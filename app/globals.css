@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0A0A0B;
+  --surface: #131316;
+  --surface-hover: #18181C;
+  --border: #1F1F23;
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+  --accent: #FF5C2C;
+  --accent-hover: #FF7A52;
+  --success: #4ADE80;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+::selection {
+  background: rgba(255, 92, 44, 0.25);
+  color: var(--text-primary);
+}
+
+/* Restrained focus styling — accent ring on the few things that take focus */
+:focus-visible {
+  outline: none;
+}
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px rgba(255, 92, 44, 0.6);
+  border-radius: 8px;
+}
+
+/* Marquee gradient mask — fades edges so the loop seam is invisible */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+/* Hairline noise overlay for the page — keeps gradients from looking flat AI-rendered */
+.grain {
+  position: relative;
+}
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Subtle dotted divider used between major sections */
+.divider-dotted {
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 4px 4px;
+  background-repeat: repeat-x;
+  height: 1px;
+  background-position: top center;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar — minimal */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #2a2a2f; }
