@@ -10,8 +10,8 @@
   --text-primary: #FAFAFA;
   --text-secondary: #A1A1AA;
   --text-muted: #71717A;
-  --accent: #FF5C2C;
-  --accent-hover: #FF7A52;
+  --accent: #D3FBA3;
+  --accent-hover: #BFEF8A;
   --success: #4ADE80;
 }
 
@@ -33,7 +33,7 @@ html {
 }
 
 ::selection {
-  background: rgba(255, 92, 44, 0.25);
+  background: rgba(211, 251, 163, 0.35);
   color: var(--text-primary);
 }
 
@@ -46,7 +46,7 @@ a:focus-visible,
 [role="button"]:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px rgba(255, 92, 44, 0.6);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px rgba(211, 251, 163, 0.55);
   border-radius: 8px;
 }
 

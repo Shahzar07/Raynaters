@@ -17,7 +17,7 @@ export function Eyebrow({
       )}
     >
       {withDot && (
-        <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_rgba(255,92,44,0.6)]" />
+        <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_14px_rgba(211,251,163,0.6)]" />
       )}
       {children}
     </p>

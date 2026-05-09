@@ -13,7 +13,7 @@ const base =
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    'bg-accent text-[#150A05] hover:bg-accent-hover border border-accent hover:border-accent-hover',
+    'bg-accent text-[#0A0A0B] hover:bg-accent-hover border border-accent hover:border-accent-hover',
   ghost:
     'bg-transparent text-text-primary border border-border hover:border-text-secondary hover:bg-surface',
 };

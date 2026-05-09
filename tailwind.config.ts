@@ -16,8 +16,8 @@ const config: Config = {
         'text-primary': '#FAFAFA',
         'text-secondary': '#A1A1AA',
         'text-muted': '#71717A',
-        accent: '#FF5C2C',
-        'accent-hover': '#FF7A52',
+        accent: '#D3FBA3',
+        'accent-hover': '#BFEF8A',
         success: '#4ADE80',
       },
       fontFamily: {

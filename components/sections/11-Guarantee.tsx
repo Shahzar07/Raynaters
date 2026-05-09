@@ -76,7 +76,7 @@ export default function Guarantee() {
               className="pointer-events-none absolute -inset-x-12 -bottom-12 -z-10 h-40"
               style={{
                 background:
-                  'radial-gradient(closest-side, rgba(255,92,44,0.10), transparent 70%)',
+                  'radial-gradient(closest-side, rgba(211,251,163,0.16), transparent 70%)',
               }}
             />
           </div>

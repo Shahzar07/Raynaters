@@ -62,7 +62,7 @@ function HeroGlow() {
         className="absolute left-1/2 top-[-10%] h-[700px] w-[1100px] -translate-x-1/2 rounded-full"
         style={{
           background:
-            'radial-gradient(closest-side, rgba(255,92,44,0.10), rgba(255,92,44,0.03) 45%, transparent 70%)',
+            'radial-gradient(closest-side, rgba(211,251,163,0.16), rgba(211,251,163,0.05) 45%, transparent 70%)',
         }}
       />
       {/* Hairline horizon — thin border line that grounds the hero */}

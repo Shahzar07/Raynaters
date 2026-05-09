@@ -15,7 +15,7 @@ function PortraitPlaceholder() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(closest-side at 30% 20%, rgba(255,92,44,0.16), transparent 55%), linear-gradient(180deg, #16161a, #0d0d0f)',
+            'radial-gradient(closest-side at 30% 20%, rgba(211,251,163,0.22), transparent 55%), linear-gradient(180deg, #16161a, #0d0d0f)',
         }}
       />
       <div className="absolute inset-0 flex flex-col justify-between p-6">

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { CONTENT } from '@/lib/content';
@@ -10,18 +11,20 @@ function Logo() {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-2.5"
+      className="group flex items-center gap-3"
       aria-label={`${CONTENT.brand.name} home`}
     >
-      <span
-        aria-hidden
-        className="relative grid h-7 w-7 place-items-center rounded-[7px] border border-border bg-surface"
-      >
-        <span className="block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px_rgba(255,92,44,0.7)]" />
-      </span>
+      <Image
+        src="/raynaters-logo.png"
+        alt="Raynaters Inc."
+        width={40}
+        height={40}
+        priority
+        className="h-9 w-9 rounded-[8px] border border-border object-cover"
+      />
       <span className="text-[15px] tracking-[-0.01em] text-text-primary font-medium">
-        {CONTENT.brand.name}
-        <span className="text-text-muted">/tech</span>
+        Raynaters
+        <span className="text-text-muted"> Inc.</span>
       </span>
     </Link>
   );

@@ -75,7 +75,7 @@ lib/
 
 ## Anti-slop guarantees baked into the design
 
-- One accent color (`#FF5C2C`), used only on CTAs, key numbers, and accent details
+- One accent color (`#D3FBA3` lime, matched to the Raynaters logo), used only on CTAs, key numbers, and accent details
 - No gradients on backgrounds (one allowed: subtle hero radial glow at ~10% opacity)
 - No glassmorphism (no backdrop-blur on cards; sticky nav uses a light backdrop on scroll only)
 - No emoji icons in UI chrome — `lucide-react` only

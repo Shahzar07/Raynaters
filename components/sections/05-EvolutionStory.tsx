@@ -57,7 +57,7 @@ export default function EvolutionStory() {
                         className={cn(
                           'block h-1.5 w-1.5 rounded-full',
                           idx === stages.length - 1
-                            ? 'bg-accent shadow-[0_0_10px_rgba(255,92,44,0.7)]'
+                            ? 'bg-accent shadow-[0_0_12px_rgba(211,251,163,0.7)]'
                             : 'bg-text-muted',
                         )}
                       />

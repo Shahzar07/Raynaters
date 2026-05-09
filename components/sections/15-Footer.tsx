@@ -1,19 +1,21 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { CONTENT } from '@/lib/content';
 import { Container } from '@/components/ui/Container';
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2.5">
-      <span
-        aria-hidden
-        className="grid h-7 w-7 place-items-center rounded-[7px] border border-border bg-surface"
-      >
-        <span className="block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px_rgba(255,92,44,0.7)]" />
-      </span>
+    <div className="flex items-center gap-3">
+      <Image
+        src="/raynaters-logo.png"
+        alt="Raynaters Inc."
+        width={56}
+        height={56}
+        className="h-12 w-12 rounded-[10px] border border-border object-cover"
+      />
       <span className="text-[15px] tracking-[-0.01em] text-text-primary font-medium">
-        {CONTENT.brand.name}
-        <span className="text-text-muted">/tech</span>
+        Raynaters
+        <span className="text-text-muted"> Inc.</span>
       </span>
     </div>
   );

@@ -149,7 +149,7 @@ function LoomTile({ tile }: { tile: Extract<Tile, { kind: 'loom' }> }) {
           className="absolute inset-0"
           style={{
             background:
-              'repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 6px, transparent 6px 12px), radial-gradient(closest-side at 30% 20%, rgba(255,92,44,0.18), transparent 55%), #0e0e11',
+              'repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 6px, transparent 6px 12px), radial-gradient(closest-side at 30% 20%, rgba(211,251,163,0.22), transparent 55%), #0e0e11',
           }}
         />
         <div className="absolute inset-0 grid place-items-center">
