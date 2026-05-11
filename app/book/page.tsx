@@ -55,8 +55,8 @@ export default function BookPage() {
 
         <p className="mt-10 text-sm text-text-muted">
           Prefer email? Reach Shahzar directly at{' '}
-          <a className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent" href="mailto:hello@raynaters.com">
-            hello@raynaters.com
+          <a className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent" href="mailto:team@raynaters.tech">
+            team@raynaters.tech
           </a>
           .
         </p>

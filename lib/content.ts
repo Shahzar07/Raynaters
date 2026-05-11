@@ -268,7 +268,7 @@ export const CONTENT = {
         links: [
           { label: 'Book audit', href: '/book' },
           { label: 'LinkedIn', href: '#' },
-          { label: 'Email', href: 'mailto:hello@raynaters.com' },
+          { label: 'Email', href: 'mailto:team@raynaters.tech' },
         ],
       },
       {
