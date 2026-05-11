@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import CalEmbed from '@/components/CalEmbed';
 
 export const metadata = {
   title: 'Book your Agent Audit — Raynaters Tech',
@@ -32,25 +33,8 @@ export default function BookPage() {
           </p>
         </div>
 
-        <div className="mt-16 rounded-[16px] border border-border bg-surface p-2">
-          <div
-            aria-label="Calendly placeholder"
-            className="grid h-[640px] place-items-center rounded-[12px] border border-dashed border-border bg-bg"
-          >
-            <div className="text-center max-w-md px-6">
-              <div className="mx-auto h-2 w-2 rounded-full bg-accent" />
-              <p className="mt-6 text-sm uppercase tracking-[0.2em] text-text-muted">
-                Calendly embed slot
-              </p>
-              <p className="mt-3 text-text-secondary">
-                Replace this placeholder with{' '}
-                <code className="rounded bg-surface-hover px-1.5 py-0.5 text-xs text-text-primary">
-                  &lt;InlineWidget url=&quot;https://calendly.com/raynaters/audit&quot; /&gt;
-                </code>{' '}
-                from <code className="rounded bg-surface-hover px-1.5 py-0.5 text-xs text-text-primary">react-calendly</code>.
-              </p>
-            </div>
-          </div>
+        <div className="mt-16 rounded-[16px] border border-border bg-surface p-2" style={{ minHeight: 700 }}>
+          <CalEmbed />
         </div>
 
         <p className="mt-10 text-sm text-text-muted">
