@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Instrument_Serif } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const inter = Inter({
@@ -48,6 +49,7 @@ export default function RootLayout({
     >
       <body className="font-sans bg-bg text-text-primary antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
