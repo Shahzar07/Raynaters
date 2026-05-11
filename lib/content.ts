@@ -195,6 +195,8 @@ export const CONTENT = {
         initials: 'DA',
         avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'The audit alone was worth the time. We deployed a single agent and recovered the entire engagement fee inside seven weeks.',
+        kind: 'slack' as const,
+        meta: '#wins',
       },
       {
         name: 'Imogen R.',
@@ -202,6 +204,8 @@ export const CONTENT = {
         initials: 'IR',
         avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'I expected slides. I got a working agent in 18 days. The hand-off documentation is the cleanest I have ever seen from a vendor.',
+        kind: 'email' as const,
+        meta: 'Re: 18-day audit — wow.',
       },
       {
         name: 'Carlos M.',
@@ -229,7 +233,9 @@ export const CONTENT = {
         role: 'Founder, marketplace',
         initials: 'TL',
         avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face&auto=format',
-        quote: 'They told me what NOT to automate. Refreshing. We shipped two agents instead of seven and ROI hit in week six.',
+        quote: 'These guys told me what NOT to automate. Refreshing. We shipped 2 agents instead of 7 and ROI hit week 6.',
+        kind: 'imessage' as const,
+        meta: 'Today 11:42 AM',
       },
       {
         name: 'Nadia S.',
@@ -237,6 +243,8 @@ export const CONTENT = {
         initials: 'NS',
         avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Our enrichment + routing agent routes leads in 11 seconds. Sales actually trusts the data. That alone justified the build.',
+        kind: 'slack' as const,
+        meta: '#revops',
       },
       {
         name: 'Henrik J.',
@@ -244,6 +252,8 @@ export const CONTENT = {
         initials: 'HJ',
         avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'They are the only AI agency that talks about failure modes before they take your money. Then they ship anyway. Rare.',
+        kind: 'email' as const,
+        meta: 'Honest pre-engagement convos',
       },
       {
         name: 'Pooja D.',
@@ -335,6 +345,8 @@ export const CONTENT = {
         initials: 'NK',
         avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Inventory reconciliation used to be a Friday nightmare. Now it runs every hour, flags exceptions in Slack, and my team closes 90 minutes earlier on Fridays.',
+        kind: 'slack' as const,
+        meta: '#ops-team',
       },
       {
         name: 'Sofia R.',
@@ -342,6 +354,8 @@ export const CONTENT = {
         initials: 'SR',
         avatar: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'I was burned by AI hype before. Shahzar was the first person to tell me our best workflow was not a good automation candidate. That honesty is why I trusted them with the three that were.',
+        kind: 'email' as const,
+        meta: 'Re: Audit follow-up',
       },
       {
         name: 'Arjun P.',

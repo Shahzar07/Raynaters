@@ -33,8 +33,13 @@ export default function BookPage() {
           </p>
         </div>
 
-        <div className="mt-16 rounded-[16px] border border-border bg-surface p-2" style={{ minHeight: 700 }}>
-          <CalEmbed />
+        <div
+          className="mt-12 overflow-hidden rounded-[20px] border border-border bg-surface p-4 md:mt-16 md:p-6"
+          style={{ minHeight: 760 }}
+        >
+          <div className="h-full w-full overflow-hidden rounded-[12px]" style={{ minHeight: 720 }}>
+            <CalEmbed />
+          </div>
         </div>
 
         <p className="mt-10 text-sm text-text-muted">
