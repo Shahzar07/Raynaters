@@ -90,9 +90,9 @@ export default function FAQ() {
                 Still curious? Send Shahzar a note —{' '}
                 <a
                   className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent"
-                  href="mailto:hello@raynaters.com"
+                  href="mailto:contact@raynaters.tech"
                 >
-                  hello@raynaters.com
+                  contact@raynaters.tech
                 </a>
                 .
               </p>

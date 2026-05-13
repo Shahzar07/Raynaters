@@ -1,12 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { CONTENT } from '@/lib/content';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Marquee } from '@/components/ui/Marquee';
 import { TOKENS } from '@/lib/design-tokens';
+import { cn } from '@/lib/utils';
 
 const wordContainer = {
   hidden: {},
@@ -57,7 +60,6 @@ function HeroGlow() {
       aria-hidden
       className="pointer-events-none absolute inset-0 -z-10"
     >
-      {/* Single subtle radial — orange at very low opacity. The ONE allowed gradient. */}
       <div
         className="absolute left-1/2 top-[-10%] h-[700px] w-[1100px] -translate-x-1/2 rounded-full"
         style={{
@@ -65,9 +67,96 @@ function HeroGlow() {
             'radial-gradient(closest-side, rgba(211,251,163,0.16), rgba(211,251,163,0.05) 45%, transparent 70%)',
         }}
       />
-      {/* Hairline horizon — thin border line that grounds the hero */}
       <div className="absolute bottom-0 left-1/2 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-border to-transparent" />
     </div>
+  );
+}
+
+function HeroVideo() {
+  const [canPlay, setCanPlay] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Delay playback by 5 seconds
+    const timer = setTimeout(() => {
+      setCanPlay(true);
+      if (videoRef.current) {
+        videoRef.current.play().then(() => {
+          setIsPlaying(true);
+        }).catch(() => {
+          setIsPlaying(false);
+        });
+      }
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const togglePlay = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.5 }}
+      className="group relative mx-auto mt-16 max-w-[1000px] overflow-hidden rounded-[32px] border-[4px] border-accent/20 bg-surface shadow-[0_0_50px_-12px_rgba(211,251,163,0.3)] cursor-pointer"
+      onClick={togglePlay}
+    >
+      <div className="aspect-video w-full overflow-hidden">
+        <video
+          ref={videoRef}
+          muted={isMuted}
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+        >
+          <source src="/raynaterstech (1).mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      {/* Custom Minimal Controls — Parrot Green Accent */}
+      <div className="absolute bottom-6 right-6 flex items-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <button
+          onClick={toggleMute}
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-bg/60 text-accent backdrop-blur-md transition-all hover:bg-bg/80 hover:scale-110"
+          aria-label={isMuted ? "Unmute" : "Mute"}
+        >
+          {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+        </button>
+        <button
+          onClick={togglePlay}
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-bg shadow-[0_0_20px_rgba(211,251,163,0.4)] transition-all hover:scale-110 hover:shadow-accent/60"
+          aria-label={isPlaying ? "Pause" : "Play"}
+        >
+          {isPlaying ? (
+            <Pause size={22} fill="currentColor" />
+          ) : (
+            <Play size={22} fill="currentColor" className="ml-1" />
+          )}
+        </button>
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-accent/[0.03]" />
+    </motion.div>
   );
 }
 
@@ -77,16 +166,57 @@ function TrustStrip() {
       <p className="text-center text-[12px] uppercase tracking-[0.22em] text-text-muted">
         {CONTENT.hero.trustLabel}
       </p>
-      <div className="mt-6">
+      <div className="mt-8 overflow-hidden marquee-mask">
         <Marquee speed="slow">
-          {CONTENT.hero.trustLogos.map((logo) => (
-            <div
-              key={logo}
-              className="flex h-8 items-center text-[18px] tracking-[-0.02em] text-text-secondary/80 font-medium"
-            >
-              {logo}
-            </div>
-          ))}
+          {CONTENT.hero.trustLogos.map((item) => {
+            // ONLY target logos that are monochrome black (or need to be white for visibility)
+            const shouldBeWhite = 
+              item.name === 'Anthropic' || 
+              item.name === 'Github' || 
+              item.name === 'Notion' || 
+              item.name === 'OpenAI' || 
+              item.name === 'Vercel' ||
+              item.name === 'Pipedream' ||
+              item.name === 'Zapier' ||
+              item.name === 'LangChain' ||
+              item.name === 'Make';
+
+            // Some SVGs/PNGs have large internal padding or thin lines and need scaling up
+            const getScale = (name: string) => {
+              if (name === 'Vercel') return 'scale-[2.8]';
+              if (name === 'OpenAI') return 'scale-[2.5]';
+              if (name === 'Notion') return 'scale-[2.2]';
+              if (name === 'Pipedream') return 'scale-[2.0]';
+              if (name === 'Bubble') return 'scale-[1.8]';
+              if (name === 'HeyGen') return 'scale-[1.1]';
+              if (name === 'GoHighLevel') return 'scale-[1.1]';
+              if (name === 'Claude') return 'scale-[1.5]';
+              if (name === 'Relevance AI') return 'scale-[1.2]';
+              if (name === 'Make') return 'scale-[1.6]';
+              if (name === 'Zapier') return 'scale-[1.4]';
+              if (name === 'LangChain') return 'scale-[1.7]';
+              return 'scale-100';
+            };
+
+            return (
+              <div
+                key={item.name}
+                className="flex h-20 items-center px-12"
+              >
+                <div className={cn("flex items-center justify-center transition-transform duration-500", getScale(item.name))}>
+                  <img
+                    src={item.logo}
+                    alt={`${item.name} logo`}
+                    className={cn(
+                      "h-9 w-auto object-contain opacity-85 transition-all duration-500 hover:opacity-100",
+                      shouldBeWhite && "brightness-0 invert"
+                    )}
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            );
+          })}
         </Marquee>
       </div>
     </div>
@@ -111,20 +241,13 @@ export default function Hero() {
           <AnimatedHeadline />
         </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.45 }}
-          className="mx-auto mt-8 max-w-[680px] text-center text-[17px] leading-relaxed text-text-secondary md:text-[19px]"
-        >
-          {CONTENT.hero.sub}
-        </motion.p>
+        <HeroVideo />
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.6 }}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.7 }}
+          className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button href={CONTENT.brand.bookHref} size="lg" withArrow>
             {CONTENT.hero.primaryCta}

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
+import CalEmbed from '@/components/ui/CalEmbed';
+
 export const metadata = {
   title: 'Book your Agent Audit — Raynaters Tech',
   description: 'Book a free 30-minute Agent Audit with Shahzar. ROI projection within 48 hours.',
@@ -32,31 +34,17 @@ export default function BookPage() {
           </p>
         </div>
 
-        <div className="mt-16 rounded-[16px] border border-border bg-surface p-2">
-          <div
-            aria-label="Calendly placeholder"
-            className="grid h-[640px] place-items-center rounded-[12px] border border-dashed border-border bg-bg"
-          >
-            <div className="text-center max-w-md px-6">
-              <div className="mx-auto h-2 w-2 rounded-full bg-accent" />
-              <p className="mt-6 text-sm uppercase tracking-[0.2em] text-text-muted">
-                Calendly embed slot
-              </p>
-              <p className="mt-3 text-text-secondary">
-                Replace this placeholder with{' '}
-                <code className="rounded bg-surface-hover px-1.5 py-0.5 text-xs text-text-primary">
-                  &lt;InlineWidget url=&quot;https://calendly.com/raynaters/audit&quot; /&gt;
-                </code>{' '}
-                from <code className="rounded bg-surface-hover px-1.5 py-0.5 text-xs text-text-primary">react-calendly</code>.
-              </p>
-            </div>
+        <div className="mt-16 rounded-[16px] border border-border bg-surface p-2 shadow-2xl">
+          <div className="h-[700px] overflow-hidden rounded-[12px] bg-bg">
+            <CalEmbed />
           </div>
         </div>
 
+
         <p className="mt-10 text-sm text-text-muted">
           Prefer email? Reach Shahzar directly at{' '}
-          <a className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent" href="mailto:hello@raynaters.com">
-            hello@raynaters.com
+          <a className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent" href="mailto:contact@raynaters.tech">
+            contact@raynaters.tech
           </a>
           .
         </p>

@@ -45,6 +45,10 @@ const config: Config = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
         'fade-up': {
           '0%': { opacity: '0', transform: 'translateY(12px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -52,7 +56,10 @@ const config: Config = {
       },
       animation: {
         marquee: 'marquee 40s linear infinite',
+        'marquee-fast': 'marquee 30s linear infinite',
         'marquee-slow': 'marquee 60s linear infinite',
+        'marquee-reverse': 'marquee-reverse 40s linear infinite',
+        'marquee-reverse-slow': 'marquee-reverse 60s linear infinite',
         'fade-up': 'fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both',
       },
     },
