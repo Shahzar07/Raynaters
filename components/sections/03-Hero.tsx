@@ -34,7 +34,7 @@ function AnimatedHeadline() {
       variants={wordContainer}
       initial="hidden"
       animate="visible"
-      className="font-display text-[44px] leading-[1.02] tracking-tightest text-text-primary md:text-[88px] md:leading-[1.0]"
+      className="font-display text-balance text-[40px] leading-[1.04] tracking-tightest text-text-primary sm:text-[56px] md:text-[72px] md:leading-[1.02] lg:text-[88px] lg:leading-[1.0]"
     >
       {allWords.map((words, lineIdx) => (
         <span key={lineIdx} className="block">
@@ -118,7 +118,7 @@ function HeroVideo() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.5 }}
-      className="group relative mx-auto mt-16 max-w-[1000px] overflow-hidden rounded-[32px] border-[4px] border-accent/20 bg-surface shadow-[0_0_50px_-12px_rgba(211,251,163,0.3)] cursor-pointer"
+      className="group relative mx-auto mt-10 sm:mt-12 md:mt-16 max-w-[1000px] overflow-hidden rounded-[20px] sm:rounded-[24px] md:rounded-[32px] border-2 sm:border-[3px] md:border-[4px] border-accent/20 bg-surface shadow-[0_0_50px_-12px_rgba(211,251,163,0.3)] cursor-pointer"
       onClick={togglePlay}
     >
       <div className="aspect-video w-full overflow-hidden">
@@ -134,7 +134,7 @@ function HeroVideo() {
       </div>
 
       {/* Custom Minimal Controls — Parrot Green Accent */}
-      <div className="absolute bottom-6 right-6 flex items-center gap-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 flex items-center gap-2 sm:gap-3 opacity-100 sm:opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <button
           onClick={toggleMute}
           className="flex h-10 w-10 items-center justify-center rounded-full bg-bg/60 text-accent backdrop-blur-md transition-all hover:bg-bg/80 hover:scale-110"
@@ -162,11 +162,11 @@ function HeroVideo() {
 
 function TrustStrip() {
   return (
-    <div className="mt-20 md:mt-28">
-      <p className="text-center text-[12px] uppercase tracking-[0.22em] text-text-muted">
+    <div className="mt-16 sm:mt-20 md:mt-28">
+      <p className="text-center text-[11px] sm:text-[12px] uppercase tracking-[0.22em] text-text-muted">
         {CONTENT.hero.trustLabel}
       </p>
-      <div className="mt-8 overflow-hidden marquee-mask">
+      <div className="mt-6 sm:mt-8 overflow-hidden marquee-mask">
         <Marquee speed="slow">
           {CONTENT.hero.trustLogos.map((item) => {
             // ONLY target logos that are monochrome black (or need to be white for visibility)
@@ -201,14 +201,14 @@ function TrustStrip() {
             return (
               <div
                 key={item.name}
-                className="flex h-20 items-center px-12"
+                className="flex h-16 sm:h-20 items-center px-7 sm:px-10 md:px-12"
               >
                 <div className={cn("flex items-center justify-center transition-transform duration-500", getScale(item.name))}>
                   <img
                     src={item.logo}
                     alt={`${item.name} logo`}
                     className={cn(
-                      "h-9 w-auto object-contain opacity-85 transition-all duration-500 hover:opacity-100",
+                      "h-7 sm:h-9 w-auto object-contain opacity-85 transition-all duration-500 hover:opacity-100",
                       shouldBeWhite && "brightness-0 invert"
                     )}
                     loading="lazy"
@@ -225,7 +225,7 @@ function TrustStrip() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-32">
+    <section className="relative overflow-hidden pt-16 pb-20 sm:pt-20 sm:pb-24 md:pt-32 md:pb-32">
       <HeroGlow />
       <Container>
         <motion.div
@@ -247,12 +247,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.7 }}
-          className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-10 sm:mt-14 flex flex-col items-stretch justify-center gap-3 sm:gap-4 px-4 sm:flex-row sm:items-center sm:px-0"
         >
-          <Button href={CONTENT.brand.bookHref} size="lg" withArrow>
+          <Button href={CONTENT.brand.bookHref} size="lg" withArrow className="w-full sm:w-auto">
             {CONTENT.hero.primaryCta}
           </Button>
-          <Button href="#industry" size="lg" variant="ghost">
+          <Button href="#industry" size="lg" variant="ghost" className="w-full sm:w-auto">
             {CONTENT.hero.secondaryCta}
           </Button>
         </motion.div>

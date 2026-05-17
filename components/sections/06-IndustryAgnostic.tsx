@@ -23,18 +23,18 @@ export default function IndustryAgnostic() {
             <Eyebrow>{CONTENT.industry.eyebrow}</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mt-6 font-display text-[36px] leading-[1.05] tracking-[-0.03em] text-text-primary md:text-[56px]">
+            <h2 className="mt-6 font-display text-balance text-[32px] leading-[1.08] tracking-[-0.03em] text-text-primary sm:text-[42px] md:text-[56px] md:leading-[1.05]">
               {CONTENT.industry.title}
             </h2>
           </Reveal>
         </div>
 
-        <RevealStagger className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-3 md:gap-8">
+        <RevealStagger className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:gap-6 md:mt-20 md:grid-cols-3 md:gap-8">
           {CONTENT.industry.cards.map((c, idx) => (
             <motion.article
               key={c.name}
               variants={staggerItem}
-              className="group relative flex flex-col rounded-[16px] border border-border bg-surface p-7 transition-colors duration-300 hover:border-text-muted/40"
+              className="group relative flex flex-col rounded-[16px] border border-border bg-surface p-6 sm:p-7 transition-colors duration-300 hover:border-text-muted/40"
             >
               {/* Index marker */}
               <div className="flex items-center justify-between">
@@ -45,8 +45,8 @@ export default function IndustryAgnostic() {
               </div>
 
               {/* Big metric */}
-              <div className="mt-10 flex items-baseline gap-3">
-                <span className="font-display text-[64px] leading-none tracking-[-0.04em] text-accent md:text-[72px]">
+              <div className="mt-8 sm:mt-10 flex items-baseline gap-3 flex-wrap">
+                <span className="font-display text-[52px] leading-none tracking-[-0.04em] text-accent sm:text-[64px] md:text-[72px]">
                   {c.metric}
                 </span>
                 <span className="text-[13px] uppercase tracking-[0.18em] text-text-muted">

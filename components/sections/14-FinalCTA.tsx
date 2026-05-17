@@ -30,28 +30,28 @@ export default function FinalCTA() {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h2 className="mt-8 font-display text-[44px] leading-[1.0] tracking-[-0.04em] text-text-primary md:text-[96px]">
+            <h2 className="mt-7 sm:mt-8 font-display text-balance text-[38px] leading-[1.04] tracking-[-0.04em] text-text-primary sm:text-[56px] md:text-[80px] lg:text-[96px] md:leading-[1.0]">
               {CONTENT.finalCta.title}
             </h2>
           </Reveal>
 
           <Reveal delay={0.12}>
-            <p className="mt-6 inline-flex items-center gap-3 text-[16px] text-text-secondary md:text-[18px]">
-              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_rgba(211,251,163,0.8)]" />
+            <p className="mt-5 sm:mt-6 inline-flex items-center gap-3 text-pretty text-[14px] text-text-secondary sm:text-[16px] md:text-[18px]">
+              <span aria-hidden className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent shadow-[0_0_12px_rgba(211,251,163,0.8)]" />
               {CONTENT.finalCta.sub}
             </p>
           </Reveal>
 
           <Reveal delay={0.18}>
-            <div className="mt-12 flex justify-center">
-              <Button href={CONTENT.brand.bookHref} size="lg" withArrow>
+            <div className="mt-10 sm:mt-12 flex justify-center px-4 sm:px-0">
+              <Button href={CONTENT.brand.bookHref} size="lg" withArrow className="w-full sm:w-auto">
                 {CONTENT.finalCta.cta}
               </Button>
             </div>
           </Reveal>
 
           <Reveal delay={0.24}>
-            <p className="mt-8 text-[13px] text-text-muted">
+            <p className="mt-7 sm:mt-8 text-[12px] sm:text-[13px] text-text-muted">
               {CONTENT.finalCta.smallprint}
             </p>
           </Reveal>

@@ -23,7 +23,7 @@ function PortraitPlaceholder() {
           Founder · 2026
         </p>
         <div>
-          <p className="font-display text-[80px] leading-[0.85] tracking-[-0.05em] text-text-primary md:text-[120px]">
+          <p className="font-display text-[64px] leading-[0.85] tracking-[-0.05em] text-text-primary sm:text-[80px] md:text-[120px]">
             S.
           </p>
           <p className="mt-3 text-[12px] uppercase tracking-[0.22em] text-accent">
@@ -42,8 +42,8 @@ export default function PersonalNote() {
   return (
     <Section className="border-b border-border">
       <Container>
-        <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-12 md:gap-16">
-          <aside className="md:col-span-4 md:sticky md:top-28">
+        <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 md:grid-cols-12 md:gap-16">
+          <aside className="md:col-span-4 md:sticky md:top-28 max-w-[280px] sm:max-w-none mx-auto md:mx-0 w-full">
             <Reveal>
               <PortraitPlaceholder />
               <div className="mt-5">
@@ -64,7 +64,7 @@ export default function PersonalNote() {
               {note.paragraphs.map((p, i) => (
                 <p
                   key={i}
-                  className="mt-6 max-w-[55ch] font-display text-[28px] leading-[1.25] tracking-[-0.02em] text-text-primary md:text-[34px] md:leading-[1.2]"
+                  className="mt-6 max-w-[55ch] font-display text-pretty text-[22px] leading-[1.3] tracking-[-0.02em] text-text-primary sm:text-[26px] md:text-[34px] md:leading-[1.2]"
                 >
                   {p}
                 </p>
@@ -81,7 +81,7 @@ export default function PersonalNote() {
                     >
                       <Check className="h-3 w-3 text-accent" strokeWidth={2.5} />
                     </span>
-                    <p className="text-[17px] leading-relaxed text-text-secondary md:text-[18px]">
+                    <p className="text-[15px] leading-relaxed text-text-secondary sm:text-[17px] md:text-[18px]">
                       {b}
                     </p>
                   </li>
@@ -90,10 +90,10 @@ export default function PersonalNote() {
             </Reveal>
 
             <Reveal delay={0.15}>
-              <p className="mt-10 max-w-[50ch] text-[18px] leading-relaxed text-text-primary">
+              <p className="mt-10 max-w-[50ch] text-pretty text-[16px] leading-relaxed text-text-primary sm:text-[18px]">
                 {note.closer}
               </p>
-              <p className="font-display mt-6 text-[22px] italic tracking-[-0.02em] text-text-secondary">
+              <p className="font-display mt-6 text-[20px] italic tracking-[-0.02em] text-text-secondary sm:text-[22px]">
                 {note.signature}
               </p>
             </Reveal>

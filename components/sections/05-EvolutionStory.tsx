@@ -12,18 +12,18 @@ export default function EvolutionStory() {
   return (
     <Section id="evolution" className="border-b border-border">
       <Container>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
+        <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <Reveal>
               <Eyebrow>{CONTENT.evolution.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-6 font-display text-[36px] leading-[1.05] tracking-[-0.03em] text-text-primary md:text-[56px]">
+              <h2 className="mt-6 font-display text-balance text-[32px] leading-[1.08] tracking-[-0.03em] text-text-primary sm:text-[42px] md:text-[56px] md:leading-[1.05]">
                 {CONTENT.evolution.title}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-5 max-w-[36ch] text-[17px] leading-relaxed text-text-secondary md:text-[19px]">
+              <p className="mt-5 max-w-[36ch] text-pretty text-[16px] leading-relaxed text-text-secondary sm:text-[17px] md:text-[19px]">
                 {CONTENT.evolution.sub}
               </p>
             </Reveal>
@@ -79,10 +79,10 @@ export default function EvolutionStory() {
                         {s.metric}
                       </span>
                     </div>
-                    <h3 className="mt-3 text-[22px] tracking-[-0.02em] text-text-primary md:text-[26px]">
+                    <h3 className="mt-3 text-[20px] tracking-[-0.02em] text-text-primary sm:text-[22px] md:text-[26px]">
                       {s.headline}
                     </h3>
-                    <p className="mt-3 max-w-[55ch] text-[16px] leading-relaxed text-text-secondary">
+                    <p className="mt-3 max-w-[55ch] text-pretty text-[15px] leading-relaxed text-text-secondary sm:text-[16px]">
                       {s.body}
                     </p>
                   </motion.li>

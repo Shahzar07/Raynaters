@@ -71,15 +71,15 @@ function PlatformIcon({ platform }: { platform?: string }) {
 /* ------------------------------ CARD ------------------------------ */
 function TestimonialCard({ item }: { item: any }) {
   return (
-    <article className="group relative flex flex-col gap-5 rounded-[24px] border border-border bg-surface p-8 transition-all duration-500 hover:border-accent/30 hover:bg-surface-hover">
+    <article className="group relative flex flex-col gap-4 sm:gap-5 rounded-[20px] sm:rounded-[24px] border border-border bg-surface p-6 sm:p-7 md:p-8 transition-all duration-500 hover:border-accent/30 hover:bg-surface-hover">
       <div className="flex items-center justify-between">
         <Stars value={5} />
         <div className="text-text-muted transition-colors group-hover:text-accent/60">
           <PlatformIcon platform={item.platform} />
         </div>
       </div>
-      
-      <p className="font-display text-[22px] leading-[1.3] text-text-primary tracking-tight md:text-[24px]">
+
+      <p className="font-display text-pretty text-[18px] leading-[1.35] text-text-primary tracking-tight sm:text-[20px] md:text-[24px] md:leading-[1.3]">
         “{item.quote}”
       </p>
 
@@ -192,26 +192,26 @@ export default function Testimonials() {
   }, [items]);
 
   return (
-    <Section className="border-b border-border bg-bg relative overflow-hidden py-24 md:py-32">
+    <Section className="border-b border-border bg-bg relative overflow-hidden py-20 sm:py-24 md:py-32">
       {/* Brand Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] aspect-square bg-accent/[0.03] blur-[140px] rounded-full pointer-events-none" />
 
       <Container width="content">
-        <div className="mb-20 text-center max-w-3xl mx-auto relative z-10">
-          <h2 className="font-display text-[40px] leading-[1.1] tracking-tightest text-text-primary md:text-[64px]">
+        <div className="mb-12 sm:mb-16 md:mb-20 text-center max-w-3xl mx-auto relative z-10">
+          <h2 className="font-display text-balance text-[32px] leading-[1.1] tracking-tightest text-text-primary sm:text-[44px] md:text-[64px]">
             {CONTENT.testimonials.title}
           </h2>
-          <p className="mt-6 text-[18px] text-text-secondary leading-relaxed">
+          <p className="mt-5 sm:mt-6 text-pretty text-[16px] text-text-secondary leading-relaxed sm:text-[18px]">
             {CONTENT.testimonials.sub}
           </p>
         </div>
 
-        <div className="relative h-[800px] w-full">
+        <div className="relative h-[600px] sm:h-[700px] md:h-[800px] w-full">
           {/* Edge Fades */}
-          <div className="absolute inset-x-0 top-0 z-20 h-40 bg-gradient-to-b from-bg to-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 z-20 h-40 bg-gradient-to-t from-bg to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 z-20 h-24 sm:h-32 md:h-40 bg-gradient-to-b from-bg to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 z-20 h-24 sm:h-32 md:h-40 bg-gradient-to-t from-bg to-transparent pointer-events-none" />
 
-          <div className="flex h-full gap-6 md:gap-8">
+          <div className="flex h-full gap-5 sm:gap-6 md:gap-8">
             <ScrollingColumn items={cols[0]} speed={35} direction="up" />
             <div className="hidden md:block flex-1">
               <ScrollingColumn items={cols[1]} speed={25} direction="down" />
