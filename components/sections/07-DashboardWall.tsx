@@ -119,7 +119,7 @@ function MetricTile({ tile }: { tile: Extract<Tile, { kind: 'metric' }> }) {
       <p className="mt-4 text-[12px] uppercase tracking-[0.18em] text-text-secondary">
         {tile.label}
       </p>
-      <p className="font-display mt-3 text-[44px] leading-none tracking-[-0.04em] text-text-primary md:text-[56px]">
+      <p className="font-display mt-3 text-[40px] leading-none tracking-[-0.04em] text-text-primary sm:text-[44px] md:text-[56px]">
         {tile.value}
       </p>
       <div className="mt-auto pt-4 flex items-center gap-2 text-[12px] text-success">
@@ -181,20 +181,20 @@ export default function DashboardWall() {
   return (
     <Section className="border-b border-border bg-bg">
       <Container width="grid">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
               <Eyebrow>{CONTENT.dashboardWall.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-6 font-display text-[36px] leading-[1.05] tracking-[-0.03em] text-text-primary md:text-[52px]">
+              <h2 className="mt-6 font-display text-balance text-[32px] leading-[1.08] tracking-[-0.03em] text-text-primary sm:text-[40px] md:text-[52px] md:leading-[1.05]">
                 {CONTENT.dashboardWall.title}
               </h2>
             </Reveal>
           </div>
           <div className="md:col-span-7 md:pt-2">
             <Reveal delay={0.1}>
-              <p className="text-[17px] leading-relaxed text-text-secondary md:text-[19px] md:max-w-[55ch]">
+              <p className="text-pretty text-[16px] leading-relaxed text-text-secondary sm:text-[17px] md:text-[19px] md:max-w-[55ch]">
                 {CONTENT.dashboardWall.sub}
               </p>
             </Reveal>

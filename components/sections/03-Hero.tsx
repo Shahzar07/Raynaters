@@ -31,7 +31,7 @@ function AnimatedHeadline() {
       variants={wordContainer}
       initial="hidden"
       animate="visible"
-      className="font-display text-[44px] leading-[1.02] tracking-tightest text-text-primary md:text-[88px] md:leading-[1.0]"
+      className="font-display text-balance text-[40px] leading-[1.04] tracking-tightest text-text-primary sm:text-[56px] md:text-[72px] md:leading-[1.02] lg:text-[88px] lg:leading-[1.0]"
     >
       {allWords.map((words, lineIdx) => (
         <span key={lineIdx} className="block">
@@ -73,8 +73,8 @@ function HeroGlow() {
 
 function TrustStrip() {
   return (
-    <div className="mt-20 md:mt-28">
-      <p className="text-center text-[12px] uppercase tracking-[0.22em] text-text-muted">
+    <div className="mt-16 sm:mt-20 md:mt-28">
+      <p className="text-center text-[11px] sm:text-[12px] uppercase tracking-[0.22em] text-text-muted">
         {CONTENT.hero.trustLabel}
       </p>
       <div className="mt-6">
@@ -95,7 +95,7 @@ function TrustStrip() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-32">
+    <section className="relative overflow-hidden pt-16 pb-20 sm:pt-20 sm:pb-24 md:pt-32 md:pb-32">
       <HeroGlow />
       <Container>
         <motion.div
@@ -115,7 +115,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.45 }}
-          className="mx-auto mt-8 max-w-[680px] text-center text-[17px] leading-relaxed text-text-secondary md:text-[19px]"
+          className="mx-auto mt-6 sm:mt-8 max-w-[680px] text-pretty text-center text-[16px] leading-relaxed text-text-secondary sm:text-[17px] md:text-[19px]"
         >
           {CONTENT.hero.sub}
         </motion.p>
@@ -124,12 +124,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.6 }}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="mt-8 sm:mt-10 flex flex-col items-stretch justify-center gap-3 px-4 sm:flex-row sm:items-center sm:px-0"
         >
-          <Button href={CONTENT.brand.bookHref} size="lg" withArrow>
+          <Button href={CONTENT.brand.bookHref} size="lg" withArrow className="w-full sm:w-auto">
             {CONTENT.hero.primaryCta}
           </Button>
-          <Button href="#industry" size="lg" variant="ghost">
+          <Button href="#industry" size="lg" variant="ghost" className="w-full sm:w-auto">
             {CONTENT.hero.secondaryCta}
           </Button>
         </motion.div>

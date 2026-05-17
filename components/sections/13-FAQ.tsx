@@ -28,13 +28,13 @@ function FAQItem({
       <button
         onClick={onToggle}
         aria-expanded={open}
-        className="group flex w-full items-start justify-between gap-6 py-6 text-left md:py-8"
+        className="group flex w-full items-start justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left md:py-8 min-h-[64px]"
       >
-        <div className="flex items-start gap-5 md:gap-7">
-          <span className="mt-1 w-6 shrink-0 text-[12px] uppercase tracking-[0.18em] tabular-nums text-text-muted">
+        <div className="flex items-start gap-4 sm:gap-5 md:gap-7">
+          <span className="mt-1 w-6 shrink-0 text-[11px] sm:text-[12px] uppercase tracking-[0.18em] tabular-nums text-text-muted">
             {String(index + 1).padStart(2, '0')}
           </span>
-          <span className="text-[18px] tracking-[-0.01em] text-text-primary md:text-[22px]">
+          <span className="text-[16px] tracking-[-0.01em] text-text-primary sm:text-[18px] md:text-[22px]">
             {q}
           </span>
         </div>
@@ -60,7 +60,7 @@ function FAQItem({
             transition={{ duration: 0.35, ease: TOKENS.motion.ease }}
             className="overflow-hidden"
           >
-            <div className="ml-11 max-w-[60ch] pb-6 text-[16px] leading-relaxed text-text-secondary md:ml-[68px] md:pb-8 md:text-[17px]">
+            <div className="ml-10 sm:ml-11 max-w-[60ch] pb-5 sm:pb-6 text-pretty text-[15px] leading-relaxed text-text-secondary sm:text-[16px] md:ml-[68px] md:pb-8 md:text-[17px]">
               {a}
             </div>
           </motion.div>
@@ -75,18 +75,18 @@ export default function FAQ() {
   return (
     <Section id="faq" className="border-b border-border">
       <Container>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
+        <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-4 md:sticky md:top-28 md:self-start">
             <Reveal>
               <Eyebrow>{CONTENT.faq.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-6 font-display text-[36px] leading-[1.05] tracking-[-0.03em] text-text-primary md:text-[52px]">
+              <h2 className="mt-6 font-display text-balance text-[32px] leading-[1.08] tracking-[-0.03em] text-text-primary sm:text-[40px] md:text-[52px] md:leading-[1.05]">
                 {CONTENT.faq.title}
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
-              <p className="mt-5 max-w-[36ch] text-[16px] leading-relaxed text-text-secondary md:text-[17px]">
+              <p className="mt-5 max-w-[36ch] text-[15px] leading-relaxed text-text-secondary sm:text-[16px] md:text-[17px]">
                 Still curious? Send Shahzar a note —{' '}
                 <a
                   className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent"

@@ -14,12 +14,12 @@ export default function WhyDoingThis() {
             <Eyebrow className="justify-center">{CONTENT.why.eyebrow}</Eyebrow>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mx-auto mt-7 font-display text-[36px] leading-[1.05] tracking-[-0.03em] text-text-primary md:text-[64px] md:leading-[1.0]">
+            <h2 className="mx-auto mt-7 font-display text-balance text-[30px] leading-[1.1] tracking-[-0.03em] text-text-primary sm:text-[40px] md:text-[64px] md:leading-[1.0]">
               {CONTENT.why.title}
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
-            <p className="mx-auto mt-8 max-w-[58ch] text-[18px] leading-[1.7] text-text-secondary md:text-[20px]">
+            <p className="mx-auto mt-6 sm:mt-8 max-w-[58ch] text-pretty text-[16px] leading-[1.7] text-text-secondary sm:text-[18px] md:text-[20px]">
               {CONTENT.why.body}
             </p>
           </Reveal>

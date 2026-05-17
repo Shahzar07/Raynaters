@@ -39,7 +39,7 @@ type Item = (typeof CONTENT.testimonials.items)[number];
 
 function Card({ t }: { t: Item }) {
   return (
-    <article className="flex h-full w-[340px] shrink-0 flex-col rounded-[14px] border border-border bg-surface p-6 transition-colors duration-300 hover:border-text-muted/30 md:w-auto">
+    <article className="flex h-full w-[280px] sm:w-[320px] shrink-0 flex-col rounded-[14px] border border-border bg-surface p-5 sm:p-6 transition-colors duration-300 hover:border-text-muted/30 md:w-auto">
       <Stars />
       <p className="mt-4 text-[15px] leading-relaxed text-text-primary">
         {t.quote}
@@ -84,12 +84,12 @@ export default function Testimonials() {
         <div className="text-center">
           <RatingHeader />
           <Reveal delay={0.05}>
-            <h2 className="mx-auto mt-8 max-w-[22ch] font-display text-[36px] leading-[1.05] tracking-[-0.03em] text-text-primary md:text-[56px]">
+            <h2 className="mx-auto mt-7 sm:mt-8 max-w-[22ch] font-display text-balance text-[32px] leading-[1.08] tracking-[-0.03em] text-text-primary sm:text-[42px] md:text-[56px] md:leading-[1.05]">
               {CONTENT.testimonials.title}
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
-            <p className="mx-auto mt-5 max-w-[58ch] text-[17px] leading-relaxed text-text-secondary md:text-[18px]">
+            <p className="mx-auto mt-5 max-w-[58ch] text-pretty text-[15px] leading-relaxed text-text-secondary sm:text-[17px] md:text-[18px]">
               {CONTENT.testimonials.sub}
             </p>
           </Reveal>
@@ -115,11 +115,13 @@ export default function Testimonials() {
         </RevealStagger>
 
         {/* Mobile horizontal scroller */}
-        <div className="mt-12 md:hidden">
-          <div className="-mx-6 overflow-x-auto px-6">
+        <div className="mt-10 sm:mt-12 md:hidden">
+          <div className="-mx-5 sm:-mx-8 overflow-x-auto px-5 sm:px-8 snap-x snap-mandatory scroll-smooth">
             <div className="flex gap-4 pb-2">
               {masonry.map((t, i) => (
-                <Card key={i} t={t} />
+                <div key={i} className="snap-start">
+                  <Card t={t} />
+                </div>
               ))}
             </div>
           </div>
@@ -129,7 +131,7 @@ export default function Testimonials() {
         <div className="mt-10 md:mt-16">
           <Marquee speed="slow" pauseOnHover>
             {marquee.map((t, i) => (
-              <div key={i} className="w-[340px]">
+              <div key={i} className="w-[280px] sm:w-[320px] md:w-[340px]">
                 <Card t={t} />
               </div>
             ))}
