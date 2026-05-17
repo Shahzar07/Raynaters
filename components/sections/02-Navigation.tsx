@@ -11,7 +11,7 @@ function Logo() {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-3"
+      className="group flex items-center gap-2.5 sm:gap-3 min-w-0"
       aria-label={`${CONTENT.brand.name} home`}
     >
       <Image
@@ -20,11 +20,11 @@ function Logo() {
         width={40}
         height={40}
         priority
-        className="h-9 w-9 rounded-[8px] border border-border object-cover"
+        className="h-9 w-9 shrink-0 rounded-[8px] border border-border object-cover"
       />
-      <span className="text-[15px] tracking-[-0.01em] text-text-primary font-medium">
+      <span className="text-[14px] sm:text-[15px] tracking-[-0.01em] text-text-primary font-medium truncate">
         Raynaters
-        <span className="text-text-muted"> Inc.</span>
+        <span className="text-text-muted hidden sm:inline"> Inc.</span>
       </span>
     </Link>
   );
@@ -49,7 +49,7 @@ export default function Navigation() {
           : 'border-b border-transparent bg-bg',
       )}
     >
-      <div className="mx-auto flex h-16 max-w-content items-center justify-between gap-6 px-6 md:px-10">
+      <div className="mx-auto flex h-16 max-w-content items-center justify-between gap-3 sm:gap-6 px-5 sm:px-8 md:px-10">
         <Logo />
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -64,8 +64,8 @@ export default function Navigation() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <Button href={CONTENT.brand.bookHref} size="md" withArrow>
+        <div className="flex shrink-0 items-center gap-2">
+          <Button href={CONTENT.brand.bookHref} size="md" withArrow className="!px-4 sm:!px-5 !text-[14px] sm:!text-[15px]">
             {CONTENT.nav.cta}
           </Button>
         </div>

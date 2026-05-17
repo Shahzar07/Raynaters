@@ -23,7 +23,7 @@ export default function AuthorityNumber() {
           <Reveal delay={0.05}>
             <h2
               aria-label={`${CONTENT.authority.display} in operational cost cut`}
-              className="font-display mt-8 text-[88px] leading-[0.95] tracking-[-0.05em] text-text-primary md:text-[200px] md:leading-[0.95]"
+              className="font-display mt-6 sm:mt-8 text-[64px] leading-[0.95] tracking-[-0.05em] text-text-primary sm:text-[96px] md:text-[140px] lg:text-[200px] md:leading-[0.95]"
             >
               <CountUp
                 to={CONTENT.authority.value}
@@ -35,7 +35,7 @@ export default function AuthorityNumber() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <p className="mx-auto mt-6 max-w-[44ch] text-[18px] leading-relaxed text-text-secondary md:text-[20px]">
+            <p className="mx-auto mt-6 max-w-[44ch] text-pretty text-[16px] leading-relaxed text-text-secondary sm:text-[18px] md:text-[20px]">
               {CONTENT.authority.label}
             </p>
           </Reveal>
