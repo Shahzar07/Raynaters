@@ -30,7 +30,7 @@ export function VerticalLandingPage({ data }: { data: LandingPage }) {
         ]}
       />
 
-      <DirectAnswerBlock text={data.directAnswer} />
+      <DirectAnswerBlock text={data.directAnswer} link={data.relatedLink} />
 
       <WhatItDoes heading={data.headings.whatItDoes} items={data.whatItDoes} />
 

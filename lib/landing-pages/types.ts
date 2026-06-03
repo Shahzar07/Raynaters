@@ -90,5 +90,8 @@ export interface LandingPage {
   /** Optional extra blocks, e.g. the trades page's per-trade sections. */
   extraSections?: ExtraSectionGroup;
 
+  /** Optional contextual internal link shown under the direct answer. */
+  relatedLink?: { label: string; href: string };
+
   metadata: { title: string; description: string };
 }
