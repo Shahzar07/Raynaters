@@ -4,6 +4,7 @@ import Hero from '@/components/sections/03-Hero';
 import StatHero from '@/components/sections/04-StatHero';
 import EvolutionStory from '@/components/sections/05-EvolutionStory';
 import IndustryAgnostic from '@/components/sections/06-IndustryAgnostic';
+import WhoWeBuildFor from '@/components/sections/16-WhoWeBuildFor';
 import DashboardWall from '@/components/sections/07-DashboardWall';
 import PersonalNote from '@/components/sections/08-PersonalNote';
 import WhyDoingThis from '@/components/sections/09-WhyDoingThis';
@@ -23,6 +24,7 @@ export default function Page() {
       <StatHero />
       <EvolutionStory />
       <IndustryAgnostic />
+      <WhoWeBuildFor />
       <DashboardWall />
       <PersonalNote />
       <WhyDoingThis />

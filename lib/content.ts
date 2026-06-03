@@ -289,10 +289,10 @@ export const CONTENT = {
       {
         label: 'Company',
         links: [
-          { label: 'Services', href: '#evolution' },
-          { label: 'Case studies', href: '#industry' },
-          { label: 'Guarantee', href: '#guarantee' },
-          { label: 'FAQ', href: '#faq' },
+          { label: 'Case studies', href: '/case-studies' },
+          { label: 'Resources', href: '/resources' },
+          { label: 'Guarantee', href: '/#guarantee' },
+          { label: 'FAQ', href: '/#faq' },
         ],
       },
       {
