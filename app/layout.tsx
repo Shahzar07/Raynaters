@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Instrument_Serif } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import LiveAvatar from '@/components/ui/LiveAvatar';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { organizationSchema, websiteSchema } from '@/lib/seo/schema';
+import { SITE_URL, SITE_NAME } from '@/lib/seo/meta';
 import './globals.css';
 
 const inter = Inter({
@@ -19,15 +22,30 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://raynaters.com'),
-  title: 'Raynaters Tech — Agentic Forces that pay for themselves in 90 days',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'AI Automation Agency UK | Raynaters Tech',
+    template: '%s | Raynaters Tech',
+  },
   description:
-    'We deploy AI agents that pay for themselves within 90 days — or we keep building until they do. 47,000+ operational hours reclaimed across UK, US and EU deployments.',
+    'AI automation agency deploying agents for UK businesses that pay for themselves in 90 days — or we keep building until they do. Book a free Agent Audit.',
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Raynaters Tech — Agentic Forces',
+    title: 'AI Automation Agency UK | Raynaters Tech',
+    description:
+      'AI agents that pay for themselves in 90 days — or we keep building until they do. 47,000+ operational hours reclaimed across the UK, US and EU.',
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: 'en_GB',
+    type: 'website',
+    images: [{ url: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155053_5eceb174-bd85-4e5b-8715-10d0673aacf4.png', width: 2752, height: 1536, alt: 'Raynaters Tech — AI agents that pay for themselves in 90 days' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Automation Agency UK | Raynaters Tech',
     description:
       'AI agents that pay for themselves in 90 days — or we keep building until they do.',
-    type: 'website',
+    images: ['https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155053_5eceb174-bd85-4e5b-8715-10d0673aacf4.png'],
   },
   robots: { index: true, follow: true },
 };
@@ -49,6 +67,7 @@ export default function RootLayout({
       className={`${inter.variable} ${instrumentSerif.variable}`}
     >
       <body className="font-sans bg-bg text-text-primary antialiased">
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {children}
         <LiveAvatar />
         <Analytics />

@@ -2,6 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CONTENT } from '@/lib/content';
 import { Container } from '@/components/ui/Container';
+import { LANDING_PAGES } from '@/lib/landing-pages';
+
+const solutionsColumn = {
+  label: 'Solutions',
+  links: LANDING_PAGES.map((p) => ({ label: p.navLabel, href: `/${p.slug}` })),
+};
 
 function Logo() {
   return (
@@ -27,16 +33,16 @@ export default function Footer() {
       <Container>
         {/* Big tagline as the visual anchor */}
         <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-12 md:gap-10">
-          <div className="md:col-span-7">
+          <div className="md:col-span-4">
             <Logo />
-            <p className="font-display mt-6 sm:mt-8 max-w-[18ch] text-balance text-[34px] leading-[1.08] tracking-[-0.03em] text-text-primary sm:text-[44px] md:text-[64px] md:leading-[1.0]">
+            <p className="font-display mt-6 sm:mt-8 max-w-[18ch] text-balance text-[32px] leading-[1.08] tracking-[-0.03em] text-text-primary sm:text-[40px] md:text-[52px] md:leading-[1.02]">
               {CONTENT.footer.tagline}
             </p>
           </div>
 
-          <div className="md:col-span-5">
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-6">
-              {CONTENT.footer.columns.map((col) => (
+          <div className="md:col-span-8">
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-6">
+              {[solutionsColumn, ...CONTENT.footer.columns].map((col) => (
                 <div key={col.label}>
                   <p className="text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-text-muted">
                     {col.label}
