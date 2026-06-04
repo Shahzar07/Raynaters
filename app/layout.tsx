@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Instrument_Serif } from 'next/font/google';
+import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import LiveAvatar from '@/components/ui/LiveAvatar';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -67,6 +68,19 @@ export default function RootLayout({
       className={`${inter.variable} ${instrumentSerif.variable}`}
     >
       <body className="font-sans bg-bg text-text-primary antialiased">
+        {/* Google tag (gtag.js) — Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-G2HE3PDF0E"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-G2HE3PDF0E');
+          `}
+        </Script>
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {children}
         <LiveAvatar />
