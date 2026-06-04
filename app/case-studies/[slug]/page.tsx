@@ -59,6 +59,18 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       />
       <Navigation />
 
+      {/* Disclaimer — representative / illustrative content */}
+      <div className="border-b border-border bg-surface/60 py-2.5">
+        <Container>
+          <p className="text-center text-[12px] leading-[1.5] text-text-muted">
+            <span className="mr-1.5 inline-block rounded-[5px] border border-border bg-surface px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-text-muted">
+              Note
+            </span>
+            This is a representative case study illustrating the type of results our deployments deliver. Metrics are indicative of typical outcomes. Client details will be updated with verified data as engagements are confirmed.
+          </p>
+        </Container>
+      </div>
+
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border pt-10 pb-14 sm:pt-12 sm:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
