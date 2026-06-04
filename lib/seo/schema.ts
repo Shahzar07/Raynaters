@@ -34,10 +34,24 @@ export function organizationSchema(): WithContext<Organization> {
     logo: absUrl('/raynaters-logo.png'),
     description:
       'AI automation agency deploying AI agents for UK service businesses that pay for themselves within 90 days — or we keep building until they do.',
-    founder: { '@type': 'Person', name: 'Shahzar' },
+    founder: {
+      '@type': 'Person',
+      name: 'Shahzar',
+      // TODO(shahzar): add founder LinkedIn profile URL
+    },
     areaServed: ['GB', 'US', 'EU'],
-    // TODO(shahzar): add LinkedIn company URL + Clutch/Trustpilot profile URLs
-    sameAs: [],
+    sameAs: [
+      'https://www.linkedin.com/in/raynaters-tech-inc-7830a0383/',
+      'https://www.trustpilot.com/review/raynaters.tech',
+      // TODO(shahzar): add Twitter/X, Crunchbase, Clutch URLs when live
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'team@raynaters.tech',
+      areaServed: ['GB', 'US', 'EU'],
+      availableLanguage: 'en',
+    },
   };
 }
 

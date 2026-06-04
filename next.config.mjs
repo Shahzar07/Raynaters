@@ -8,8 +8,9 @@ const nextConfig = {
       { protocol: 'https', hostname: 'd8j0ntlcm91z4.cloudfront.net' },
     ],
   },
-  // Canonical host: force the apex domain to the www host over https.
-  // (Vercel → Domains should also set apex 308 → www; this is belt-and-braces.)
+  // Canonical host: apex → www, 308 permanent (Next.js maps permanent:true to 308).
+  // Also set the apex → www redirect in Vercel Domains panel for the HTTP-level redirect
+  // (covers requests that never reach Next.js, e.g. bare http://raynaters.tech).
   async redirects() {
     return [
       {
