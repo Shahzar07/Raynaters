@@ -7,6 +7,25 @@ const page: LandingPage = {
   serviceType: 'AI Automation',
   navLabel: 'AI Automation Agency',
   navBlurb: 'Done-for-you AI agents that pay for themselves in 90 days.',
+  image: {
+    src: '/img/verticals/agency.png',
+    alt: 'Modern UK AI automation agency operations room with multiple monitors showing dashboards and workflow diagrams',
+  },
+  showcase: {
+    eyebrow: 'How the agents work',
+    rows: [
+      {
+        title: 'Every missed call becomes a booked job',
+        body: 'Our AI receptionist answers 24/7, triages enquiries, books appointments directly into your calendar and sends confirmation — without a human touching the keyboard.',
+        image: { src: '/img/product/missed-call-pipeline.png', alt: 'AI automation pipeline showing missed calls converting to booked appointments in real time' },
+      },
+      {
+        title: 'See your ROI before you commit',
+        body: 'Every deployment includes a written ROI projection. You see exactly which workflows we\'re targeting, what the time and revenue impact will be, and a 90-day payback guarantee.',
+        image: { src: '/img/product/roi-savings-dashboard.png', alt: 'AI ROI and savings summary dashboard showing pound-sterling savings and time reclaimed' },
+      },
+    ],
+  },
 
   eyebrow: 'AI Automation Agency · UK · US · EU',
   h1: 'The AI automation agency UK businesses hire to stop doing work by hand.',

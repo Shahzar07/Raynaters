@@ -6,6 +6,7 @@ import { Container } from '@/components/ui/Container';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Reveal } from '@/components/ui/Reveal';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { MediaFrame } from '@/components/ui/MediaFrame';
 import { LandingFinalCTA } from '@/components/landing/LandingFinalCTA';
 import { CaseStudyCard } from '@/components/case-studies/CaseStudyCard';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -85,6 +86,18 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <h1 className="mt-7 max-w-[18ch] font-display text-balance text-[32px] leading-[1.08] tracking-tightest text-text-primary sm:text-[44px] md:text-[56px] md:leading-[1.03]">
               {study.headlineResult}
             </h1>
+          </Reveal>
+
+          <Reveal delay={0.1} className="mt-10 block">
+            <MediaFrame
+              src={study.image.src}
+              alt={study.image.alt}
+              aspectClass="aspect-[21/9]"
+              priority
+              overlay
+              glow
+              sizes="(max-width: 1100px) 100vw, 1100px"
+            />
           </Reveal>
         </Container>
       </section>

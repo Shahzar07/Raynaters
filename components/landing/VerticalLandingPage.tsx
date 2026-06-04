@@ -4,6 +4,7 @@ import { LandingHero } from './LandingHero';
 import { DirectAnswerBlock } from './DirectAnswerBlock';
 import { WhatItDoes } from './WhatItDoes';
 import { WhoItsFor } from './WhoItsFor';
+import { FeatureShowcase } from './FeatureShowcase';
 import { HowItWorks } from './HowItWorks';
 import { ComparisonTable } from './ComparisonTable';
 import { ExtraSections } from './ExtraSections';
@@ -24,6 +25,7 @@ export function VerticalLandingPage({ data }: { data: LandingPage }) {
         h1={data.h1}
         hook={data.hook}
         utmCampaign={data.utmCampaign}
+        image={data.image}
         crumbs={[
           { name: 'Home', path: '/' },
           { name: data.navLabel, path: `/${data.slug}` },
@@ -33,6 +35,10 @@ export function VerticalLandingPage({ data }: { data: LandingPage }) {
       <DirectAnswerBlock text={data.directAnswer} link={data.relatedLink} />
 
       <WhatItDoes heading={data.headings.whatItDoes} items={data.whatItDoes} />
+
+      {data.showcase && (
+        <FeatureShowcase eyebrow={data.showcase.eyebrow} rows={data.showcase.rows} />
+      )}
 
       <WhoItsFor heading={data.headings.whoItsFor} items={data.whoItsFor} />
 

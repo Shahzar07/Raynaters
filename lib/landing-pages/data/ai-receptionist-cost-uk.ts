@@ -7,6 +7,10 @@ const page: LandingPage = {
   serviceType: 'AI Receptionist',
   navLabel: 'AI Receptionist Cost',
   navBlurb: 'What an AI receptionist really costs in the UK.',
+  image: {
+    src: '/img/product/roi-savings-dashboard.png',
+    alt: 'AI ROI and savings dashboard showing pound-sterling cost savings and return on investment metrics',
+  },
 
   eyebrow: 'UK Pricing · 2026',
   h1: 'How much does an AI receptionist cost in the UK?',

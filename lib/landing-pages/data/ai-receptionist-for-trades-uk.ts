@@ -7,6 +7,25 @@ const page: LandingPage = {
   serviceType: 'AI Receptionist',
   navLabel: 'AI Receptionist for Trades',
   navBlurb: 'Answer every call and book every job — even on the tools.',
+  image: {
+    src: '/img/verticals/trades.png',
+    alt: 'Skilled tradesperson engineer working on a modern boiler in a neat UK workshop with tools on workbench',
+  },
+  showcase: {
+    eyebrow: 'How it works for trades',
+    rows: [
+      {
+        title: 'Never lose a job to voicemail again',
+        body: 'When you\'re on the tools, every unanswered call is a missed booking. Our AI receptionist answers instantly, qualifies the job, and books it straight into your diary.',
+        image: { src: '/img/product/ai-receptionist-dashboard.png', alt: 'AI receptionist dashboard showing active call transcript and appointment booking panel with confirmed jobs' },
+      },
+      {
+        title: 'From missed call to confirmed booking in seconds',
+        body: 'The agent captures job type, address and urgency, books into your schedule and sends the customer a confirmation — all before you\'ve finished your current job.',
+        image: { src: '/img/product/missed-call-pipeline.png', alt: 'Automation pipeline showing missed calls turning into confirmed bookings with calendar slots filling up' },
+      },
+    ],
+  },
 
   eyebrow: 'For UK Trades & Field-Service Businesses',
   h1: "AI receptionist for UK tradespeople who can't answer the phone on the job.",

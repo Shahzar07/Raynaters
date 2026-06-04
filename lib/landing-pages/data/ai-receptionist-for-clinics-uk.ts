@@ -7,6 +7,25 @@ const page: LandingPage = {
   serviceType: 'AI Receptionist',
   navLabel: 'AI Receptionist for Clinics',
   navBlurb: 'Answer every patient call and fill every appointment slot.',
+  image: {
+    src: '/img/verticals/clinics.png',
+    alt: 'Modern UK dental clinic reception area with clean white surfaces, computer screen and professional healthcare environment',
+  },
+  showcase: {
+    eyebrow: 'How it works for clinics',
+    rows: [
+      {
+        title: 'Every call answered — even during a full surgery',
+        body: 'Our AI receptionist handles calls 24/7, books and reschedules appointments in real time, and handles routine questions so your reception team stays focused on patients in the practice.',
+        image: { src: '/img/product/ai-receptionist-dashboard.png', alt: 'AI receptionist interface with call transcript panel and appointment calendar showing real-time bookings' },
+      },
+      {
+        title: 'New patients booked while you sleep',
+        body: 'High-intent patients who call after hours get answered, qualified and booked immediately. No voicemail, no dropped leads, no competitor picking them up first.',
+        image: { src: '/img/product/missed-call-pipeline.png', alt: 'Automation pipeline showing out-of-hours clinic enquiries converting to booked appointments' },
+      },
+    ],
+  },
 
   eyebrow: 'For UK Clinics, Dental & Healthcare Practices',
   h1: 'AI receptionist for UK clinics that never sends a patient to voicemail.',

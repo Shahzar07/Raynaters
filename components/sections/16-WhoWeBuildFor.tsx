@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import { Container, Section } from '@/components/ui/Container';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Reveal } from '@/components/ui/Reveal';
-import { ArrowRight } from 'lucide-react';
+import { ImageCard } from '@/components/ui/ImageCard';
 import { CORE_VERTICALS } from '@/lib/landing-pages';
 
 export default function WhoWeBuildFor() {
@@ -29,23 +28,14 @@ export default function WhoWeBuildFor() {
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {CORE_VERTICALS.map((v, i) => (
             <Reveal key={v.slug} delay={Math.min(i * 0.05, 0.3)} className="h-full">
-              <Link href={`/${v.slug}`} className="group block h-full">
-                <article className="flex h-full flex-col rounded-[16px] border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-text-muted/40 sm:p-7">
-                  <h3 className="text-[19px] tracking-[-0.01em] text-text-primary sm:text-[20px]">
-                    {v.navLabel}
-                  </h3>
-                  <p className="mt-3 flex-1 text-pretty text-[15px] leading-relaxed text-text-secondary">
-                    {v.navBlurb}
-                  </p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-medium text-accent">
-                    Explore
-                    <ArrowRight
-                      className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
-                      strokeWidth={2.25}
-                    />
-                  </span>
-                </article>
-              </Link>
+              <ImageCard
+                href={`/${v.slug}`}
+                image={v.image}
+                category={v.navLabel}
+                title={v.navLabel}
+                body={v.navBlurb}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
             </Reveal>
           ))}
         </div>

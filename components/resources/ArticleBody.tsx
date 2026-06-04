@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Block } from '@/lib/resources/types';
 
 export function ArticleBody({ blocks }: { blocks: Block[] }) {
@@ -99,6 +100,25 @@ export function ArticleBody({ blocks }: { blocks: Block[] }) {
                   </tbody>
                 </table>
               </div>
+            );
+          case 'image':
+            return (
+              <figure key={i} className="my-2">
+                <div className="relative aspect-video overflow-hidden rounded-[14px] border border-border">
+                  <Image
+                    src={block.src}
+                    alt={block.alt}
+                    fill
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    className="object-cover"
+                  />
+                </div>
+                {block.caption && (
+                  <figcaption className="mt-3 text-center text-[13px] text-text-muted">
+                    {block.caption}
+                  </figcaption>
+                )}
+              </figure>
             );
           default:
             return null;

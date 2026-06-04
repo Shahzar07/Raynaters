@@ -7,6 +7,25 @@ const page: LandingPage = {
   serviceType: 'AI Automation',
   navLabel: 'AI Automation for Law Firms',
   navBlurb: 'Automate intake, scheduling and chasing — bill more hours.',
+  image: {
+    src: '/img/verticals/law.png',
+    alt: 'Prestigious UK solicitor law office with mahogany bookshelves of legal volumes and elegant wooden desk',
+  },
+  showcase: {
+    eyebrow: 'What the agents automate',
+    rows: [
+      {
+        title: 'Intake and qualification running 24/7',
+        body: 'Agents capture new enquiries around the clock, qualify against your matter types and criteria, and route only the relevant cases to fee-earners — with context attached.',
+        image: { src: '/img/product/ai-receptionist-dashboard.png', alt: 'AI intake qualification dashboard showing call transcripts and client qualification workflow' },
+      },
+      {
+        title: 'Admin off your fee-earners\' desks',
+        body: 'Scheduling consultations, chasing documents, keeping clients updated — all handled by agents so your team bills the hours that used to go on admin.',
+        image: { src: '/img/product/agent-ops-dashboard.png', alt: 'AI agent operations dashboard showing hours saved, tasks automated and billable time recovered' },
+      },
+    ],
+  },
 
   eyebrow: 'For UK Law Firms & Solicitors',
   h1: 'AI automation for UK law firms that gives fee-earners their hours back.',

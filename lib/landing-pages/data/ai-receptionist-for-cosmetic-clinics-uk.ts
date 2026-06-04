@@ -7,6 +7,25 @@ const page: LandingPage = {
   serviceType: 'AI Receptionist',
   navLabel: 'AI Receptionist for Cosmetic Clinics',
   navBlurb: 'Capture every aesthetic enquiry and fill your treatment book.',
+  image: {
+    src: '/img/verticals/cosmetic.png',
+    alt: 'Luxury aesthetic clinic treatment room with sleek modern reclining chair and premium clinical equipment',
+  },
+  showcase: {
+    eyebrow: 'How it works for cosmetic clinics',
+    rows: [
+      {
+        title: 'Every high-value enquiry captured instantly',
+        body: 'When you\'re mid-treatment and can\'t answer, our AI receptionist responds instantly — qualifying against suitability criteria and booking consultations before the lead goes cold.',
+        image: { src: '/img/product/ai-receptionist-dashboard.png', alt: 'AI receptionist dashboard capturing cosmetic clinic enquiries and booking treatment consultations' },
+      },
+      {
+        title: 'No-shows reduced, deposits secured',
+        body: 'The agent sends reminders and deposit prompts automatically, protecting high-value treatment slots without adding any work for your team.',
+        image: { src: '/img/product/missed-call-pipeline.png', alt: 'Automation pipeline showing cosmetic enquiries converting to confirmed bookings with deposit collection' },
+      },
+    ],
+  },
 
   eyebrow: 'For UK Aesthetic, Cosmetic & Beauty Clinics',
   h1: 'AI receptionist for UK cosmetic clinics that turns enquiries into booked treatments.',

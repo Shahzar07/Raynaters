@@ -10,7 +10,8 @@ export type Block =
   | { type: 'h3'; text: string }
   | { type: 'ul'; items: string[] }
   | { type: 'callout'; text: string }
-  | { type: 'table'; columns: string[]; rows: string[][] };
+  | { type: 'table'; columns: string[]; rows: string[][] }
+  | { type: 'image'; src: string; alt: string; caption?: string };
 
 export interface Resource {
   slug: string;
@@ -21,6 +22,9 @@ export interface Resource {
   datePublished: string; // ISO date
   dateModified: string; // ISO date
   featured?: boolean;
+
+  /** Feature hero image shown on article page + card thumbnail. */
+  coverImage?: { src: string; alt: string };
 
   /** AIO-magnet answer rendered at the top of the article. */
   directAnswer: string;

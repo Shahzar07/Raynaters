@@ -54,6 +54,12 @@ export interface ExtraSectionGroup {
   items: { title: string; body: string }[];
 }
 
+export interface ShowcaseRow {
+  title: string;
+  body: string;
+  image: { src: string; alt: string };
+}
+
 export interface LandingPage {
   slug: string;
   primaryKeyword: string;
@@ -64,6 +70,12 @@ export interface LandingPage {
   navLabel: string;
   /** One-line blurb for the nav dropdown + homepage "Who we build for" cards. */
   navBlurb: string;
+
+  /** Hero + solutions-page card image. */
+  image: { src: string; alt: string };
+
+  /** Optional beam.ai-style alternating feature rows (image + copy). */
+  showcase?: { eyebrow?: string; rows: ShowcaseRow[] };
 
   eyebrow: string;
   h1: string;

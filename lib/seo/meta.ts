@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const SITE_URL = 'https://www.raynaters.tech';
 export const SITE_NAME = 'Raynaters Tech';
-export const DEFAULT_OG_IMAGE = '/raynaters-logo.png';
+export const DEFAULT_OG_IMAGE = '/og.png';
 
 /** Absolute, canonical www URL for a given path. */
 export function absUrl(path = '/'): string {

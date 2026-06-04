@@ -15,6 +15,9 @@ export interface CaseStudy {
   monogram: string;
   category: string;
 
+  /** Card thumbnail + detail hero banner image. */
+  image: { src: string; alt: string };
+
   /** Big result headline used on the detail hero. */
   headlineResult: string;
   /** Headline metric for the index card. */

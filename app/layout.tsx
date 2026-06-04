@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: 'en_GB',
     type: 'website',
-    images: [{ url: '/raynaters-logo.png' }],
+    images: [{ url: '/og.png', width: 2752, height: 1536, alt: 'Raynaters Tech — AI agents that pay for themselves in 90 days' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Automation Agency UK | Raynaters Tech',
     description:
       'AI agents that pay for themselves in 90 days — or we keep building until they do.',
-    images: ['/raynaters-logo.png'],
+    images: ['/og.png'],
   },
   robots: { index: true, follow: true },
 };

@@ -11,6 +11,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Accordion } from '@/components/ui/Accordion';
 import { DirectAnswerBlock } from '@/components/landing/DirectAnswerBlock';
 import { ArticleBody } from '@/components/resources/ArticleBody';
+import { MediaFrame } from '@/components/ui/MediaFrame';
 import { LandingFinalCTA } from '@/components/landing/LandingFinalCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { pageMetadata, absUrl } from '@/lib/seo/meta';
@@ -80,6 +81,19 @@ export default function ResourcePage({ params }: { params: { slug: string } }) {
             <p className="mt-6 text-[13px] uppercase tracking-[0.16em] text-text-muted">
               {fmtDate(resource.datePublished)} · {resource.readingTime} read
             </p>
+
+            {resource.coverImage && (
+              <div className="mt-8">
+                <MediaFrame
+                  src={resource.coverImage.src}
+                  alt={resource.coverImage.alt}
+                  aspectClass="aspect-[21/9]"
+                  priority
+                  overlay
+                  sizes="(max-width: 800px) 100vw, 800px"
+                />
+              </div>
+            )}
           </div>
         </Container>
       </section>

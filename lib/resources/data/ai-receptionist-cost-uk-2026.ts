@@ -10,6 +10,10 @@ const resource: Resource = {
   datePublished: '2026-02-03',
   dateModified: '2026-02-03',
   featured: true,
+  coverImage: {
+    src: '/img/resources/ai-cost-guide.png',
+    alt: 'Clean modern desk setup with open laptop showing financial data representing AI receptionist cost research',
+  },
 
   directAnswer:
     'In the UK, an AI receptionist typically costs from around £100 to £600 per month in 2026. Entry plans that simply answer calls sit at the lower end; plans that book appointments, integrate with your systems and handle multiple channels sit higher. Most businesses recover the cost from a single saved booking each week.',
