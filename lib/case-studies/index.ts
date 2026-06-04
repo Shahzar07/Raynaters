@@ -7,7 +7,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     monogram: 'NP',
     category: 'Trades',
     image: {
-      src: '/img/cases/northgate-plumbing.png',
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155014_c5adbbda-27d2-4b04-a110-a30e2d61d491.png',
       alt: 'UK plumbing and heating company van parked outside a residential property on a suburban street',
     },
     headlineResult: 'Recovered ~£4,100 of booked work a month that used to go to voicemail.',
@@ -43,7 +43,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     monogram: 'RD',
     category: 'Clinics',
     image: {
-      src: '/img/cases/riverside-dental.png',
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155016_1fda9728-add8-412e-b9d7-c657d093d44d.png',
       alt: 'Clean modern UK dental practice interior with dental chair and professional clinical equipment',
     },
     headlineResult: 'Lifted captured new-patient bookings by 22% across two sites.',
@@ -79,7 +79,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     monogram: 'CV',
     category: 'Law Firms',
     image: {
-      src: '/img/cases/carter-vance.png',
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155018_4e469b59-37d6-40d2-aad5-14207c1fcacc.png',
       alt: 'Prestigious UK law firm boardroom with polished conference table and bookshelves of legal texts',
     },
     headlineResult: 'Returned ~9 billable hours a week per fee-earner.',
@@ -115,7 +115,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     monogram: 'LA',
     category: 'Cosmetic Clinics',
     image: {
-      src: '/img/cases/lumiere-aesthetics.png',
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155021_1285e182-640a-447a-a0ca-d2d6cb851ff6.png',
       alt: 'Upscale UK cosmetic aesthetics clinic waiting room with elegant reception desk and luxury decor',
     },
     headlineResult: 'Recovered around £6,800 of booked treatments a month.',
@@ -151,7 +151,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     monogram: 'BL',
     category: 'Property',
     image: {
-      src: '/img/cases/brookline-lettings.png',
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155023_7bcdc43e-2ce8-44d4-b022-e46c6233b9d9.png',
       alt: 'Premium UK lettings and property management office with screens showing property listings and city skyline view',
     },
     headlineResult: 'Freed 31 hours a week of lettings admin.',
@@ -187,7 +187,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     monogram: 'MC',
     category: 'E-commerce',
     image: {
-      src: '/img/cases/meridian-commerce.png',
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155025_08eefd93-99ec-4746-9ff9-f7529992faf3.png',
       alt: 'Sleek UK digital commerce operations workspace with multiple screens showing analytics dashboards and metrics',
     },
     headlineResult: 'Auto-resolved 85% of support tickets within seconds.',

@@ -8,7 +8,7 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Cosmetic Clinics',
   navBlurb: 'Capture every aesthetic enquiry and fill your treatment book.',
   image: {
-    src: '/img/verticals/cosmetic.png',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155004_73a98940-c917-4a6c-acc7-6848fe486d68.png',
     alt: 'Luxury aesthetic clinic treatment room with sleek modern reclining chair and premium clinical equipment',
   },
   showcase: {
@@ -17,12 +17,12 @@ const page: LandingPage = {
       {
         title: 'Every high-value enquiry captured instantly',
         body: 'When you\'re mid-treatment and can\'t answer, our AI receptionist responds instantly — qualifying against suitability criteria and booking consultations before the lead goes cold.',
-        image: { src: '/img/product/ai-receptionist-dashboard.png', alt: 'AI receptionist dashboard capturing cosmetic clinic enquiries and booking treatment consultations' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155033_d675c0fa-3787-41d5-ad52-ac7e7b8d41f9.png', alt: 'AI receptionist dashboard capturing cosmetic clinic enquiries and booking treatment consultations' },
       },
       {
         title: 'No-shows reduced, deposits secured',
         body: 'The agent sends reminders and deposit prompts automatically, protecting high-value treatment slots without adding any work for your team.',
-        image: { src: '/img/product/missed-call-pipeline.png', alt: 'Automation pipeline showing cosmetic enquiries converting to confirmed bookings with deposit collection' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155039_5730193a-d2ee-4346-be52-d4dd0d05a2c3.png', alt: 'Automation pipeline showing cosmetic enquiries converting to confirmed bookings with deposit collection' },
       },
     ],
   },

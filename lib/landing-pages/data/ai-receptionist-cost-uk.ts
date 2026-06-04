@@ -8,7 +8,7 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist Cost',
   navBlurb: 'What an AI receptionist really costs in the UK.',
   image: {
-    src: '/img/product/roi-savings-dashboard.png',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155042_a9b3c028-5991-4ffd-b5db-ea37c9e6c5b6.png',
     alt: 'AI ROI and savings dashboard showing pound-sterling cost savings and return on investment metrics',
   },
 

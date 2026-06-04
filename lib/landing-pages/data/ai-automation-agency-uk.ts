@@ -8,7 +8,7 @@ const page: LandingPage = {
   navLabel: 'AI Automation Agency',
   navBlurb: 'Done-for-you AI agents that pay for themselves in 90 days.',
   image: {
-    src: '/img/verticals/agency.png',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155008_c83ad6a9-f380-4e12-af9f-11c97acb3be1.png',
     alt: 'Modern UK AI automation agency operations room with multiple monitors showing dashboards and workflow diagrams',
   },
   showcase: {
@@ -17,12 +17,12 @@ const page: LandingPage = {
       {
         title: 'Every missed call becomes a booked job',
         body: 'Our AI receptionist answers 24/7, triages enquiries, books appointments directly into your calendar and sends confirmation — without a human touching the keyboard.',
-        image: { src: '/img/product/missed-call-pipeline.png', alt: 'AI automation pipeline showing missed calls converting to booked appointments in real time' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155039_5730193a-d2ee-4346-be52-d4dd0d05a2c3.png', alt: 'AI automation pipeline showing missed calls converting to booked appointments in real time' },
       },
       {
         title: 'See your ROI before you commit',
         body: 'Every deployment includes a written ROI projection. You see exactly which workflows we\'re targeting, what the time and revenue impact will be, and a 90-day payback guarantee.',
-        image: { src: '/img/product/roi-savings-dashboard.png', alt: 'AI ROI and savings summary dashboard showing pound-sterling savings and time reclaimed' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155042_a9b3c028-5991-4ffd-b5db-ea37c9e6c5b6.png', alt: 'AI ROI and savings summary dashboard showing pound-sterling savings and time reclaimed' },
       },
     ],
   },

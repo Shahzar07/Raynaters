@@ -8,7 +8,7 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Trades',
   navBlurb: 'Answer every call and book every job — even on the tools.',
   image: {
-    src: '/img/verticals/trades.png',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_154957_621a8568-1959-40fb-92a5-1981ef7ca93d.png',
     alt: 'Skilled tradesperson engineer working on a modern boiler in a neat UK workshop with tools on workbench',
   },
   showcase: {
@@ -17,12 +17,12 @@ const page: LandingPage = {
       {
         title: 'Never lose a job to voicemail again',
         body: 'When you\'re on the tools, every unanswered call is a missed booking. Our AI receptionist answers instantly, qualifies the job, and books it straight into your diary.',
-        image: { src: '/img/product/ai-receptionist-dashboard.png', alt: 'AI receptionist dashboard showing active call transcript and appointment booking panel with confirmed jobs' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155033_d675c0fa-3787-41d5-ad52-ac7e7b8d41f9.png', alt: 'AI receptionist dashboard showing active call transcript and appointment booking panel with confirmed jobs' },
       },
       {
         title: 'From missed call to confirmed booking in seconds',
         body: 'The agent captures job type, address and urgency, books into your schedule and sends the customer a confirmation — all before you\'ve finished your current job.',
-        image: { src: '/img/product/missed-call-pipeline.png', alt: 'Automation pipeline showing missed calls turning into confirmed bookings with calendar slots filling up' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155039_5730193a-d2ee-4346-be52-d4dd0d05a2c3.png', alt: 'Automation pipeline showing missed calls turning into confirmed bookings with calendar slots filling up' },
       },
     ],
   },
