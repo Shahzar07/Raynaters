@@ -15,7 +15,7 @@ export default function FinalCTA() {
         className="pointer-events-none absolute inset-0 -z-10"
       >
         <div
-          className="absolute left-1/2 top-1/2 h-[600px] w-[1100px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="absolute left-1/2 top-1/2 h-[400px] w-[140%] max-w-[1100px] -translate-x-1/2 -translate-y-1/2 rounded-full md:h-[600px] md:w-[1100px]"
           style={{
             background:
               'radial-gradient(closest-side, rgba(211,251,163,0.16), rgba(211,251,163,0.05) 45%, transparent 70%)',
@@ -30,7 +30,7 @@ export default function FinalCTA() {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h2 className="mt-8 font-display text-[44px] leading-[1.0] tracking-[-0.04em] text-text-primary md:text-[96px]">
+            <h2 className="mt-8 font-display text-[40px] leading-[1.02] tracking-[-0.04em] text-text-primary sm:text-[56px] md:text-[72px] lg:text-[96px] lg:leading-[1.0]">
               {CONTENT.finalCta.title}
             </h2>
           </Reveal>

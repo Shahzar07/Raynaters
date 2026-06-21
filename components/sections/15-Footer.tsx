@@ -29,13 +29,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-10">
           <div className="md:col-span-7">
             <Logo />
-            <p className="font-display mt-8 max-w-[18ch] text-[40px] leading-[1.05] tracking-[-0.03em] text-text-primary md:text-[64px] md:leading-[1.0]">
+            <p className="font-display mt-8 max-w-[18ch] text-[32px] leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-[40px] md:text-[64px] md:leading-[1.0]">
               {CONTENT.footer.tagline}
             </p>
           </div>
 
           <div className="md:col-span-5">
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
               {CONTENT.footer.columns.map((col) => (
                 <div key={col.label}>
                   <p className="text-[12px] uppercase tracking-[0.18em] text-text-muted">

@@ -311,11 +311,8 @@ export default function Testimonials() {
           </Reveal>
         </div>
 
-        {/* Desktop: true CSS-columns masonry */}
-        <div
-          className="mt-16 hidden md:block md:mt-20"
-          style={{ columns: 3, columnGap: '1.25rem' }}
-        >
+        {/* Desktop: true CSS-columns masonry — 2 cols on tablet, 3 on desktop */}
+        <div className="mt-16 hidden columns-2 gap-5 md:block md:mt-20 lg:columns-3">
           {masonry.map((t, i) => (
             <motion.div
               key={i}
@@ -327,19 +324,22 @@ export default function Testimonials() {
                 duration: 0.55,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
-              style={{ breakInside: 'avoid', marginBottom: '1.25rem' }}
+              className="mb-5 break-inside-avoid"
             >
               <TestimonialCard t={t} />
             </motion.div>
           ))}
         </div>
 
-        {/* Mobile: horizontal snap scroll */}
+        {/* Mobile: horizontal snap scroll — cards sized to fit viewport */}
         <div className="mt-12 md:hidden">
           <div className="-mx-6 overflow-x-auto px-6">
             <div className="flex gap-4 pb-2">
               {masonry.map((t, i) => (
-                <div key={i} className="w-[300px] shrink-0">
+                <div
+                  key={i}
+                  className="w-[min(85vw,320px)] shrink-0"
+                >
                   <TestimonialCard t={t} />
                 </div>
               ))}
@@ -351,14 +351,14 @@ export default function Testimonials() {
         <div className="mt-10 space-y-4 md:mt-16">
           <Marquee speed="slow" pauseOnHover>
             {marqueeRow.map((t, i) => (
-              <div key={i} className="w-[340px]">
+              <div key={i} className="w-[300px] sm:w-[340px]">
                 <TestimonialCard t={t} />
               </div>
             ))}
           </Marquee>
           <Marquee speed="slow" pauseOnHover reverse>
             {[...marqueeRow].reverse().map((t, i) => (
-              <div key={i} className="w-[340px]">
+              <div key={i} className="w-[300px] sm:w-[340px]">
                 <TestimonialCard t={t} />
               </div>
             ))}

@@ -17,9 +17,9 @@ export const CONTENT = {
 
   nav: {
     links: [
-      { label: 'Services', href: '#evolution' },
-      { label: 'Case Studies', href: '#industry' },
-      { label: 'Contact', href: '#footer' },
+      { label: 'How it works', href: '#evolution' },
+      { label: 'What we build', href: '#industry' },
+      { label: 'Guarantee', href: '#guarantee' },
     ],
     cta: 'Book Audit',
   },
@@ -47,69 +47,111 @@ export const CONTENT = {
     ],
   },
 
-  statHero: {
-    value: 47283,
-    display: '47,283',
-    label: 'operational hours reclaimed across deployed Agentic Forces — last 14 months',
+  proof: {
+    eyebrow: 'The outcomes',
+    title: 'The numbers our agents put on the board.',
+    sub: 'Not projections — audited results across 23 Agentic Forces running in production today.',
+    stats: [
+      {
+        to: 47283,
+        prefix: '',
+        suffix: '',
+        label: 'Operational hours reclaimed',
+        context: 'Across all deployments · last 14 months',
+        level: 0.96,
+      },
+      {
+        to: 90,
+        prefix: '<',
+        suffix: ' days',
+        label: 'Average time to full ROI',
+        context: 'Or we keep building at zero cost',
+        level: 0.7,
+      },
+      {
+        to: 23,
+        prefix: '',
+        suffix: '',
+        label: 'Agentic Forces in production',
+        context: 'Live across UK · US · EU · UAE',
+        level: 0.5,
+      },
+      {
+        to: 11,
+        prefix: '',
+        suffix: 's',
+        label: 'Average agent first-response',
+        context: 'Down from 3+ hours, manual',
+        level: 0.99,
+      },
+    ],
     footnote: 'Measured Mar 2025 → May 2026. Receipts on request.',
   },
 
-  evolution: {
-    eyebrow: 'The progression',
-    title: 'How Agentic Forces Got Here',
-    sub: 'Three years. Three inflection points. One framework that finally compounds.',
-    stages: [
+  howItWorks: {
+    eyebrow: 'How deployment works',
+    title: 'From first call to live agent in four weeks.',
+    sub: 'A fixed, transparent process. No "AI strategy decks", no open-ended retainers — you always know exactly what happens next.',
+    steps: [
       {
-        marker: 'Year 1',
-        headline: 'One client. One agent. 200 hours/month back.',
-        body: 'A single inventory-reconciliation agent for a DTC brand. Crude, sturdy, and undeniably profitable. We knew we had something.',
-        metric: '200 hrs / mo',
+        week: 'Week 01',
+        tag: 'Audit',
+        title: 'The free Agent Audit',
+        body: 'We map your operation, score every workflow for automation ROI, and hand you a written projection — before you commit a penny.',
       },
       {
-        marker: 'Year 2',
-        headline: '8 clients. 12,000+ hours saved. Framework shipped.',
-        body: 'The same playbook applied 8 different ways. We stopped freelancing one-off workflows and started deploying systems with documented hand-off.',
-        metric: '12,000+ hrs',
+        week: 'Week 02',
+        tag: 'Build',
+        title: 'Fixed-scope build',
+        body: 'We scope the highest-ROI agent, lock the price, and build on infrastructure you own. No hourly billing games.',
       },
       {
-        marker: 'Now',
-        headline: '23 active deployments. v3 framework. 14 months of refinement.',
-        body: 'The Agentic Forces v3 framework — the audit, the ROI projection, the fixed-scope build, the 90-day proof window. Repeatable. Defensible. Yours.',
-        metric: '47,000+ hrs',
+        week: 'Week 03',
+        tag: 'Deploy',
+        title: 'Deploy inside your stack',
+        body: 'Your agent goes live in the tools you already run — Slack, HubSpot, n8n — with full documentation and a recorded hand-off.',
+      },
+      {
+        week: 'Week 04',
+        tag: 'Prove',
+        title: 'Prove, then compound',
+        body: "We measure against the projection and open the 90-day proof window. If it doesn't pay for itself, we keep iterating free.",
       },
     ],
   },
 
-  industry: {
-    eyebrow: 'Different industries. Same compounding result.',
-    title: 'It works no matter what you sell.',
-    cards: [
+  suites: {
+    eyebrow: 'What we automate',
+    title: 'Agent suites for the work that drains your team.',
+    sub: "Tool-agnostic builds across the functions where hours leak the most. If a workflow is repeatable, it's automatable.",
+    items: [
       {
-        name: 'Sarah',
-        role: 'E-commerce Ops Manager',
-        company: 'DTC apparel · UK',
-        metric: '30 hrs / week',
-        metricLabel: 'reclaimed',
-        quote: 'Got 30 hours a week back from inventory + customer service automation. My team stopped working weekends within the first month.',
-        initials: 'SM',
+        icon: 'support',
+        name: 'Customer Support',
+        desc: 'Tier-1 resolution, ticket triage, refunds and escalation routing — answered in seconds, not hours.',
+        metric: 'Sub-1-minute first response',
+        tools: ['Zendesk', 'Intercom', 'Slack'],
       },
       {
-        name: 'Marcus',
-        role: 'SaaS Founder',
-        company: 'B2B analytics · US',
-        metric: '5×',
-        metricLabel: 'support volume',
-        quote: 'Scaled support to 5x users without a single new hire. The agent now handles tier-1 better than the humans we used to onboard for it.',
-        initials: 'MR',
+        icon: 'revops',
+        name: 'Revenue Operations',
+        desc: 'Lead enrichment, scoring, routing and CRM hygiene that keep your pipeline clean without a human touching it.',
+        metric: '11-second lead routing',
+        tools: ['HubSpot', 'Salesforce', 'Clay'],
       },
       {
-        name: 'Priya',
-        role: 'Agency Owner',
-        company: 'Performance marketing · EU',
-        metric: '4×',
-        metricLabel: 'client capacity',
-        quote: '4x client capacity, same team, same hours. The reporting + onboarding agents alone freed up two full-time slots.',
-        initials: 'PK',
+        icon: 'finance',
+        name: 'Finance & Reporting',
+        desc: 'Invoice reconciliation, reporting compilers and inventory sync that close your books — and your Fridays — earlier.',
+        metric: '2-day close → hourly',
+        tools: ['Xero', 'QuickBooks', 'Sheets'],
+      },
+      {
+        icon: 'onboarding',
+        name: 'Onboarding & Ops',
+        desc: 'Client and employee onboarding sequencers that compress 11-day ramps into 2, documented end to end.',
+        metric: '11 days → 2 days',
+        tools: ['Notion', 'Gmail', 'Calendar'],
       },
     ],
   },
@@ -136,10 +178,10 @@ export const CONTENT = {
 
   personalNote: {
     eyebrow: 'A note from the founder',
-    name: 'Shahzar',
-    role: 'Founder, Raynaters Tech',
+    name: 'Founder',
+    role: 'Raynaters Tech Inc.',
     paragraphs: [
-      "Hey — Shahzar here, founder of Raynaters Tech.",
+      "Hey — I'm the founder of Raynaters Tech Inc.",
       "Here's what I've set up for you, no strings:",
     ],
     bullets: [
@@ -149,7 +191,7 @@ export const CONTENT = {
       "If we're not, I'll send you 3 free recommendations and we'll part ways. No pressure.",
     ],
     closer: "You're not committing to anything. You're just getting clarity.",
-    signature: '— Shahzar',
+    signature: '— Founder, Raynaters Tech Inc.',
   },
 
   why: {
@@ -167,20 +209,28 @@ export const CONTENT = {
 
   guarantee: {
     eyebrow: 'Risk reversal — in writing',
-    title: 'Our Pay-Back-Or-We-Keep-Building Guarantee',
+    title: 'The risk is ours. In writing.',
+    sub: 'Most agencies sell you a deck and disappear. We put our fee on the line — twice — so the only thing you can lose is the hours you are already losing.',
     layers: [
       {
         n: '01',
         label: '14-day full refund',
-        body: 'No questions, no forms, no "are you sure?" emails. Change your mind in the first two weeks and we wire it back same-day.',
+        proof: 'Same-day · no questions',
+        body: 'No forms, no "are you sure?" emails. Change your mind in the first two weeks and we wire it back the same day.',
       },
       {
         n: '02',
-        label: 'The ROI promise',
-        body: "If your deployed Agentic Force doesn't pay for itself within 90 days, we keep iterating at zero additional cost until it does. For up to 12 months.",
+        label: 'The 90-day ROI promise',
+        proof: 'Up to 12 months free iteration',
+        body: "If your deployed Agentic Force doesn't pay for itself within 90 days, we keep iterating at zero additional cost until it does.",
       },
     ],
-    closer: "We've never had to invoke layer 02. We're not afraid to.",
+    stat: {
+      value: '0',
+      label: 'Times we have had to invoke Layer 02',
+    },
+    closer: "We've never had to. We're not afraid to.",
+    cta: 'Book your free Agent Audit',
   },
 
   testimonials: {
@@ -197,6 +247,7 @@ export const CONTENT = {
         quote: 'The audit alone was worth the time. We deployed a single agent and recovered the entire engagement fee inside seven weeks.',
         kind: 'slack' as const,
         meta: '#wins',
+        company: 'Finchpay',
       },
       {
         name: 'Imogen R.',
@@ -206,6 +257,7 @@ export const CONTENT = {
         quote: 'I expected slides. I got a working agent in 18 days. The hand-off documentation is the cleanest I have ever seen from a vendor.',
         kind: 'email' as const,
         meta: 'Re: 18-day audit — wow.',
+        email: 'imogen@northbound.io',
       },
       {
         name: 'Carlos M.',
@@ -213,6 +265,9 @@ export const CONTENT = {
         initials: 'CM',
         avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'We replaced an entire vendor contract with two Raynaters-built agents. The cost gap pays a junior hire every quarter.',
+        kind: 'slack' as const,
+        meta: '#cost-savings',
+        company: 'Routedeck',
       },
       {
         name: 'Yuki T.',
@@ -220,6 +275,8 @@ export const CONTENT = {
         initials: 'YT',
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Onboarding compressed from 11 days to 2. Clients notice. We win pitches we used to lose to bigger shops.',
+        kind: 'imessage' as const,
+        meta: 'Yesterday 8:14 PM',
       },
       {
         name: 'Aisha K.',
@@ -227,6 +284,9 @@ export const CONTENT = {
         initials: 'AK',
         avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'First-response time went from 3 hours to under a minute. CSAT actually went up — the agent is more patient than my best human.',
+        kind: 'slack' as const,
+        meta: '#cs-wins',
+        company: 'Braided',
       },
       {
         name: 'Theo L.',
@@ -245,6 +305,7 @@ export const CONTENT = {
         quote: 'Our enrichment + routing agent routes leads in 11 seconds. Sales actually trusts the data. That alone justified the build.',
         kind: 'slack' as const,
         meta: '#revops',
+        company: 'Plumes',
       },
       {
         name: 'Henrik J.',
@@ -254,6 +315,7 @@ export const CONTENT = {
         quote: 'They are the only AI agency that talks about failure modes before they take your money. Then they ship anyway. Rare.',
         kind: 'email' as const,
         meta: 'Honest pre-engagement convos',
+        email: 'h.jansson@circulate.co',
       },
       {
         name: 'Pooja D.',
@@ -261,6 +323,9 @@ export const CONTENT = {
         initials: 'PD',
         avatar: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'The 90-day guarantee is not a marketing line. They keep iterating. Two of our agents are now on v4 — at no extra cost.',
+        kind: 'slack' as const,
+        meta: '#engineering',
+        company: 'Tideline',
       },
       {
         name: 'Will F.',
@@ -268,6 +333,8 @@ export const CONTENT = {
         initials: 'WF',
         avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Tool-agnostic, like they advertise. We were on Make, they migrated us to LangGraph cleanly when the workflow outgrew it.',
+        kind: 'imessage' as const,
+        meta: 'Thursday 2:31 PM',
       },
       {
         name: 'Elena V.',
@@ -275,6 +342,9 @@ export const CONTENT = {
         initials: 'EV',
         avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Fixed scope, fixed price, fixed timeline. After three burned automation vendors, I almost did not believe it. Then they shipped.',
+        kind: 'email' as const,
+        meta: 'Finally — a vendor that ships.',
+        email: 'elena@plate-co.com',
       },
       {
         name: 'Samir B.',
@@ -282,6 +352,9 @@ export const CONTENT = {
         initials: 'SB',
         avatar: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'The "free recommendations if we are not a fit" is real — they actually told us we did not need an agent yet. Earned the trust.',
+        kind: 'email' as const,
+        meta: 'Trust earned',
+        email: 'samir@upline.work',
       },
       {
         name: 'Marcus T.',
@@ -289,6 +362,9 @@ export const CONTENT = {
         initials: 'MT',
         avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'We were manually enriching 400 leads a week. Now it\'s fully automated — enriched, scored, and routed before our SDRs start their day. Pipeline velocity doubled.',
+        kind: 'slack' as const,
+        meta: '#pipeline',
+        company: 'Keystone',
       },
       {
         name: 'Lucía M.',
@@ -296,6 +372,9 @@ export const CONTENT = {
         initials: 'LM',
         avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Their scoping process is rigorous in the best way. They found two workflows we assumed were too complex to automate and shipped both in the first sprint.',
+        kind: 'email' as const,
+        meta: 'Scoping process — game-changer',
+        email: 'lucia.m@coalfox.legal',
       },
       {
         name: 'Owen P.',
@@ -303,6 +382,8 @@ export const CONTENT = {
         initials: 'OP',
         avatar: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: "I've tried three automation shops before Raynaters. The difference is they build for the edge case, not just the happy path. Nothing breaks in production.",
+        kind: 'imessage' as const,
+        meta: 'Tuesday 9:05 AM',
       },
       {
         name: 'Farida A.',
@@ -310,6 +391,9 @@ export const CONTENT = {
         initials: 'FA',
         avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'HIPAA-compliant, self-hosted, fully documented. We went from skeptical to running six agents in production. The 14-day refund gave us the confidence to start.',
+        kind: 'email' as const,
+        meta: 'Re: HIPAA-compliant deploy',
+        email: 'faisha@vianova.health',
       },
       {
         name: 'James W.',
@@ -317,6 +401,9 @@ export const CONTENT = {
         initials: 'JW',
         avatar: 'https://images.unsplash.com/photo-1463453091185-61582044d556?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'The audit revealed we were wasting £18k/year on a tool we could replace with one agent. They built it in two weeks. I have never had a vendor pay for themselves before the kick-off call.',
+        kind: 'email' as const,
+        meta: 'Re: £18k savings found in audit',
+        email: 'j.weston@arclight.media',
       },
       {
         name: 'Priya N.',
@@ -324,6 +411,9 @@ export const CONTENT = {
         initials: 'PN',
         avatar: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'They embedded with our team like a co-founder, not a contractor. Full Slack access, daily async updates, shipped ahead of schedule.',
+        kind: 'slack' as const,
+        meta: '#product',
+        company: 'Kindred',
       },
       {
         name: 'Tobias H.',
@@ -331,6 +421,9 @@ export const CONTENT = {
         initials: 'TH',
         avatar: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Usually I spend two weeks reviewing a vendor\'s architecture. Their documentation was so clean I approved it in an afternoon. The system has been running in prod for four months without a single page.',
+        kind: 'email' as const,
+        meta: 'Architecture review — approved',
+        email: 't.holm@inverso.dev',
       },
       {
         name: 'Chiara B.',
@@ -338,6 +431,8 @@ export const CONTENT = {
         initials: 'CB',
         avatar: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'We run a lean team. Three months after deploying the wholesale order agent it processes 300 orders a day, and one of my ops staff was redeployed to growth. Worth every pound.',
+        kind: 'imessage' as const,
+        meta: 'Yesterday 6:48 PM',
       },
       {
         name: 'Noah K.',
@@ -347,15 +442,17 @@ export const CONTENT = {
         quote: 'Inventory reconciliation used to be a Friday nightmare. Now it runs every hour, flags exceptions in Slack, and my team closes 90 minutes earlier on Fridays.',
         kind: 'slack' as const,
         meta: '#ops-team',
+        company: 'Shopline',
       },
       {
         name: 'Sofia R.',
         role: 'CEO, edtech',
         initials: 'SR',
         avatar: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=96&h=96&fit=crop&crop=face&auto=format',
-        quote: 'I was burned by AI hype before. Shahzar was the first person to tell me our best workflow was not a good automation candidate. That honesty is why I trusted them with the three that were.',
+        quote: 'I was burned by AI hype before. The Raynaters team was the first to tell me our best workflow was not a good automation candidate. That honesty is why I trusted them with the three that were.',
         kind: 'email' as const,
         meta: 'Re: Audit follow-up',
+        email: 'sofia@learnsphere.ed',
       },
       {
         name: 'Arjun P.',
@@ -363,6 +460,9 @@ export const CONTENT = {
         initials: 'AP',
         avatar: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'CRM hygiene was our weakest link. They built an enrichment agent that keeps every contact field updated without anyone touching it. Our forecast accuracy improved in the first month.',
+        kind: 'slack' as const,
+        meta: '#sales-wins',
+        company: 'Northform',
       },
       {
         name: 'Maya L.',
@@ -370,6 +470,9 @@ export const CONTENT = {
         initials: 'ML',
         avatar: 'https://images.unsplash.com/photo-1548142813-c348350df52b?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Renewals used to require a 90-minute manual pull. The agent handles it end-to-end — checks usage, drafts the email, queues it for one-click send. My CSM recovered eight hours a week.',
+        kind: 'slack' as const,
+        meta: '#cs-team',
+        company: 'Plumes',
       },
       {
         name: 'Jack D.',
@@ -377,6 +480,9 @@ export const CONTENT = {
         initials: 'JD',
         avatar: 'https://images.unsplash.com/photo-1566753323558-173cf4d61580?w=96&h=96&fit=crop&crop=face&auto=format',
         quote: 'Compliance reporting was a quarterly two-day sprint. Now it\'s a Tuesday morning report that runs itself. Freed up our most senior analyst to focus on actual threat work.',
+        kind: 'email' as const,
+        meta: 'Compliance reporting fixed',
+        email: 'j.dawson@northstack.sec',
       },
     ],
   },

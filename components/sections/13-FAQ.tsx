@@ -87,7 +87,7 @@ export default function FAQ() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-5 max-w-[36ch] text-[16px] leading-relaxed text-text-secondary md:text-[17px]">
-                Still curious? Send Shahzar a note —{' '}
+                Still curious? Send the founder a note —{' '}
                 <a
                   className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent"
                   href="mailto:hello@raynaters.com"

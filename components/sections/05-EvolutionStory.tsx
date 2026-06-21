@@ -4,93 +4,94 @@ import { CONTENT } from '@/lib/content';
 import { Container, Section } from '@/components/ui/Container';
 import { Reveal, RevealStagger, staggerItem } from '@/components/ui/Reveal';
 import { Eyebrow } from '@/components/ui/Eyebrow';
+import { Button } from '@/components/ui/Button';
 import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+
+type Step = (typeof CONTENT.howItWorks.steps)[number];
+
+function StepCard({ step, index, total }: { step: Step; index: number; total: number }) {
+  const isLast = index === total - 1;
+  return (
+    <motion.div variants={staggerItem} className="relative">
+      {/* Node + connector (desktop) */}
+      <div className="mb-6 hidden items-center md:flex">
+        <span className="relative z-10 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-accent/40 bg-accent/10 text-[13px] font-medium tabular-nums text-accent">
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        {!isLast && (
+          <span aria-hidden className="ml-3 h-px flex-1 bg-gradient-to-r from-accent/40 to-border" />
+        )}
+      </div>
+
+      <div className="flex h-full flex-col rounded-[18px] border border-border bg-surface p-6 transition-colors duration-300 hover:border-accent/30 md:rounded-[16px] md:bg-transparent md:p-0 md:hover:border-border">
+        {/* Mobile node inline */}
+        <div className="mb-4 flex items-center gap-3 md:hidden">
+          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-accent/40 bg-accent/10 text-[12px] font-medium tabular-nums text-accent">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <span className="text-[12px] uppercase tracking-[0.2em] text-text-muted">
+            {step.week}
+          </span>
+        </div>
+
+        <div className="hidden items-center gap-2.5 md:flex">
+          <span className="text-[12px] uppercase tracking-[0.2em] text-text-muted">
+            {step.week}
+          </span>
+          <span className="h-1 w-1 rounded-full bg-border" />
+          <span className="text-[11px] uppercase tracking-[0.18em] text-accent">
+            {step.tag}
+          </span>
+        </div>
+
+        <h3 className="mt-3 text-[20px] tracking-[-0.02em] text-text-primary md:text-[21px]">
+          {step.title}
+        </h3>
+        <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
+          {step.body}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function EvolutionStory() {
-  const stages = CONTENT.evolution.stages;
+  const steps = CONTENT.howItWorks.steps;
   return (
     <Section id="evolution" className="border-b border-border">
-      <Container>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-5">
+      <Container width="grid">
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-[640px]">
             <Reveal>
-              <Eyebrow>{CONTENT.evolution.eyebrow}</Eyebrow>
+              <Eyebrow>{CONTENT.howItWorks.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-6 font-display text-[36px] leading-[1.05] tracking-[-0.03em] text-text-primary md:text-[56px]">
-                {CONTENT.evolution.title}
+              <h2 className="mt-6 font-display text-[34px] leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-[44px] md:text-[56px]">
+                {CONTENT.howItWorks.title}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-5 max-w-[36ch] text-[17px] leading-relaxed text-text-secondary md:text-[19px]">
-                {CONTENT.evolution.sub}
+              <p className="mt-5 max-w-[54ch] text-[17px] leading-relaxed text-text-secondary md:text-[19px]">
+                {CONTENT.howItWorks.sub}
               </p>
             </Reveal>
           </div>
 
-          <div className="md:col-span-7">
-            <RevealStagger className="relative">
-              {/* Vertical timeline rail */}
-              <div
-                aria-hidden
-                className="absolute left-[10px] top-3 bottom-3 w-px bg-gradient-to-b from-border via-border to-transparent md:left-[14px]"
-              />
-              <ul className="space-y-10 md:space-y-14">
-                {stages.map((s, idx) => (
-                  <motion.li
-                    key={s.marker}
-                    variants={staggerItem}
-                    className="relative pl-12 md:pl-16"
-                  >
-                    {/* Timeline dot */}
-                    <span
-                      aria-hidden
-                      className={cn(
-                        'absolute left-[3px] top-[6px] grid h-[18px] w-[18px] place-items-center rounded-full border md:left-[5px]',
-                        idx === stages.length - 1
-                          ? 'border-accent bg-accent/15'
-                          : 'border-border bg-surface',
-                      )}
-                    >
-                      <span
-                        className={cn(
-                          'block h-1.5 w-1.5 rounded-full',
-                          idx === stages.length - 1
-                            ? 'bg-accent shadow-[0_0_12px_rgba(211,251,163,0.7)]'
-                            : 'bg-text-muted',
-                        )}
-                      />
-                    </span>
-
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-[12px] uppercase tracking-[0.22em] text-text-muted">
-                        {s.marker}
-                      </span>
-                      <span className="h-px flex-1 bg-border" />
-                      <span
-                        className={cn(
-                          'tabular-nums text-[14px] tracking-[-0.01em] font-medium',
-                          idx === stages.length - 1
-                            ? 'text-accent'
-                            : 'text-text-secondary',
-                        )}
-                      >
-                        {s.metric}
-                      </span>
-                    </div>
-                    <h3 className="mt-3 text-[22px] tracking-[-0.02em] text-text-primary md:text-[26px]">
-                      {s.headline}
-                    </h3>
-                    <p className="mt-3 max-w-[55ch] text-[16px] leading-relaxed text-text-secondary">
-                      {s.body}
-                    </p>
-                  </motion.li>
-                ))}
-              </ul>
-            </RevealStagger>
-          </div>
+          <Reveal delay={0.15} className="hidden shrink-0 md:block">
+            <Button href={CONTENT.brand.bookHref} size="md" variant="ghost" withArrow>
+              Start with the audit
+            </Button>
+          </Reveal>
         </div>
+
+        <RevealStagger
+          stagger={0.1}
+          className="mt-14 grid grid-cols-1 gap-5 md:mt-20 md:grid-cols-4 md:gap-6"
+        >
+          {steps.map((step, i) => (
+            <StepCard key={i} step={step} index={i} total={steps.length} />
+          ))}
+        </RevealStagger>
       </Container>
     </Section>
   );

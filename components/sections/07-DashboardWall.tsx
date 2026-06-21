@@ -77,7 +77,7 @@ function SlackTile({ tile }: { tile: Extract<Tile, { kind: 'slack' }> }) {
   const messages = [
     { who: 'agent-bot', txt: 'Resolved ticket #4192 · refund issued' },
     { who: 'agent-bot', txt: 'Auto-routed lead · scoring 87/100' },
-    { who: 'shahzar', txt: 'green ✓ pushed v3.2 to prod' },
+    { who: 'founder', txt: 'green ✓ pushed v3.2 to prod' },
   ];
   return (
     <div className="flex h-full flex-col p-5">
@@ -197,6 +197,15 @@ export default function DashboardWall() {
               <p className="text-[17px] leading-relaxed text-text-secondary md:text-[19px] md:max-w-[55ch]">
                 {CONTENT.dashboardWall.sub}
               </p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-[12px] uppercase tracking-[0.16em] text-text-secondary">
+                <span className="relative inline-flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
+                </span>
+                Live · synced moments ago
+              </span>
             </Reveal>
           </div>
         </div>

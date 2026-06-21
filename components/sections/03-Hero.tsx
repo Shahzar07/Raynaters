@@ -31,7 +31,7 @@ function AnimatedHeadline() {
       variants={wordContainer}
       initial="hidden"
       animate="visible"
-      className="font-display text-[44px] leading-[1.02] tracking-tightest text-text-primary md:text-[88px] md:leading-[1.0]"
+      className="font-display text-[40px] leading-[1.02] tracking-tightest text-text-primary sm:text-[56px] md:text-[72px] lg:text-[88px] lg:leading-[1.0]"
     >
       {allWords.map((words, lineIdx) => (
         <span key={lineIdx} className="block">
