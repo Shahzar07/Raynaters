@@ -197,7 +197,9 @@ export const CONTENT = {
   why: {
     eyebrow: 'Founder honesty',
     title: "Why I'm Doing This (Call Me Selfish)",
-    body: "Every agent we deploy that actually pays for itself becomes a case study. Every case study compounds our reputation. Every reputation point makes the next deal easier to close. So yes — call me selfish. I need YOU to win, because that's how Raynaters becomes the default name in agentic AI for businesses like yours. The fastest way for me to grow is to make you absurdly profitable.",
+    body: "Every agent we deploy that actually pays for itself becomes a case study. Every case study compounds our reputation. Every reputation point makes the next deal easier to close. So yes — call me selfish. I need you to win, because that's how Raynaters becomes the default name in agentic AI for businesses like yours.",
+    punch: 'The fastest way for me to grow is to make you absurdly profitable.',
+    attribution: 'Founder, Raynaters Tech Inc.',
   },
 
   authority: {

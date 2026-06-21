@@ -5,9 +5,8 @@ import { useState } from 'react';
 import { CONTENT } from '@/lib/content';
 import { Container, Section } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
-import { Marquee } from '@/components/ui/Marquee';
 import { motion } from 'framer-motion';
-import { Star, Hash, MoreHorizontal, Inbox, Paperclip } from 'lucide-react';
+import { Star, Hash, MoreHorizontal, Inbox, Paperclip, BadgeCheck } from 'lucide-react';
 
 // ───────────────────────────────────────── primitives ─────────────────────────────────────────
 
@@ -156,14 +155,13 @@ function SlackCard({ t }: { t: Item }) {
 /* Email-style card */
 function EmailCard({ t }: { t: Item }) {
   const subject = getMeta(t) || 'Note from the team';
-  const handle = t.name.toLowerCase().split(' ')[0].replace('.', '');
   return (
     <HoverWrap>
       {/* mail toolbar */}
       <div className="flex items-center justify-between border-b border-border/80 px-4 py-2.5 text-[11px] uppercase tracking-[0.16em] text-text-muted">
         <div className="flex items-center gap-1.5">
           <Inbox className="h-3 w-3" />
-          <span>Inbox · Tue</span>
+          <span>Inbox</span>
         </div>
         <Paperclip className="h-3 w-3" />
       </div>
@@ -177,12 +175,12 @@ function EmailCard({ t }: { t: Item }) {
         {/* sender row */}
         <div className="mt-3 flex items-center gap-2.5">
           <Avatar avatar={t.avatar} initials={t.initials} size={28} />
-          <div className="min-w-0">
-            <p className="truncate text-[12.5px] text-text-primary">
-              <span className="font-medium">{t.name}</span>{' '}
-              <span className="text-text-muted">&lt;{handle}@company.com&gt;</span>
+          <div className="min-w-0 flex-1">
+            <p className="flex items-center gap-1.5 truncate text-[12.5px] font-medium text-text-primary">
+              {t.name}
+              <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-accent" strokeWidth={2} />
             </p>
-            <p className="text-[11px] text-text-muted">to me · 11:42 AM</p>
+            <p className="text-[11px] text-text-muted">Verified customer</p>
           </div>
         </div>
 
@@ -291,8 +289,7 @@ export default function Testimonials() {
     return result;
   })();
 
-  const masonry = ordered.slice(0, 18);
-  const marqueeRow = ordered;
+  const masonry = ordered;
 
   return (
     <Section className="border-b border-border">
@@ -331,38 +328,19 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Mobile: horizontal snap scroll — cards sized to fit viewport */}
-        <div className="mt-12 md:hidden">
-          <div className="-mx-6 overflow-x-auto px-6">
-            <div className="flex gap-4 pb-2">
-              {masonry.map((t, i) => (
-                <div
-                  key={i}
-                  className="w-[min(85vw,320px)] shrink-0"
-                >
-                  <TestimonialCard t={t} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Dual marquee — forward + reverse */}
-        <div className="mt-10 space-y-4 md:mt-16">
-          <Marquee speed="slow" pauseOnHover>
-            {marqueeRow.map((t, i) => (
-              <div key={i} className="w-[300px] sm:w-[340px]">
-                <TestimonialCard t={t} />
-              </div>
-            ))}
-          </Marquee>
-          <Marquee speed="slow" pauseOnHover reverse>
-            {[...marqueeRow].reverse().map((t, i) => (
-              <div key={i} className="w-[300px] sm:w-[340px]">
-                <TestimonialCard t={t} />
-              </div>
-            ))}
-          </Marquee>
+        {/* Mobile: single-column masonry stack */}
+        <div className="mt-12 grid grid-cols-1 gap-4 md:hidden">
+          {masonry.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <TestimonialCard t={t} />
+            </motion.div>
+          ))}
         </div>
       </Container>
     </Section>
