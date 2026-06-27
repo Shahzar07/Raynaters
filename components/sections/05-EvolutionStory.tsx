@@ -117,7 +117,7 @@ export default function EvolutionStory() {
 
         <RevealStagger
           stagger={0.1}
-          className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-16 md:gap-6 lg:grid-cols-4"
+          className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-16 md:gap-6"
         >
           {steps.map((step, i) => (
             <StepCard key={i} step={step} index={i} featured={i === steps.length - 1} />

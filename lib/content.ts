@@ -17,15 +17,16 @@ export const CONTENT = {
 
   nav: {
     links: [
-      { label: 'How it works', href: '#evolution' },
-      { label: 'What we build', href: '#industry' },
-      { label: 'Guarantee', href: '#guarantee' },
+      { label: 'How it works', href: '/#evolution' },
+      { label: 'What we build', href: '/#industry' },
+      { label: 'Case studies', href: '/case-studies' },
+      { label: 'Resources', href: '/resources' },
     ],
     cta: 'Book Audit',
   },
 
   hero: {
-    eyebrow: 'Agentic Forces · Q1 Cohort',
+    eyebrow: 'Custom AI systems · Live in under a week',
     h1Lines: [
       'We Deploy AI Agents That',
       'Pay For Themselves Within 90 Days',
@@ -48,9 +49,9 @@ export const CONTENT = {
   },
 
   proof: {
-    eyebrow: 'The outcomes',
-    title: 'The numbers our agents put on the board.',
-    sub: 'Not projections — audited results across 23 Agentic Forces running in production today.',
+    eyebrow: 'Proven results',
+    title: 'Real outcomes from systems we’ve shipped.',
+    sub: 'We study your business, then build and deploy the automation, agents, or software it actually needs. Here’s what that has delivered across 23 live builds.',
     stats: [
       {
         to: 47283,
@@ -167,7 +168,7 @@ export const CONTENT = {
       { kind: 'slack', label: '#agent-support — DTC apparel', detail: 'Resolved 412 tickets · last 7 days', span: 'sm' },
       { kind: 'metric', label: 'Hours reclaimed (90d)', value: '6,418', span: 'sm' },
       { kind: 'workflow', label: 'Lead enrichment · Make', runs: '92,401 runs', status: 'Healthy', span: 'md' },
-      { kind: 'loom', label: 'Founder walkthrough · Marcus', duration: '4:12', span: 'md' },
+      { kind: 'loom', label: 'Follow-up checker · live in n8n', duration: 'Active', span: 'md', image: '/n8n-workflow.png' },
       { kind: 'metric', label: 'Avg. first-response', value: '11s', span: 'sm' },
       { kind: 'workflow', label: 'Onboarding sequencer · LangGraph', runs: '3,902 runs', status: 'Healthy', span: 'md' },
       { kind: 'slack', label: '#agent-ops — SaaS analytics', detail: 'Auto-triaged 1,204 events', span: 'sm' },
@@ -496,36 +497,36 @@ export const CONTENT = {
     title: 'Everything you would ask in the first ten minutes.',
     items: [
       {
-        q: 'How long does a typical deployment take?',
-        a: 'First agent live in 14–21 days. Full system in 6–10 weeks depending on scope.',
+        q: 'What exactly do you build?',
+        a: 'Three things, depending on what your business actually needs: (1) automation systems — the repetitive workflows quietly eating your team\'s hours; (2) agentic AI systems — agents that read context, decide, and take action, not just follow rigid rules; and (3) custom software development when off-the-shelf tools simply can\'t do the job.',
+      },
+      {
+        q: 'How fast can you deploy?',
+        a: 'Most systems go live in under a week. We move from your free audit to a working, deployed build fast — larger multi-system projects run two to four weeks depending on scope.',
+      },
+      {
+        q: 'How do you decide what to build for me?',
+        a: 'We start by analysing your operation — where the hours leak, where errors creep in, where revenue stalls. Then we scope the highest-ROI system for your specific business and hand you a written projection before you commit a penny. We never sell a template.',
       },
       {
         q: 'What if my data is sensitive?',
-        a: 'Every deployment runs on infrastructure you own. We never hold your data. SOC2-aligned by default.',
+        a: 'Every system runs on infrastructure you own. We never hold your data, and builds are security-aligned by default.',
       },
       {
         q: 'Do I need a technical team to maintain this?',
         a: 'No. We hand off with full documentation, video walkthroughs, and 90 days of post-launch support included.',
       },
       {
-        q: 'What tools do you build with?',
-        a: "Whatever fits your stack. We're tool-agnostic — n8n, Make, custom Python, LangGraph, Zapier. We've shipped on all of them.",
-      },
-      {
-        q: 'How is this different from hiring an automation freelancer?',
-        a: 'Freelancers ship one workflow. We deploy a system designed to compound. Plus: written ROI guarantee.',
+        q: 'What tools and stack do you build on?',
+        a: "Whatever fits your business — we're tool-agnostic. n8n, Make, Zapier, custom Python, LangGraph, OpenAI and Anthropic models, and full custom codebases when the job calls for it.",
       },
       {
         q: "What's the typical investment?",
-        a: 'Pilot deployments start at £4,500. Full Agentic Force engagements range £15K–£60K depending on scope. ROI projection delivered before any commitment.',
+        a: 'Pilot builds start at £4,500. Full multi-system engagements range £15K–£60K depending on scope. You get an ROI projection before any commitment.',
       },
       {
-        q: 'Do you work with companies outside the UK?',
-        a: 'Yes — currently active across UK, US, EU, and UAE. Async-friendly across all time zones.',
-      },
-      {
-        q: 'What happens after the audit call?',
-        a: "If we're a fit, you get a written proposal in 48 hours. If we're not, you get 3 free recommendations and we go our separate ways.",
+        q: 'What happens after the free audit call?',
+        a: "If we're a fit, you get a written proposal within 48 hours. If we're not, you get three free recommendations and we go our separate ways — no pressure.",
       },
     ],
   },
@@ -542,20 +543,33 @@ export const CONTENT = {
     tagline: 'Built for businesses ready to compound.',
     columns: [
       {
+        label: 'Solutions',
+        links: [
+          { label: 'AI Automation Agency', href: '/ai-automation-agency-uk' },
+          { label: 'AI for Law Firms', href: '/ai-automation-for-law-firms-uk' },
+          { label: 'AI Receptionist · Trades', href: '/ai-receptionist-for-trades-uk' },
+          { label: 'AI Receptionist · Clinics', href: '/ai-receptionist-for-clinics-uk' },
+          { label: 'AI Receptionist · Cosmetic', href: '/ai-receptionist-for-cosmetic-clinics-uk' },
+          { label: 'AI Receptionist Cost', href: '/ai-receptionist-cost-uk' },
+        ],
+      },
+      {
         label: 'Company',
         links: [
-          { label: 'Services', href: '#evolution' },
-          { label: 'Case studies', href: '#industry' },
-          { label: 'Guarantee', href: '#guarantee' },
-          { label: 'FAQ', href: '#faq' },
+          { label: 'How it works', href: '/#evolution' },
+          { label: 'What we build', href: '/#industry' },
+          { label: 'Case studies', href: '/case-studies' },
+          { label: 'Resources', href: '/resources' },
+          { label: 'Guarantee', href: '/#guarantee' },
+          { label: 'FAQ', href: '/#faq' },
         ],
       },
       {
         label: 'Connect',
         links: [
           { label: 'Book audit', href: '/book' },
+          { label: 'Email', href: 'mailto:team@raynaters.tech' },
           { label: 'LinkedIn', href: '#' },
-          { label: 'Email', href: 'mailto:hello@raynaters.com' },
         ],
       },
       {

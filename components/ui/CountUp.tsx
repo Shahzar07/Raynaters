@@ -13,7 +13,7 @@ interface CountUpProps {
 }
 
 const defaultFormat = (n: number) =>
-  Math.round(n).toLocaleString('en-US');
+  Math.round(n).toLocaleString('en-GB');
 
 export function CountUp({
   to,
@@ -25,10 +25,16 @@ export function CountUp({
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: '-20% 0px' });
-  const [value, setValue] = useState(0);
+  // Initialise to the REAL value so the final number is present in the
+  // server-rendered HTML — crawlers, AI Overviews and no-JS users read the
+  // true figure (these counters sit below the fold, so users still see the
+  // count-up animation as they scroll the element into view).
+  const [value, setValue] = useState(to);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || hasAnimated.current) return;
+    hasAnimated.current = true;
     const controls = animate(0, to, {
       duration,
       ease: [0.22, 1, 0.36, 1],

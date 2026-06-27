@@ -18,7 +18,7 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={cn('mx-auto w-full px-6 md:px-10', widthClass[width], className)}>
+    <div className={cn('mx-auto w-full px-5 sm:px-8 md:px-10', widthClass[width], className)}>
       {children}
     </div>
   );
@@ -36,7 +36,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn('relative py-24 md:py-[160px]', className)}
+      className={cn('relative py-20 sm:py-24 md:py-[120px] lg:py-[160px]', className)}
     >
       {children}
     </section>

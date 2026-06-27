@@ -19,7 +19,7 @@ export default function AuthorityNumber() {
       <Container width="grid">
         <div className="mx-auto max-w-[900px] text-center">
           <Reveal>
-            <Eyebrow className="justify-center">Authority anchor</Eyebrow>
+            <Eyebrow className="justify-center">The bottom line</Eyebrow>
           </Reveal>
 
           <Reveal delay={0.05}>

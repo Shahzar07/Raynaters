@@ -5,7 +5,7 @@ import { Container, Section } from '@/components/ui/Container';
 import { Reveal, RevealStagger, staggerItem } from '@/components/ui/Reveal';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { motion } from 'framer-motion';
-import { Activity, Hash, Play, TrendingUp } from 'lucide-react';
+import { Activity, Hash, Play, TrendingUp, Workflow as WorkflowIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type Tile = (typeof CONTENT.dashboardWall.tiles)[number];
@@ -132,20 +132,33 @@ function MetricTile({ tile }: { tile: Extract<Tile, { kind: 'metric' }> }) {
 
 function LoomTile({ tile }: { tile: Extract<Tile, { kind: 'loom' }> }) {
   const video = 'video' in tile ? (tile.video as string) : undefined;
+  const image = 'image' in tile ? (tile.image as string) : undefined;
   return (
     <div className="relative flex h-full flex-col p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-text-muted">
-          <Play className="h-3.5 w-3.5" />
-          {video ? 'Walkthrough' : 'Loom'}
+          {image ? <WorkflowIcon className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
+          {image ? 'Workflow' : video ? 'Walkthrough' : 'Preview'}
         </div>
-        <span className="rounded-full bg-bg/60 px-2 py-0.5 text-[11px] tabular-nums text-text-secondary">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-bg/60 px-2 py-0.5 text-[11px] tabular-nums text-text-secondary">
+          {image && <span className="h-1.5 w-1.5 rounded-full bg-success" />}
           {tile.duration}
         </span>
       </div>
 
       <div className="group/vid relative mt-4 aspect-[16/9] overflow-hidden rounded-[10px] border border-border">
-        {video ? (
+        {image ? (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={image}
+              alt={tile.label}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/40 via-transparent to-transparent" />
+          </>
+        ) : video ? (
           <>
             <video
               autoPlay

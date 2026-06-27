@@ -1,12 +1,101 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { CONTENT } from '@/lib/content';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Marquee } from '@/components/ui/Marquee';
 import { TOKENS } from '@/lib/design-tokens';
+
+function HeroShowcase() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(true);
+  const [muted, setMuted] = useState(true);
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setPlaying(true);
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+  };
+
+  return (
+    <div className="relative mx-auto mt-16 max-w-[1040px] md:mt-20">
+      {/* green glow behind the showcase */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -inset-x-6 -top-6 bottom-0 -z-10 rounded-[40px]"
+        style={{
+          background:
+            'radial-gradient(60% 55% at 50% 0%, rgba(211,251,163,0.28), transparent 70%)',
+        }}
+      />
+      <div className="group/video relative overflow-hidden rounded-[20px] border-2 border-accent/50 bg-surface shadow-[0_0_0_1px_rgba(211,251,163,0.15),0_0_60px_-12px_rgba(211,251,163,0.45),0_30px_120px_-30px_rgba(0,0,0,0.85)]">
+        {/* chrome bar */}
+        <div className="flex items-center gap-2 border-b border-border bg-bg/60 px-4 py-3">
+          <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+          <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+          <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+          <span className="ml-3 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-text-muted">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            Live agent build
+          </span>
+        </div>
+
+        <div className="relative">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Agentic Forces in action"
+            onClick={togglePlay}
+            className="block aspect-video h-full w-full cursor-pointer object-cover"
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+          </video>
+
+          {/* controls */}
+          <div className="absolute bottom-3 right-3 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={togglePlay}
+              aria-label={playing ? 'Pause video' : 'Play video'}
+              className="grid h-9 w-9 place-items-center rounded-full border border-border bg-bg/70 text-text-primary backdrop-blur transition-colors hover:border-accent hover:text-accent"
+            >
+              {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+            </button>
+            <button
+              type="button"
+              onClick={toggleMute}
+              aria-label={muted ? 'Unmute video' : 'Mute video'}
+              className="grid h-9 w-9 place-items-center rounded-full border border-border bg-bg/70 text-text-primary backdrop-blur transition-colors hover:border-accent hover:text-accent"
+            >
+              {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const wordContainer = {
   hidden: {},
@@ -191,40 +280,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.75 }}
-          className="relative mx-auto mt-16 max-w-[1040px] md:mt-20"
         >
-          {/* accent glow behind the showcase */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -inset-x-8 -top-8 bottom-0 -z-10 rounded-[40px]"
-            style={{
-              background:
-                'radial-gradient(60% 50% at 50% 0%, rgba(211,251,163,0.18), transparent 70%)',
-            }}
-          />
-          <div className="overflow-hidden rounded-[20px] border border-border bg-surface shadow-[0_30px_120px_-30px_rgba(0,0,0,0.8)]">
-            {/* browser chrome bar */}
-            <div className="flex items-center gap-2 border-b border-border bg-bg/60 px-4 py-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
-              <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
-              <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
-              <span className="ml-3 inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 text-[11px] text-text-muted">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                agents.raynaters.tech
-              </span>
-            </div>
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="Agentic Forces in action"
-              className="block aspect-video h-full w-full object-cover"
-            >
-              <source src="/hero.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <HeroShowcase />
         </motion.div>
 
         <motion.div

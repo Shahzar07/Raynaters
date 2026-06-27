@@ -29,15 +29,15 @@ export default function Footer() {
       <Container>
         {/* Big tagline as the visual anchor */}
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-10">
-          <div className="md:col-span-7">
+          <div className="md:col-span-4">
             <Logo />
-            <p className="font-display mt-8 max-w-[18ch] text-[32px] leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-[40px] md:text-[64px] md:leading-[1.0]">
+            <p className="font-display mt-8 max-w-[16ch] text-[30px] leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-[36px] md:text-[44px] md:leading-[1.05]">
               {CONTENT.footer.tagline}
             </p>
           </div>
 
-          <div className="md:col-span-5">
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
+          <div className="md:col-span-8">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
               {CONTENT.footer.columns.map((col) => (
                 <div key={col.label}>
                   <p className="text-[12px] uppercase tracking-[0.18em] text-text-muted">
