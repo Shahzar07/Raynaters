@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { CONTENT } from '@/lib/content';
 import { Container, Section } from '@/components/ui/Container';
 import { Reveal } from '@/components/ui/Reveal';
@@ -40,10 +41,16 @@ function FounderCard() {
         </div>
 
         <div>
-          <p className="font-display text-[96px] leading-[0.8] tracking-[-0.05em] text-text-primary md:text-[128px]">
-            R.
-          </p>
-          <p className="mt-4 text-[12px] uppercase tracking-[0.22em] text-accent">
+          <span className="grid h-24 w-24 place-items-center rounded-[22px] bg-accent shadow-[0_8px_40px_rgba(211,251,163,0.25)] md:h-28 md:w-28">
+            <Image
+              src="/raynaters-mark.png"
+              alt="Raynaters Tech Inc."
+              width={88}
+              height={88}
+              className="h-[68px] w-[68px] md:h-[80px] md:w-[80px]"
+            />
+          </span>
+          <p className="mt-5 text-[12px] uppercase tracking-[0.22em] text-accent">
             Raynaters Tech Inc.
           </p>
         </div>

@@ -188,9 +188,49 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.75 }}
+          className="relative mx-auto mt-16 max-w-[1040px] md:mt-20"
+        >
+          {/* accent glow behind the showcase */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-x-8 -top-8 bottom-0 -z-10 rounded-[40px]"
+            style={{
+              background:
+                'radial-gradient(60% 50% at 50% 0%, rgba(211,251,163,0.18), transparent 70%)',
+            }}
+          />
+          <div className="overflow-hidden rounded-[20px] border border-border bg-surface shadow-[0_30px_120px_-30px_rgba(0,0,0,0.8)]">
+            {/* browser chrome bar */}
+            <div className="flex items-center gap-2 border-b border-border bg-bg/60 px-4 py-3">
+              <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+              <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+              <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+              <span className="ml-3 inline-flex items-center gap-1.5 rounded-md border border-border bg-surface px-2.5 py-1 text-[11px] text-text-muted">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                agents.raynaters.tech
+              </span>
+            </div>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Agentic Forces in action"
+              className="block aspect-video h-full w-full object-cover"
+            >
+              <source src="/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.85 }}
+          transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.95 }}
         >
           <TrustStrip />
         </motion.div>

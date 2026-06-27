@@ -92,6 +92,8 @@ export const CONTENT = {
     eyebrow: 'How deployment works',
     title: 'From first call to live agent in four weeks.',
     sub: 'A fixed, transparent process. No "AI strategy decks", no open-ended retainers — you always know exactly what happens next.',
+    trust: 'The exact process behind 23 live deployments · UK · US · EU · UAE',
+    guaranteeChip: 'Backed by our 90-day ROI guarantee',
     steps: [
       {
         week: 'Week 01',
@@ -170,7 +172,7 @@ export const CONTENT = {
       { kind: 'workflow', label: 'Onboarding sequencer · LangGraph', runs: '3,902 runs', status: 'Healthy', span: 'md' },
       { kind: 'slack', label: '#agent-ops — SaaS analytics', detail: 'Auto-triaged 1,204 events', span: 'sm' },
       { kind: 'metric', label: 'Tickets / agent / day', value: '218', span: 'sm' },
-      { kind: 'loom', label: 'Before/after timesheets', duration: '2:38', span: 'lg' },
+      { kind: 'loom', label: 'Full workflow walkthrough', duration: '2:38', span: 'lg', video: '/walkthrough.mp4' },
       { kind: 'workflow', label: 'Reporting compiler · Python', runs: '1,138 runs', status: 'Healthy', span: 'sm' },
       { kind: 'metric', label: 'Cost saved (USD)', value: '$418k', span: 'sm' },
     ],

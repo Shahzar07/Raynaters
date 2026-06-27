@@ -11,20 +11,18 @@ function Logo() {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-3"
+      className="group flex items-center"
       aria-label={`${CONTENT.brand.name} home`}
     >
-      <Image
-        src="/raynaters-logo.png"
-        alt="Raynaters Inc."
-        width={40}
-        height={40}
-        priority
-        className="h-9 w-9 rounded-[8px] border border-border object-cover"
-      />
-      <span className="text-[15px] tracking-[-0.01em] text-text-primary font-medium">
-        Raynaters
-        <span className="text-text-muted"> Inc.</span>
+      <span className="grid h-10 w-10 place-items-center rounded-[10px] bg-accent transition-transform duration-300 group-hover:scale-[1.04]">
+        <Image
+          src="/raynaters-mark.png"
+          alt="Raynaters"
+          width={32}
+          height={32}
+          priority
+          className="h-7 w-7"
+        />
       </span>
     </Link>
   );

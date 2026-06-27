@@ -6,13 +6,15 @@ import { Container } from '@/components/ui/Container';
 function Logo() {
   return (
     <div className="flex items-center gap-3">
-      <Image
-        src="/raynaters-logo.png"
-        alt="Raynaters Inc."
-        width={56}
-        height={56}
-        className="h-12 w-12 rounded-[10px] border border-border object-cover"
-      />
+      <span className="grid h-12 w-12 place-items-center rounded-[12px] bg-accent">
+        <Image
+          src="/raynaters-mark.png"
+          alt="Raynaters Inc."
+          width={40}
+          height={40}
+          className="h-9 w-9"
+        />
+      </span>
       <span className="text-[15px] tracking-[-0.01em] text-text-primary font-medium">
         Raynaters
         <span className="text-text-muted"> Inc.</span>

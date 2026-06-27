@@ -131,32 +131,57 @@ function MetricTile({ tile }: { tile: Extract<Tile, { kind: 'metric' }> }) {
 }
 
 function LoomTile({ tile }: { tile: Extract<Tile, { kind: 'loom' }> }) {
+  const video = 'video' in tile ? (tile.video as string) : undefined;
   return (
     <div className="relative flex h-full flex-col p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-text-muted">
           <Play className="h-3.5 w-3.5" />
-          Loom
+          {video ? 'Walkthrough' : 'Loom'}
         </div>
         <span className="rounded-full bg-bg/60 px-2 py-0.5 text-[11px] tabular-nums text-text-secondary">
           {tile.duration}
         </span>
       </div>
-      {/* Faux thumbnail — diagonal hatching + gradient, no AI imagery */}
-      <div className="relative mt-4 aspect-[16/9] overflow-hidden rounded-[10px] border border-border">
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              'repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 6px, transparent 6px 12px), radial-gradient(closest-side at 30% 20%, rgba(211,251,163,0.22), transparent 55%), #0e0e11',
-          }}
-        />
-        <div className="absolute inset-0 grid place-items-center">
-          <span className="grid h-12 w-12 place-items-center rounded-full border border-border bg-bg/80">
-            <Play className="h-4 w-4 text-text-primary" fill="currentColor" />
-          </span>
-        </div>
+
+      <div className="group/vid relative mt-4 aspect-[16/9] overflow-hidden rounded-[10px] border border-border">
+        {video ? (
+          <>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label={tile.label}
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              <source src={video} type="video/mp4" />
+            </video>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/50 via-transparent to-transparent" />
+            <span className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1.5 rounded-full bg-bg/70 px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-text-secondary backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              Real deployment
+            </span>
+          </>
+        ) : (
+          <>
+            {/* Faux thumbnail — diagonal hatching + gradient, no AI imagery */}
+            <div
+              aria-hidden
+              className="absolute inset-0"
+              style={{
+                background:
+                  'repeating-linear-gradient(45deg, rgba(255,255,255,0.025) 0 6px, transparent 6px 12px), radial-gradient(closest-side at 30% 20%, rgba(211,251,163,0.22), transparent 55%), #0e0e11',
+              }}
+            />
+            <div className="absolute inset-0 grid place-items-center">
+              <span className="grid h-12 w-12 place-items-center rounded-full border border-border bg-bg/80">
+                <Play className="h-4 w-4 text-text-primary" fill="currentColor" />
+              </span>
+            </div>
+          </>
+        )}
       </div>
       <p className="mt-4 text-[14px] tracking-[-0.01em] text-text-primary">
         {tile.label}
