@@ -150,9 +150,9 @@ const page: LandingPage = {
   ],
 
   metadata: {
-    title: 'AI Automation Agency UK | Raynaters Tech',
+    title: 'AI Automation Agency UK | Custom AI Agents for SMEs',
     description:
-      'UK AI automation agency deploying AI agents that pay for themselves in 90 days — or we keep building. 47,000+ hours reclaimed. Book a free Agent Audit.',
+      'A UK AI automation agency building custom AI agents and receptionists for trades, clinics and law firms. ROI in 90 days or we keep building. See case studies.',
   },
 };
 

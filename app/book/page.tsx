@@ -1,10 +1,17 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import CalEmbed from '@/components/CalEmbed';
+import { pageMetadata } from '@/lib/seo/meta';
 
-export const metadata = {
-  title: 'Book your Agent Audit — Raynaters Tech',
-  description: 'Book a free 30-minute Agent Audit with the Raynaters founder. ROI projection within 48 hours.',
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: 'Book a Free AI Agent Audit | Raynaters Tech',
+    description:
+      'Book a free 30-minute AI Agent Audit with Raynaters Tech. We map your workflows and send a written ROI projection within 48 hours.',
+    path: '/book',
+  }),
+  robots: { index: false, follow: true },
 };
 
 export default function BookPage() {
@@ -41,8 +48,8 @@ export default function BookPage() {
 
         <p className="mt-8 text-sm text-text-muted md:mt-10">
           Prefer email? Reach the founder directly at{' '}
-          <a className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent break-all" href="mailto:hello@raynaters.com">
-            hello@raynaters.com
+          <a className="text-text-primary underline underline-offset-4 decoration-border hover:decoration-accent break-all" href="mailto:team@raynaters.tech">
+            team@raynaters.tech
           </a>
           .
         </p>
