@@ -11,7 +11,7 @@ import { LandingFinalCTA } from '@/components/landing/LandingFinalCTA';
 import { CaseStudyCard } from '@/components/case-studies/CaseStudyCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { pageMetadata, absUrl } from '@/lib/seo/meta';
-import { breadcrumbSchema, articleSchema } from '@/lib/seo/schema';
+import { breadcrumbSchema, articleSchema, reviewSchema } from '@/lib/seo/schema';
 import { CASE_STUDIES, getCaseStudy } from '@/lib/case-studies';
 import type { CaseStudy } from '@/lib/case-studies/types';
 
@@ -54,6 +54,11 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             description: study.metadata.description,
             url: absUrl(`/case-studies/${study.slug}`),
             datePublished: '2026-01-15',
+          }),
+          reviewSchema({
+            body: study.quote.text,
+            author: study.quote.author,
+            itemName: 'Raynaters Tech',
           }),
         ]}
       />

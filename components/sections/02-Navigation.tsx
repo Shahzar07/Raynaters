@@ -5,7 +5,15 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { CONTENT } from '@/lib/content';
 import { Button } from '@/components/ui/Button';
+import { NavDropdown } from '@/components/ui/NavDropdown';
+import { LANDING_PAGES } from '@/lib/landing-pages';
 import { cn } from '@/lib/utils';
+
+const SOLUTIONS_ITEMS = LANDING_PAGES.map((p) => ({
+  label: p.navLabel,
+  href: `/${p.slug}`,
+  blurb: p.navBlurb,
+}));
 
 function Logo() {
   return (
@@ -50,16 +58,26 @@ export default function Navigation() {
       <div className="mx-auto flex h-16 max-w-content items-center justify-between gap-6 px-6 md:px-10">
         <Logo />
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {CONTENT.nav.links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[14px] text-text-secondary hover:text-text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-7 md:flex">
+          <NavDropdown label="Solutions" items={SOLUTIONS_ITEMS} />
+          <Link
+            href="/case-studies"
+            className="text-[14px] text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Case studies
+          </Link>
+          <Link
+            href="/resources"
+            className="text-[14px] text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Resources
+          </Link>
+          <Link
+            href="/ai-receptionist-cost-uk"
+            className="text-[14px] text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Pricing
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2">

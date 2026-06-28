@@ -9,6 +9,8 @@ import type {
   FAQPage,
   BreadcrumbList,
   Article,
+  Review,
+  Person,
   WithContext,
 } from 'schema-dts';
 import { SITE_URL, SITE_NAME, absUrl } from './meta';
@@ -111,6 +113,48 @@ export function breadcrumbSchema(
       name: item.name,
       item: absUrl(item.path),
     })),
+  };
+}
+
+export function reviewSchema(input: {
+  body: string;
+  author: string;
+  itemName: string;
+}): WithContext<Review> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    reviewBody: input.body,
+    author: { '@type': 'Person', name: input.author },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: '5',
+      bestRating: '5',
+    },
+    itemReviewed: {
+      '@type': 'Organization',
+      name: input.itemName,
+      '@id': ORG_ID,
+    },
+  };
+}
+
+export function personSchema(input: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  url: string;
+  sameAs?: string[];
+}): WithContext<Person> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: input.name,
+    jobTitle: input.jobTitle,
+    description: input.description,
+    url: input.url,
+    worksFor: orgRef,
+    ...(input.sameAs ? { sameAs: input.sameAs } : {}),
   };
 }
 

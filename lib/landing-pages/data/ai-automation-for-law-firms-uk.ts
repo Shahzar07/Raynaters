@@ -150,9 +150,9 @@ const page: LandingPage = {
   ],
 
   metadata: {
-    title: 'AI Automation for UK Law Firms | Raynaters Tech',
+    title: 'AI Receptionist & Automation for UK Law Firms | Raynaters',
     description:
-      'AI automation for UK law firms — client intake, scheduling and chasing handled by agents so fee-earners bill more. Book a free Agent Audit.',
+      'An AI receptionist for UK law firms that qualifies new-client enquiries, captures matter details and books fee-earner calls — SRA-aware intake. Free Agent Audit.',
   },
 };
 

@@ -155,9 +155,9 @@ const page: LandingPage = {
   },
 
   metadata: {
-    title: 'AI Receptionist for UK Clinics | Raynaters Tech',
+    title: 'AI Receptionist for UK Dental & Medical Clinics | Raynaters',
     description:
-      'An AI receptionist that answers every clinic call 24/7, books patients and never misses a lead. For UK dental & healthcare practices. Book a free Agent Audit.',
+      'An AI receptionist for UK clinics that answers every call 24/7, books NHS & private appointments, and handles reschedules — GDPR-ready. Book a free Agent Audit.',
   },
 };
 

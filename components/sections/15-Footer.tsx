@@ -2,6 +2,42 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CONTENT } from '@/lib/content';
 import { Container } from '@/components/ui/Container';
+import { LANDING_PAGES } from '@/lib/landing-pages';
+import { RESOURCES } from '@/lib/resources';
+
+type FooterLink = { label: string; href: string };
+
+const SOLUTIONS_LINKS: FooterLink[] = LANDING_PAGES.map((p) => ({
+  label: p.navLabel,
+  href: `/${p.slug}`,
+}));
+
+const COMPANY_LINKS: FooterLink[] = [
+  { label: 'How it works', href: '/#evolution' },
+  { label: 'What we build', href: '/#industry' },
+  { label: 'About', href: '/about' },
+  { label: 'Case studies', href: '/case-studies' },
+  { label: 'Guarantee', href: '/#guarantee' },
+  { label: 'FAQ', href: '/#faq' },
+];
+
+const RESOURCE_LINKS: FooterLink[] = [
+  { label: 'All resources', href: '/resources' },
+  ...RESOURCES.map((r) => ({ label: r.title, href: `/resources/${r.slug}` })),
+];
+
+const CONNECT_LINKS: FooterLink[] = [
+  { label: 'Book a free audit', href: '/book' },
+  { label: 'team@raynaters.tech', href: 'mailto:team@raynaters.tech' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/raynaters-tech-inc-7830a0383/' },
+];
+
+const FOOTER_COLUMNS: { label: string; links: FooterLink[] }[] = [
+  { label: 'Solutions', links: SOLUTIONS_LINKS },
+  { label: 'Company', links: COMPANY_LINKS },
+  { label: 'Resources', links: RESOURCE_LINKS },
+  { label: 'Connect', links: CONNECT_LINKS },
+];
 
 function Logo() {
   return (
@@ -38,7 +74,7 @@ export default function Footer() {
 
           <div className="md:col-span-8">
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-              {CONTENT.footer.columns.map((col) => (
+              {FOOTER_COLUMNS.map((col) => (
                 <div key={col.label}>
                   <p className="text-[12px] uppercase tracking-[0.18em] text-text-muted">
                     {col.label}
@@ -48,7 +84,7 @@ export default function Footer() {
                       <li key={l.label}>
                         <Link
                           href={l.href}
-                          className="text-[14px] text-text-secondary hover:text-text-primary transition-colors"
+                          className="text-[14px] leading-snug text-text-secondary hover:text-text-primary transition-colors"
                         >
                           {l.label}
                         </Link>
@@ -65,9 +101,11 @@ export default function Footer() {
         <div className="mt-16 border-t border-border pt-8 md:mt-24">
           <div className="flex flex-col items-start justify-between gap-4 text-[12px] text-text-muted md:flex-row md:items-center">
             <p>{CONTENT.footer.copyright}</p>
-            <p className="uppercase tracking-[0.18em]">
-              Made in the UK · shipping worldwide
-            </p>
+            <div className="flex items-center gap-5">
+              <Link href="/#" className="hover:text-text-primary transition-colors">Privacy</Link>
+              <Link href="/#" className="hover:text-text-primary transition-colors">Terms</Link>
+              <span className="uppercase tracking-[0.18em]">Made in the UK</span>
+            </div>
           </div>
         </div>
       </Container>
