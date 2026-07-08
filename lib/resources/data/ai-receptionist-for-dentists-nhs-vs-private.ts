@@ -10,10 +10,6 @@ const resource: Resource = {
   datePublished: '2026-05-06',
   dateModified: '2026-06-20',
   featured: false,
-  coverImage: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155016_1fda9728-add8-412e-b9d7-c657d093d44d.png',
-    alt: 'UK dental practice reception managing NHS and private appointment bookings',
-  },
 
   directAnswer:
     'An AI receptionist for a dental practice handles NHS and private bookings by following your rules for each: it checks which type the caller needs, books into the right slots in your practice software, manages recalls and reminders, and captures new-patient enquiries 24/7 — so the front desk isn’t buried under the phone at peak times.',

@@ -217,6 +217,114 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     related: ['brookline-lettings', 'northgate-plumbing-heating'],
   },
+  {
+    slug: 'harbourline-electrical',
+    client: 'Harbourline Electrical',
+    monogram: 'HE',
+    category: 'Trades · Australia',
+    image: {
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155033_d675c0fa-3787-41d5-ad52-ac7e7b8d41f9.png',
+      alt: 'AI receptionist dashboard showing a live call transcript and booked electrical jobs for a Sydney contractor',
+    },
+    headlineResult: 'Recovered ~A$5,900 of booked call-out work a month in Sydney.',
+    metric: 'A$5,900/mo',
+    metricLabel: 'Recovered booked work',
+    summary:
+      'A Sydney electrical contractor was losing after-hours fault call-outs to voicemail. An AI receptionist now answers, triages and books every call.',
+    challenge:
+      'Harbourline runs three electricians across Sydney. On the tools all day, they sent nearly every call to voicemail — including the after-hours fault call-outs that pay the most. Callers simply rang the next sparkie, and the owner only saw the scale of it when he checked the missed-call log.',
+    solution:
+      'We deployed an AI receptionist on their existing business number. It answers every call 24/7, recognises urgent faults — no power, a tripping switchboard — books routine work into the shared diary, and alerts the on-call electrician the moment a genuine emergency comes in.',
+    results: [
+      { metric: 'A$5,900', label: 'Recovered booked work per month' },
+      { metric: '100%', label: 'Of calls answered, day and night' },
+      { metric: '0', label: 'After-hours call-outs missed' },
+    ],
+    persona: { name: 'Mitch Doran', role: 'Owner' },
+    quote: {
+      text: "We had no idea how much work was ringing out while we were up in ceilings. Now every call gets answered, the urgent ones reach whoever's on call, and the diary fills itself. It covered its own cost in the first month.",
+      author: 'Mitch Doran',
+      role: 'Owner, Harbourline Electrical',
+    },
+    metadata: {
+      title: 'Harbourline Electrical — AI Receptionist Case Study (Sydney)',
+      description:
+        'How a Sydney electrical contractor recovered ~A$5,900 of booked call-out work a month by replacing voicemail with a 24/7 AI receptionist.',
+    },
+    related: ['northgate-plumbing-heating', 'coastal-smiles-dental'],
+  },
+  {
+    slug: 'coastal-smiles-dental',
+    client: 'Coastal Smiles Dental',
+    monogram: 'CS',
+    category: 'Clinics · Australia',
+    image: {
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155039_5730193a-d2ee-4346-be52-d4dd0d05a2c3.png',
+      alt: 'Automation pipeline showing missed patient calls turning into confirmed dental bookings on the Gold Coast',
+    },
+    headlineResult: 'Lifted captured new-patient bookings by 19% on the Gold Coast.',
+    metric: '+19%',
+    metricLabel: 'New-patient bookings captured',
+    summary:
+      'A Gold Coast dental clinic was missing peak-time and after-hours calls. An AI receptionist now answers, books and reschedules around the clock.',
+    challenge:
+      'Coastal Smiles runs a busy single-site practice on the Gold Coast. At peak times the front desk simply could not keep up, and evening enquiries — often new patients comparing clinics — went straight to voicemail and on to a competitor with a live line.',
+    solution:
+      'We deployed an AI receptionist connected to their practice calendar. It answers every call, books and reschedules appointments in real time, handles routine questions about treatments and health-fund cover, and captures new-patient enquiries out of hours so the morning starts with a fuller book.',
+    results: [
+      { metric: '+19%', label: 'New-patient bookings captured' },
+      { metric: '24/7', label: 'Appointment booking cover' },
+      { metric: '0', label: 'Evening enquiries lost to voicemail' },
+    ],
+    persona: { name: 'Renee Walcott', role: 'Practice Manager' },
+    quote: {
+      text: 'Evenings used to be a black hole — people would ring after work, get nothing, and book somewhere else. Now those calls turn into appointments overnight and my front desk finally gets to look after the patients in the room.',
+      author: 'Renee Walcott',
+      role: 'Practice Manager, Coastal Smiles Dental',
+    },
+    metadata: {
+      title: 'Coastal Smiles Dental — AI Receptionist Case Study (Gold Coast)',
+      description:
+        'How a Gold Coast dental clinic lifted captured new-patient bookings by 19% with a 24/7 AI receptionist answering every call.',
+    },
+    related: ['riverside-dental', 'harbourline-electrical'],
+  },
+  {
+    slug: 'southbank-property-group',
+    client: 'Southbank Property Group',
+    monogram: 'SP',
+    category: 'Property · Australia',
+    image: {
+      src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155046_623c9edd-4657-4a8f-af0a-9899039d7b69.png',
+      alt: 'Scheduling dashboard with confirmed property inspections for a Melbourne property management team',
+    },
+    headlineResult: 'Freed 26 hours a week of property-management admin in Melbourne.',
+    metric: '26 hrs/wk',
+    metricLabel: 'Admin time reclaimed',
+    summary:
+      'A Melbourne property manager lost days to inspection bookings, application chasing and re-keying data. An agent now runs it end to end.',
+    challenge:
+      'Southbank manages several hundred rentals across Melbourne. The team was buried in inspection scheduling, tenant application chasing and copying the same details between their CRM, trust accounting and inspection apps — while out-of-hours enquiries from realestate.com.au sat unanswered until morning.',
+    solution:
+      'We deployed an agent that books inspections around the team’s calendar, chases application documents automatically, answers out-of-hours portal enquiries in minutes, and keeps their three systems in sync — leaving the team to manage exceptions instead of copy-paste.',
+    results: [
+      { metric: '26 hrs/wk', label: 'Admin time reclaimed' },
+      { metric: '<5 min', label: 'Response to portal enquiries' },
+      { metric: '3→1', label: 'Systems kept in sync automatically' },
+    ],
+    persona: { name: 'Lauren Considine', role: 'Head of Property Management' },
+    quote: {
+      text: 'The team used to spend whole afternoons on inspections and application chasing. The agent handles it all now, and enquiries get answered in minutes instead of the next day. It changed what a normal week looks like here.',
+      author: 'Lauren Considine',
+      role: 'Head of Property Management, Southbank Property Group',
+    },
+    metadata: {
+      title: 'Southbank Property Group — AI Automation Case Study (Melbourne)',
+      description:
+        'How a Melbourne property management team reclaimed 26 hours a week by automating inspections, application chasing and system sync.',
+    },
+    related: ['brookline-lettings', 'harbourline-electrical'],
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {

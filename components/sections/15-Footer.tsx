@@ -2,15 +2,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CONTENT } from '@/lib/content';
 import { Container } from '@/components/ui/Container';
-import { LANDING_PAGES } from '@/lib/landing-pages';
+import { MENU_GROUPS } from '@/lib/landing-pages';
 import { RESOURCES } from '@/lib/resources';
 
 type FooterLink = { label: string; href: string };
 
-const SOLUTIONS_LINKS: FooterLink[] = LANDING_PAGES.map((p) => ({
-  label: p.navLabel,
+// Mirror the header mega-menu groups: industries in one column,
+// pricing/comparison + hub pages in another.
+const INDUSTRY_LINKS: FooterLink[] = (MENU_GROUPS[0]?.items ?? []).map((p) => ({
+  label: p.navLabel
+    .replace(/^AI Receptionist for /, '')
+    .replace(/^AI Automation for /, ''),
   href: `/${p.slug}`,
 }));
+
+const PRICING_GUIDE_LINKS: FooterLink[] = [
+  ...(MENU_GROUPS[1]?.items ?? []),
+  ...(MENU_GROUPS[2]?.items ?? []),
+].map((p) => ({ label: p.navLabel, href: `/${p.slug}` }));
 
 const COMPANY_LINKS: FooterLink[] = [
   { label: 'How it works', href: '/#evolution' },
@@ -33,7 +42,8 @@ const CONNECT_LINKS: FooterLink[] = [
 ];
 
 const FOOTER_COLUMNS: { label: string; links: FooterLink[] }[] = [
-  { label: 'Solutions', links: SOLUTIONS_LINKS },
+  { label: 'Industries', links: INDUSTRY_LINKS },
+  { label: 'Pricing & guides', links: PRICING_GUIDE_LINKS },
   { label: 'Company', links: COMPANY_LINKS },
   { label: 'Resources', links: RESOURCE_LINKS },
   { label: 'Connect', links: CONNECT_LINKS },
@@ -73,7 +83,7 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-8">
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
               {FOOTER_COLUMNS.map((col) => (
                 <div key={col.label}>
                   <p className="text-[12px] uppercase tracking-[0.18em] text-text-muted">

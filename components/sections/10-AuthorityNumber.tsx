@@ -11,7 +11,7 @@ const formatMillions = (n: number) => {
   return `$${m.toFixed(1)}M+`;
 };
 
-const REGIONS = ['United Kingdom', 'United States', 'European Union', 'UAE'];
+const REGIONS = ['United Kingdom', 'Australia', 'United States', 'European Union'];
 
 export default function AuthorityNumber() {
   return (

@@ -5,14 +5,18 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { CONTENT } from '@/lib/content';
 import { Button } from '@/components/ui/Button';
-import { NavDropdown } from '@/components/ui/NavDropdown';
-import { LANDING_PAGES } from '@/lib/landing-pages';
+import { MegaMenu, type MegaMenuGroup } from '@/components/ui/MegaMenu';
+import { MENU_GROUPS } from '@/lib/landing-pages';
 import { cn } from '@/lib/utils';
 
-const SOLUTIONS_ITEMS = LANDING_PAGES.map((p) => ({
-  label: p.navLabel,
-  href: `/${p.slug}`,
-  blurb: p.navBlurb,
+const SOLUTIONS_GROUPS: MegaMenuGroup[] = MENU_GROUPS.map((group, gi) => ({
+  label: group.label,
+  items: group.items.map((p) => ({
+    label: p.navLabel.replace(/^AI Receptionist for /, '').replace(/^AI Receptionist in /, ''),
+    href: `/${p.slug}`,
+    // Blurbs only in the narrow columns — the industry grid stays compact.
+    blurb: gi === 0 ? undefined : p.navBlurb,
+  })),
 }));
 
 function Logo() {
@@ -59,7 +63,7 @@ export default function Navigation() {
         <Logo />
 
         <nav className="hidden items-center gap-7 md:flex">
-          <NavDropdown label="Solutions" items={SOLUTIONS_ITEMS} />
+          <MegaMenu label="Solutions" groups={SOLUTIONS_GROUPS} />
           <Link
             href="/case-studies"
             className="text-[14px] text-text-secondary hover:text-text-primary transition-colors"
@@ -77,6 +81,12 @@ export default function Navigation() {
             className="text-[14px] text-text-secondary hover:text-text-primary transition-colors"
           >
             Pricing
+          </Link>
+          <Link
+            href="/about"
+            className="text-[14px] text-text-secondary hover:text-text-primary transition-colors"
+          >
+            About
           </Link>
         </nav>
 

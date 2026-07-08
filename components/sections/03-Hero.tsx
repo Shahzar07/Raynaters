@@ -65,7 +65,7 @@ function HeroShowcase() {
             loop
             playsInline
             preload="metadata"
-            aria-label="Agentic Forces in action"
+            aria-label="Raynaters AI systems in action"
             onClick={togglePlay}
             className="block aspect-video h-full w-full cursor-pointer object-cover"
           >

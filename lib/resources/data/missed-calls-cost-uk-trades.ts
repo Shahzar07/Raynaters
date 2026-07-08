@@ -10,10 +10,6 @@ const resource: Resource = {
   datePublished: '2026-03-04',
   dateModified: '2026-06-10',
   featured: false,
-  coverImage: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155014_c5adbbda-27d2-4b04-a110-a30e2d61d491.png',
-    alt: 'UK trades van parked outside a job while the owner is unable to answer a ringing phone',
-  },
 
   directAnswer:
     'A missed call for a UK trades business is rarely a lost message — it is usually a lost job, because most callers simply ring the next firm rather than leave voicemail. To size the cost, multiply your missed calls a week by your average job value and your typical win rate. For many trades that is hundreds to thousands of pounds a month walking out the door.',

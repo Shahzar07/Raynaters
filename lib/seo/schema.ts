@@ -35,13 +35,26 @@ export function organizationSchema(): WithContext<Organization> {
     url: SITE_URL,
     logo: absUrl('/raynaters-logo.png'),
     description:
-      'AI automation agency deploying AI agents for UK service businesses that pay for themselves within 90 days — or we keep building until they do.',
+      'AI automation agency building custom AI agents and AI receptionists for service businesses across the UK and Australia — systems that pay for themselves within 90 days, or we keep building until they do.',
     founder: {
       '@type': 'Person',
       name: 'Shahzar',
+      jobTitle: 'Founder & CEO',
       // TODO(shahzar): add founder LinkedIn profile URL
     },
-    areaServed: ['GB', 'US', 'EU'],
+    employee: [
+      {
+        '@type': 'Person',
+        name: 'Shahzar',
+        jobTitle: 'Founder & CEO',
+      },
+      {
+        '@type': 'Person',
+        name: 'Sharib',
+        jobTitle: 'Co-Founder — Business Analysis & Systems Operations',
+      },
+    ],
+    areaServed: ['GB', 'AU', 'US', 'EU'],
     sameAs: [
       'https://www.linkedin.com/in/raynaters-tech-inc-7830a0383/',
       'https://www.trustpilot.com/review/raynaters.tech',

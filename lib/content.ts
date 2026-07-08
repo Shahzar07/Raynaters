@@ -12,7 +12,7 @@ export const CONTENT = {
   },
 
   announcement: {
-    text: 'ONLY 12 Q1 BUILDS REMAINING — BOOK YOUR DISCOVERY CALL',
+    text: 'ONLY 12 BUILD SLOTS LEFT THIS QUARTER — BOOK YOUR FREE AUDIT',
   },
 
   nav: {
@@ -32,7 +32,7 @@ export const CONTENT = {
       'Pay For Themselves Within 90 Days',
       '— Or We Keep Building Until They Do.',
     ],
-    sub: 'The Agentic Forces System has reclaimed 47,000+ operational hours for SMBs and scale-ups across the UK, US, and EU. No fluff. No "AI strategy decks." Just deployed agents earning their keep.',
+    sub: 'Our AI systems have saved businesses 47,000+ hours of manual work across the UK and Australia. No jargon, no endless strategy decks — just working systems that answer your calls, book your jobs and chase your admin.',
     primaryCta: 'Book Your Free Agent Audit',
     secondaryCta: 'See Case Studies',
     trustLabel: 'Active deployments shipping with',
@@ -73,8 +73,8 @@ export const CONTENT = {
         to: 23,
         prefix: '',
         suffix: '',
-        label: 'Agentic Forces in production',
-        context: 'Live across UK · US · EU · UAE',
+        label: 'AI systems live in production',
+        context: 'Running across the UK & Australia',
         level: 0.5,
       },
       {
@@ -93,7 +93,7 @@ export const CONTENT = {
     eyebrow: 'How deployment works',
     title: 'From first call to live agent in four weeks.',
     sub: 'A fixed, transparent process. No "AI strategy decks", no open-ended retainers — you always know exactly what happens next.',
-    trust: 'The exact process behind 23 live deployments · UK · US · EU · UAE',
+    trust: 'The exact process behind 23 live deployments across the UK & Australia',
     guaranteeChip: 'Backed by our 90-day ROI guarantee',
     steps: [
       {
@@ -162,7 +162,7 @@ export const CONTENT = {
   dashboardWall: {
     eyebrow: 'The receipts',
     title: 'A wall of working agents. Not slide decks.',
-    sub: 'A live snapshot of dashboards, workflow runs, and Slack channels across deployed Agentic Forces. Names redacted; hours are real.',
+    sub: 'A live snapshot of dashboards, workflow runs, and Slack channels from systems we run for clients. Names redacted; hours are real.',
     tiles: [
       { kind: 'workflow', label: 'Inventory reconciliation · n8n', runs: '14,238 runs', status: 'Healthy', span: 'lg' },
       { kind: 'slack', label: '#agent-support — DTC apparel', detail: 'Resolved 412 tickets · last 7 days', span: 'sm' },
@@ -227,7 +227,7 @@ export const CONTENT = {
         n: '02',
         label: 'The 90-day ROI promise',
         proof: 'Up to 12 months free iteration',
-        body: "If your deployed Agentic Force doesn't pay for itself within 90 days, we keep iterating at zero additional cost until it does.",
+        body: "If your system doesn't pay for itself within 90 days, we keep improving it at zero additional cost until it does.",
       },
     ],
     stat: {
@@ -242,7 +242,7 @@ export const CONTENT = {
     rating: '4.9',
     reviewCount: '127 verified',
     title: 'They came for the pilot. They stayed for the compounding.',
-    sub: 'A wall of unedited words from operations leads, founders, and agency owners who deployed an Agentic Force.',
+    sub: 'A wall of unedited words from owners, operations leads and founders who put our systems to work.',
     items: [
       {
         name: 'Daniel A.',
@@ -534,7 +534,7 @@ export const CONTENT = {
   finalCta: {
     eyebrow: 'Last call',
     title: 'Stop Doing What An Agent Could Do.',
-    sub: '12 Q1 deployment slots remaining.',
+    sub: 'Only 12 build slots left this quarter.',
     cta: 'Book Your Free Agent Audit',
     smallprint: 'Free 30-minute call. ROI projection within 48 hours. No pitch deck.',
   },

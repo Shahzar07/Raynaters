@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Automation Agency UK | Raynaters Tech',
     description:
-      'AI agents that pay for themselves in 90 days — or we keep building until they do. 47,000+ operational hours reclaimed across the UK, US and EU.',
+      'AI agents that pay for themselves in 90 days — or we keep building until they do. 47,000+ hours of manual work saved across the UK and Australia.',
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: 'en_GB',

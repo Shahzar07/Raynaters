@@ -39,6 +39,35 @@ export const CORE_VERTICALS: LandingPage[] = [
   aiReceptionistForCosmeticClinicsUk,
 ];
 
+/** Grouped menu structure — drives the header mega menu and footer columns. */
+export const MENU_GROUPS: { label: string; items: LandingPage[] }[] = [
+  {
+    label: 'By industry',
+    items: [
+      aiReceptionistForTradesUk,
+      aiReceptionistForElectriciansUk,
+      aiReceptionistForClinicsUk,
+      aiReceptionistForDentistsUk,
+      aiReceptionistForCosmeticClinicsUk,
+      aiReceptionistForSalonsUk,
+      aiReceptionistForEstateAgentsUk,
+      aiAutomationForLawFirmsUk,
+    ],
+  },
+  {
+    label: 'Compare & pricing',
+    items: [
+      aiReceptionistCostUk,
+      aiReceptionistVsHumanReceptionist,
+      bestAiReceptionistUk,
+    ],
+  },
+  {
+    label: 'Explore',
+    items: [aiAutomationAgencyUk, aiReceptionistLondon],
+  },
+];
+
 export function getLandingPage(slug: string): LandingPage | undefined {
   return LANDING_PAGES.find((p) => p.slug === slug);
 }
