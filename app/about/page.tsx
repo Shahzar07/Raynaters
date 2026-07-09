@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Navigation from '@/components/sections/02-Navigation';
 import Footer from '@/components/sections/15-Footer';
 import { Container, Section } from '@/components/ui/Container';
@@ -30,10 +29,6 @@ const FOUNDER = {
     { value: '4X', label: 'Scale playbooks built' },
     { value: 'UK · AU', label: 'Markets deployed' },
   ],
-  image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185156_da937835-2570-4220-b4bf-fec7dc0e7ed2.png',
-    alt: 'Portrait of Shahzar, Founder & CEO of Raynaters Tech',
-  },
 };
 
 const CO_FOUNDER = {
@@ -46,10 +41,6 @@ const CO_FOUNDER = {
     'Designs the workflows agents run on',
     'Keeps delivery measured, documented and on time',
   ],
-  image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185158_f28e08ff-994c-41a9-9859-05ddb2771d7f.png',
-    alt: 'Portrait of Sharib, Co-Founder of Raynaters Tech',
-  },
 };
 
 const PRINCIPLES = [
@@ -149,93 +140,63 @@ export default function AboutPage() {
 
           {/* Founder — prominent editorial card */}
           <Reveal className="mt-12 block md:mt-14">
-            <article className="overflow-hidden rounded-[24px] border border-border bg-surface shadow-[0_0_60px_-18px_rgba(211,251,163,0.18)]">
-              <div className="grid grid-cols-1 md:grid-cols-[minmax(0,380px)_1fr] lg:grid-cols-[minmax(0,440px)_1fr]">
-                <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[520px]">
-                  <Image
-                    src={FOUNDER.image.src}
-                    alt={FOUNDER.image.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 440px"
-                    className="object-cover object-top"
-                    priority
-                  />
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0"
-                    style={{ background: 'linear-gradient(to top, rgba(19,19,22,0.55) 0%, transparent 40%)' }}
-                  />
-                </div>
-                <div className="flex flex-col justify-center p-7 sm:p-9 md:p-11 lg:p-14">
-                  <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-accent">
-                    {FOUNDER.role}
-                  </p>
-                  <h3 className="mt-4 font-display text-[40px] leading-[1.02] tracking-tightest text-text-primary sm:text-[52px] md:text-[60px]">
-                    {FOUNDER.name}
-                  </h3>
-                  <p className="mt-3 text-[13px] uppercase tracking-[0.16em] text-text-muted">
-                    {FOUNDER.tagline}
-                  </p>
-                  <p className="mt-6 max-w-[54ch] text-pretty text-[16px] leading-relaxed text-text-secondary sm:text-[17px]">
-                    {FOUNDER.bio}
-                  </p>
-                  <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-7">
-                    {FOUNDER.stats.map((s) => (
-                      <div key={s.label}>
-                        <p className="font-display text-[26px] leading-none tracking-[-0.03em] text-accent sm:text-[32px]">
-                          {s.value}
-                        </p>
-                        <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-text-muted sm:text-[12px]">
-                          {s.label}
-                        </p>
-                      </div>
-                    ))}
+            <article className="relative overflow-hidden rounded-[24px] border border-border bg-surface p-7 shadow-[0_0_60px_-18px_rgba(211,251,163,0.18)] sm:p-10 md:p-14">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute right-[-15%] top-[-40%] h-[420px] w-[560px] rounded-full"
+                style={{ background: 'radial-gradient(closest-side, rgba(211,251,163,0.09), transparent 72%)' }}
+              />
+              <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-accent">
+                {FOUNDER.role}
+              </p>
+              <h3 className="mt-4 font-display text-[44px] leading-[1.0] tracking-tightest text-text-primary sm:text-[60px] md:text-[72px]">
+                {FOUNDER.name}
+              </h3>
+              <p className="mt-3 text-[13px] uppercase tracking-[0.16em] text-text-muted">
+                {FOUNDER.tagline}
+              </p>
+              <p className="mt-6 max-w-[62ch] text-pretty text-[16px] leading-relaxed text-text-secondary sm:text-[18px]">
+                {FOUNDER.bio}
+              </p>
+              <div className="mt-9 grid max-w-[640px] grid-cols-3 gap-4 border-t border-border pt-8">
+                {FOUNDER.stats.map((s) => (
+                  <div key={s.label}>
+                    <p className="font-display text-[28px] leading-none tracking-[-0.03em] text-accent sm:text-[36px]">
+                      {s.value}
+                    </p>
+                    <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-text-muted sm:text-[12px]">
+                      {s.label}
+                    </p>
                   </div>
-                </div>
+                ))}
               </div>
             </article>
           </Reveal>
 
-          {/* Co-Founder — beneath, image right */}
+          {/* Co-Founder — beneath */}
           <Reveal delay={0.08} className="mt-6 block">
-            <article className="overflow-hidden rounded-[24px] border border-border bg-surface">
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_minmax(0,320px)] lg:grid-cols-[1fr_minmax(0,380px)]">
-                <div className="order-2 flex flex-col justify-center p-7 sm:p-9 md:order-1 md:p-11 lg:p-12">
-                  <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-accent">
-                    {CO_FOUNDER.role}
-                  </p>
-                  <h3 className="mt-4 font-display text-[32px] leading-[1.02] tracking-tightest text-text-primary sm:text-[40px] md:text-[44px]">
-                    {CO_FOUNDER.name}
-                  </h3>
-                  <p className="mt-3 text-[13px] uppercase tracking-[0.16em] text-text-muted">
-                    {CO_FOUNDER.tagline}
-                  </p>
-                  <p className="mt-5 max-w-[58ch] text-pretty text-[15px] leading-relaxed text-text-secondary sm:text-[16px]">
-                    {CO_FOUNDER.bio}
-                  </p>
-                  <ul className="mt-6 space-y-2.5 border-t border-border pt-6">
-                    {CO_FOUNDER.highlights.map((h) => (
-                      <li key={h} className="flex items-start gap-2.5 text-[14px] text-text-secondary">
-                        <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="relative order-1 aspect-[4/5] md:order-2 md:aspect-auto md:min-h-[440px]">
-                  <Image
-                    src={CO_FOUNDER.image.src}
-                    alt={CO_FOUNDER.image.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className="object-cover object-top"
-                  />
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0"
-                    style={{ background: 'linear-gradient(to top, rgba(19,19,22,0.55) 0%, transparent 40%)' }}
-                  />
-                </div>
+            <article className="rounded-[24px] border border-border bg-surface p-7 sm:p-9 md:p-11">
+              <p className="text-[12px] font-medium uppercase tracking-[0.18em] text-accent">
+                {CO_FOUNDER.role}
+              </p>
+              <h3 className="mt-4 font-display text-[32px] leading-[1.02] tracking-tightest text-text-primary sm:text-[40px] md:text-[44px]">
+                {CO_FOUNDER.name}
+              </h3>
+              <p className="mt-3 text-[13px] uppercase tracking-[0.16em] text-text-muted">
+                {CO_FOUNDER.tagline}
+              </p>
+              <div className="mt-5 grid grid-cols-1 gap-8 md:grid-cols-[1fr_minmax(0,340px)] md:gap-12">
+                <p className="max-w-[62ch] text-pretty text-[15px] leading-relaxed text-text-secondary sm:text-[16px]">
+                  {CO_FOUNDER.bio}
+                </p>
+                <ul className="space-y-2.5 border-t border-border pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+                  {CO_FOUNDER.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-2.5 text-[14px] text-text-secondary">
+                      <span aria-hidden className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </article>
           </Reveal>

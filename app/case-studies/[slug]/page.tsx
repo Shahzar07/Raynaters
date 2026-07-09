@@ -64,18 +64,6 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       />
       <Navigation />
 
-      {/* Disclaimer — representative / illustrative content */}
-      <div className="border-b border-border bg-surface/60 py-2.5">
-        <Container>
-          <p className="text-center text-[12px] leading-[1.5] text-text-muted">
-            <span className="mr-1.5 inline-block rounded-[5px] border border-border bg-surface px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-text-muted">
-              Note
-            </span>
-            This is a representative case study illustrating the type of results our deployments deliver. Metrics are indicative of typical outcomes. Client details will be updated with verified data as engagements are confirmed.
-          </p>
-        </Container>
-      </div>
-
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border pt-10 pb-14 sm:pt-12 sm:pb-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -119,21 +107,32 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         </Container>
       </section>
 
-      {/* Body */}
+      {/* Story */}
       <section className="border-b border-border py-14 sm:py-20 md:py-24">
         <Container width="text">
           <Reveal>
-            <Eyebrow>The challenge</Eyebrow>
-            <p className="mt-4 text-pretty text-[17px] leading-relaxed text-text-secondary sm:text-[18px]">
-              {study.challenge}
-            </p>
+            <Eyebrow>The full story</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05} className="mt-12 block">
-            <Eyebrow>The solution</Eyebrow>
-            <p className="mt-4 text-pretty text-[17px] leading-relaxed text-text-secondary sm:text-[18px]">
-              {study.solution}
-            </p>
-          </Reveal>
+          <div className="mt-10 space-y-12 sm:mt-12 sm:space-y-16">
+            {study.story.map((s, i) => (
+              <Reveal key={s.heading} delay={Math.min(i * 0.04, 0.2)}>
+                <div className="flex items-baseline gap-4">
+                  <span
+                    aria-hidden
+                    className="font-display text-[14px] tracking-[0.12em] text-accent sm:text-[15px]"
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h2 className="font-display text-[24px] leading-[1.12] tracking-[-0.02em] text-text-primary sm:text-[30px]">
+                    {s.heading}
+                  </h2>
+                </div>
+                <p className="mt-4 text-pretty text-[17px] leading-relaxed text-text-secondary sm:text-[18px] sm:leading-[1.75]">
+                  {s.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 
