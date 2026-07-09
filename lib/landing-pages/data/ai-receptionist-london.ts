@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist in London',
   navBlurb: 'A 24/7 receptionist for London businesses.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155053_5eceb174-bd85-4e5b-8715-10d0673aacf4.png',
-    alt: 'AI receptionist answering calls 24/7 for a busy London service business',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185133_b93f46d9-1626-42e5-bd56-e96b7b3d0c7b.png',
+    alt: 'Receptionist taking a call at an elegant London office front desk with the City skyline behind',
   },
 
   eyebrow: 'For London Businesses',

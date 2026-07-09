@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Dentists',
   navBlurb: 'Answer every call, book NHS & private, handle recalls.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155016_1fda9728-add8-412e-b9d7-c657d093d44d.png',
-    alt: 'Modern UK dental practice surgery with a dental chair and clinical equipment, front desk unattended',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185129_ef1aab6d-c9f7-4429-aa1d-2264433c21a7.png',
+    alt: 'Receptionist welcoming a patient at a bright modern dental clinic front desk',
   },
 
   eyebrow: 'For UK Dental Practices',

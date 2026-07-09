@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Salons',
   navBlurb: 'Book appointments while your team is with clients.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155021_1285e182-640a-447a-a0ca-d2d6cb851ff6.png',
-    alt: 'Stylish UK hair and beauty salon reception with an elegant front desk and calm waiting area',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185113_8290cb86-e188-46cb-a80a-1133e407c2ce.png',
+    alt: 'Practitioner preparing a treatment room in a premium salon and aesthetics clinic',
   },
 
   eyebrow: 'For UK Hair & Beauty Salons',

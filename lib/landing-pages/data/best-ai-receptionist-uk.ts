@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'Choosing an AI Receptionist',
   navBlurb: 'How to choose — and when custom beats off-the-shelf.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155053_5eceb174-bd85-4e5b-8715-10d0673aacf4.png',
-    alt: 'Decision framework concept for choosing the best AI receptionist for a UK business',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185137_0b49577c-d9af-4aa0-a2b3-0248626d7beb.png',
+    alt: 'Premium minimalist office reception at dusk with a single desk phone under warm lamp light',
   },
 
   eyebrow: 'Buyer’s Guide · UK',

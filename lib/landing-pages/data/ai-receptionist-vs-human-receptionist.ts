@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI vs Human Receptionist',
   navBlurb: 'Cost, coverage and trade-offs, compared honestly.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155053_5eceb174-bd85-4e5b-8715-10d0673aacf4.png',
-    alt: 'Side-by-side comparison concept of an AI receptionist and a human receptionist for UK businesses',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185135_bc4e54d7-1fc3-4df6-8448-bd0e27a41ec9.png',
+    alt: 'Professional receptionist with a wireless headset mid-conversation at a modern front desk',
   },
 
   eyebrow: 'Comparison · UK',

@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Electricians',
   navBlurb: 'Triage faults, book jobs and catch after-hours callouts.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_154957_621a8568-1959-40fb-92a5-1981ef7ca93d.png',
-    alt: 'UK electrician working safely on a consumer unit, unable to stop and answer a ringing phone',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185127_44879934-f33a-498d-8356-25362c7704b7.png',
+    alt: 'Electrician in hi-vis testing a residential switchboard at a suburban home',
   },
 
   eyebrow: 'For UK Electricians & Electrical Contractors',

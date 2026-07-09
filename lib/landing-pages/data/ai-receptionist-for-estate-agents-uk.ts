@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Estate & Letting Agents',
   navBlurb: 'Book viewings, qualify applicants and catch portal enquiries.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155023_7bcdc43e-2ce8-44d4-b022-e46c6233b9d9.png',
-    alt: 'UK estate and lettings agency office with screens showing property listings and a busy enquiry pipeline',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185115_97cf72af-7636-4f92-b795-76d92d76e31c.png',
+    alt: 'Property agent reviewing listings at a UK high-street estate agency office at dusk',
   },
 
   eyebrow: 'For UK Estate & Letting Agents',

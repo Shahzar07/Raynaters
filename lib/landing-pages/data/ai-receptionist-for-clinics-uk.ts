@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Clinics',
   navBlurb: 'Answer every patient call and fill every appointment slot.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_154959_ebc92ddd-4e2f-462a-b55c-574610a62f28.png',
-    alt: 'Modern UK dental clinic reception area with clean white surfaces, computer screen and professional healthcare environment',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185109_eecfc50e-27d1-41ea-9508-3d56d5b07c81.png',
+    alt: 'Receptionist answering a patient call at the front desk of a modern UK dental practice',
   },
   showcase: {
     eyebrow: 'How it works for clinics',
@@ -17,12 +17,12 @@ const page: LandingPage = {
       {
         title: 'Every call answered — even during a full surgery',
         body: 'Our AI receptionist handles calls 24/7, books and reschedules appointments in real time, and handles routine questions so your reception team stays focused on patients in the practice.',
-        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155033_d675c0fa-3787-41d5-ad52-ac7e7b8d41f9.png', alt: 'AI receptionist interface with call transcript panel and appointment calendar showing real-time bookings' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185147_5f7901b3-d757-40b6-9339-f58b18e0d379.png', alt: 'Clinic front-desk workspace with phone and appointment calendar' },
       },
       {
         title: 'New patients booked while you sleep',
         body: 'High-intent patients who call after hours get answered, qualified and booked immediately. No voicemail, no dropped leads, no competitor picking them up first.',
-        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155039_5730193a-d2ee-4346-be52-d4dd0d05a2c3.png', alt: 'Automation pipeline showing out-of-hours clinic enquiries converting to booked appointments' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185152_b8fb9c87-d4a4-4696-a675-40aa2866c4ac.png', alt: 'Practice manager reviewing captured after-hours patient enquiries on a laptop in the evening' },
       },
     ],
   },
