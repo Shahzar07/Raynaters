@@ -6,6 +6,7 @@ import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Reveal } from '@/components/ui/Reveal';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
+import { VismeForm } from '@/components/ui/VismeForm';
 import { LandingFinalCTA } from '@/components/landing/LandingFinalCTA';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { pageMetadata, absUrl } from '@/lib/seo/meta';
@@ -219,6 +220,63 @@ export default function AboutPage() {
                 <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">{p.body}</p>
               </div>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Contact */}
+      <Section className="border-b border-border">
+        <Container width="grid">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,440px)_1fr] lg:gap-16">
+            <div>
+              <Reveal>
+                <Eyebrow>Get in touch</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="mt-6 font-display text-[32px] leading-[1.05] tracking-[-0.03em] text-text-primary sm:text-[40px] md:text-[48px]">
+                  Tell us about your business.
+                </h2>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="mt-5 max-w-[46ch] text-pretty text-[16px] leading-relaxed text-text-secondary sm:text-[17px]">
+                  Send us a message and one of the founders will come back to you
+                  personally — usually within one working day. Prefer email?
+                  Write to{' '}
+                  <a
+                    href="mailto:team@raynaters.tech"
+                    className="text-accent underline-offset-4 hover:underline"
+                  >
+                    team@raynaters.tech
+                  </a>
+                  .
+                </p>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <ul className="mt-8 space-y-2.5 border-t border-border pt-7">
+                  {[
+                    'A reply from a founder, not a sales queue',
+                    'Free 30-minute Agent Audit if it looks like a fit',
+                    'Written ROI projection within 48 hours of the call',
+                  ].map((line) => (
+                    <li
+                      key={line}
+                      className="flex items-start gap-2.5 text-[14px] text-text-secondary"
+                    >
+                      <span
+                        aria-hidden
+                        className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                      />
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+            <Reveal delay={0.1} className="block">
+              <div className="overflow-hidden rounded-[20px] border border-border bg-surface p-3 sm:p-4 md:p-5">
+                <VismeForm />
+              </div>
+            </Reveal>
           </div>
         </Container>
       </Section>
