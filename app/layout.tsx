@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Instrument_Serif } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
-import LiveAvatar from '@/components/ui/LiveAvatar';
+import ConvaiWidget from '@/components/ui/ConvaiWidget';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { organizationSchema, websiteSchema } from '@/lib/seo/schema';
 import { SITE_URL, SITE_NAME } from '@/lib/seo/meta';
@@ -83,7 +83,7 @@ export default function RootLayout({
         </Script>
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {children}
-        <LiveAvatar />
+        <ConvaiWidget />
         <Analytics />
       </body>
     </html>
