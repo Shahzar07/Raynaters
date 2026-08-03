@@ -3,6 +3,7 @@ import { Inter, Instrument_Serif } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import ConvaiWidget from '@/components/ui/ConvaiWidget';
+import MetaPixel from '@/components/analytics/MetaPixel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { organizationSchema, websiteSchema } from '@/lib/seo/schema';
 import { SITE_URL, SITE_NAME } from '@/lib/seo/meta';
@@ -84,6 +85,7 @@ export default function RootLayout({
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {children}
         <ConvaiWidget />
+        <MetaPixel />
         <Analytics />
       </body>
     </html>

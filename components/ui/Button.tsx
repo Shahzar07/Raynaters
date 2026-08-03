@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { metaTrackCustom } from '@/lib/analytics/meta';
 
 type Variant = 'primary' | 'ghost';
 type Size = 'md' | 'lg';
@@ -51,11 +52,22 @@ export function Button({
 
   const classes = cn(base, variantStyles[variant], sizeStyles[size], className);
 
+  // Any CTA pointing at the booking flow is a top-of-funnel intent signal.
+  // Reporting it lets Meta optimise towards the people who actually book.
+  const isBookingCta = Boolean(href && href.includes('/book'));
+  const handleClick = isBookingCta
+    ? () =>
+        metaTrackCustom('BookingCTAClick', {
+          content_name: typeof children === 'string' ? children : 'Book CTA',
+        })
+    : undefined;
+
   if (href) {
     if (external || href.startsWith('http') || href.startsWith('mailto:')) {
       return (
         <motion.a
           href={href}
+          onClick={handleClick}
           whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.15 }}
           className={classes}
@@ -68,7 +80,7 @@ export function Button({
     }
     return (
       <motion.div whileTap={{ scale: 0.98 }} transition={{ duration: 0.15 }} className="inline-flex">
-        <Link href={href} className={classes}>
+        <Link href={href} onClick={handleClick} className={classes}>
           {content}
         </Link>
       </motion.div>
