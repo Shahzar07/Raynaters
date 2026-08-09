@@ -21,6 +21,8 @@ import Testimonials from '@/components/sections/12-Testimonials';
 import FAQ from '@/components/sections/13-FAQ';
 import FinalCTA from '@/components/sections/14-FinalCTA';
 import Footer from '@/components/sections/15-Footer';
+import { CTABlock } from '@/components/ui/CTABlock';
+import StickyCTA from '@/components/ui/StickyCTA';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Raynaters Tech | AI Automation Agency — Systems That Pay For Themselves',
@@ -39,15 +41,23 @@ export default function Page() {
       {/* Belief arc: the wall → the belief → the system that answers it */}
       <ProblemCascade />
       <BeliefShift />
+      {/* CTA 2 — fires the moment the belief lands, while it stings */}
+      <CTABlock variant="band" {...CONTENT.ctaBands.afterBelief} />
       <GrowthOS />
       {/* The execution layer inside Growth OS™ */}
       <IndustryAgnostic />
+      {/* CTA 3 — they now know what they'd be buying */}
+      <CTABlock {...CONTENT.ctaBands.afterWorkforces} />
       {/* Proof: outcomes, then the before/after it produced */}
       <StatHero />
       <TransformationTimeline />
+      {/* CTA 4 — straight after the proof peak */}
+      <CTABlock variant="band" {...CONTENT.ctaBands.afterProof} />
       {/* How we get there, and why you can trust it */}
       <EvolutionStory />
       <Guarantee />
+      {/* CTA 5 — risk reversal is the strongest moment to ask */}
+      <CTABlock {...CONTENT.ctaBands.afterGuarantee} />
       <PersonalNote />
       <WhyDoingThis />
       {/* Implementation receipts + tool logos — deliberately low */}
@@ -56,6 +66,7 @@ export default function Page() {
       <FAQ />
       <FinalCTA />
       <Footer />
+      <StickyCTA />
     </main>
   );
 }

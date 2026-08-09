@@ -25,6 +25,38 @@ export const CONTENT = {
     cta: 'Book Your Session',
   },
 
+  /** Short label for the persistent sticky bar — must stay thumb-sized. */
+  stickyCta: 'Book Your Free Session',
+
+  /**
+   * Mid-page conversion bands. Each one is written to follow the argument
+   * directly above it, so the ask reads as the next logical step rather than
+   * a repeated banner. utmContent makes each placement individually
+   * attributable in GA4 / Vercel Analytics.
+   */
+  ctaBands: {
+    afterBelief: {
+      title: 'Which system in your business is quietly capping growth?',
+      sub: 'That is the exact question we answer on the call — free, in 30 minutes, with the numbers written down afterwards.',
+      utmContent: 'band_after_belief',
+    },
+    afterWorkforces: {
+      title: 'See which workforce your business should hire first.',
+      sub: 'We map your operation live, then show you the one deployment with the fastest payback. No obligation to build it with us.',
+      utmContent: 'band_after_workforces',
+    },
+    afterProof: {
+      title: 'Get your own numbers, not ours.',
+      sub: 'Every business is different. Bring us your workflow and we will project the hours and revenue a system would return — in writing, within 48 hours.',
+      utmContent: 'band_after_proof',
+    },
+    afterGuarantee: {
+      title: 'The risk is ours. The upside is yours.',
+      sub: 'Fixed scope, written projection, and we keep building until it pays for itself. Start with a free session.',
+      utmContent: 'band_after_guarantee',
+    },
+  },
+
   hero: {
     eyebrow: 'Business Operating Systems · UK & Australia',
     h1Lines: [

@@ -8,6 +8,7 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { TOKENS } from '@/lib/design-tokens';
+import { bookHref } from '@/lib/seo/utm';
 
 function HeroShowcase() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -191,15 +192,38 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.6 }}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row"
         >
-          <Button href={CONTENT.brand.bookHref} size="lg" withArrow>
+          <Button
+            href={bookHref({ campaign: 'homepage', content: 'hero_cta' })}
+            size="xl"
+            withArrow
+            fullWidthOnMobile
+          >
             {CONTENT.hero.primaryCta}
           </Button>
-          <Button href="#industry" size="lg" variant="ghost">
+          <Button href="#industry" size="xl" variant="ghost" fullWidthOnMobile>
             {CONTENT.hero.secondaryCta}
           </Button>
         </motion.div>
+
+        {/* Risk reversal directly under the primary CTA — the objection people
+            have at the exact moment they consider clicking. */}
+        <motion.ul
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.75 }}
+          className="mt-6 flex flex-col items-center justify-center gap-x-6 gap-y-2 text-[13px] text-text-muted sm:flex-row sm:text-[14px]"
+        >
+          {['Free 30-minute session', 'ROI projection in 48 hours', 'No pitch deck'].map(
+            (t) => (
+              <li key={t} className="flex items-center gap-2">
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
+                {t}
+              </li>
+            ),
+          )}
+        </motion.ul>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
