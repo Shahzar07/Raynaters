@@ -76,7 +76,7 @@ const resource: Resource = {
   ],
 
   related: [
-    { label: 'Book a free Agent Audit', href: '/book' },
+    { label: 'Book Your Business On Autopilot Session™', href: '/book' },
     { label: 'What does an AI automation agency do?', href: '/ai-automation-agency-uk' },
   ],
 

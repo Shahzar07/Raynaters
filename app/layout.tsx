@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | Raynaters Tech',
   },
   description:
-    'AI automation agency deploying agents for UK businesses that pay for themselves in 90 days — or we keep building until they do. Book a free Agent Audit.',
+    'AI automation agency deploying agents for UK businesses that pay for themselves in 90 days — or we keep building until they do. Book your Business On Autopilot Session.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'AI Automation Agency UK | Raynaters Tech',

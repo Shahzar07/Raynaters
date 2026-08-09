@@ -47,7 +47,7 @@ export function LandingFinalCTA({
                 withArrow
                 className="w-full sm:w-auto"
               >
-                Book your free Agent Audit
+                Book Your Business On Autopilot Session™
               </Button>
             </div>
           </Reveal>

@@ -12,7 +12,7 @@ export const CONTENT = {
   },
 
   announcement: {
-    text: 'ONLY 12 BUILD SLOTS LEFT THIS QUARTER — BOOK YOUR FREE AUDIT',
+    text: 'ONLY 12 BUILD SLOTS LEFT THIS QUARTER — BOOK YOUR BUSINESS ON AUTOPILOT SESSION™',
   },
 
   nav: {
@@ -22,36 +22,102 @@ export const CONTENT = {
       { label: 'Case studies', href: '/case-studies' },
       { label: 'Resources', href: '/resources' },
     ],
-    cta: 'Book Audit',
+    cta: 'Book Your Session',
   },
 
   hero: {
-    eyebrow: 'Custom AI systems · Live in under a week',
+    eyebrow: 'Business Operating Systems · UK & Australia',
     h1Lines: [
-      'We Deploy AI Agents That',
-      'Pay For Themselves Within 90 Days',
-      '— Or We Keep Building Until They Do.',
+      "Your Business Doesn't Need",
+      'More Employees.',
+      'It Needs Better Systems.',
     ],
-    sub: 'Our AI systems have saved businesses 47,000+ hours of manual work across the UK and Australia. No jargon, no endless strategy decks — just working systems that answer your calls, book your jobs and chase your admin.',
-    primaryCta: 'Book Your Free Agent Audit',
-    secondaryCta: 'See Case Studies',
-    trustLabel: 'Active deployments shipping with',
-    trustLogos: [
-      'n8n',
-      'Make',
-      'LangGraph',
-      'Zapier',
-      'OpenAI',
-      'Anthropic',
-      'Slack',
-      'HubSpot',
+    sub: "Growing businesses don't run out of people. They run out of systems. Raynaters Tech engineers Business Operating Systems — AI systems that remove bottlenecks, automate repetitive work, and let your company scale without the operational chaos.",
+    primaryCta: 'Book Your Business On Autopilot Session™',
+    secondaryCta: 'See the results',
+  },
+
+  problem: {
+    eyebrow: 'The wall every growing business hits',
+    title: "Hiring more people isn't a growth strategy.",
+    sub: 'Every time the business gets busier, you add another person. More payroll. More management. More complexity. But people were never the bottleneck — the system was.',
+    chain: [
+      'More customers',
+      'More employees',
+      'More complexity',
+      'More meetings',
+      'More admin',
+    ],
+    outcome: 'Everything slows down.',
+    closer: "People don't fix broken systems. Systems do.",
+  },
+
+  belief: {
+    eyebrow: 'What we believe',
+    lead: "Growing businesses don't run out of",
+    strike: 'people.',
+    trail: 'They run out of',
+    emphasis: 'systems.',
+    sub: 'Every engagement we take starts from that one belief — and everything we build follows from it.',
+  },
+
+  growthOS: {
+    eyebrow: 'Introducing Growth OS™',
+    title: 'The operating system that runs your business.',
+    sub: 'Growth OS™ connects the four things every company already has — but almost never has working together. One intelligent system instead of five disconnected ones.',
+    layers: [
+      {
+        n: '01',
+        name: 'Your people',
+        body: 'Freed from the repetitive work software should already be doing, and pointed at the work only humans can do.',
+      },
+      {
+        n: '02',
+        name: 'Your processes',
+        body: 'Mapped, documented and rebuilt so the business runs the same way on your worst week as your best.',
+      },
+      {
+        n: '03',
+        name: 'Your data',
+        body: 'One source of truth across the tools you already run — no re-keying, no three systems disagreeing.',
+      },
+      {
+        n: '04',
+        name: 'Your AI Workforces™',
+        body: 'The execution layer. Always-on digital teams that answer, qualify, book, chase and report — without being managed.',
+      },
+    ],
+    closer: 'You own all of it. Built on your infrastructure, documented, handed over.',
+  },
+
+  timeline: {
+    eyebrow: 'The transformation',
+    title: 'What actually changes when the system does.',
+    sub: 'The same business, before and after Growth OS™ — drawn from live deployments across the UK and Australia.',
+    beforeLabel: 'Before Raynaters',
+    afterLabel: 'After Growth OS™',
+    before: [
+      'Enquiries answered in hours — if at all',
+      'Follow-ups depend on someone remembering',
+      'Admin re-keyed across three systems',
+      'Out-of-hours leads lost to voicemail',
+      'Growth plan: hire more people',
+      'Owner working in the business, not on it',
+    ],
+    after: [
+      'Every enquiry answered in seconds, day or night',
+      'Follow-up runs automatically, every time',
+      'Systems stay in sync without a human touching them',
+      'Evenings and weekends convert while you sleep',
+      'Growth plan: deploy the next workforce',
+      'Leadership back on strategy, not admin',
     ],
   },
 
   proof: {
-    eyebrow: 'Proven results',
-    title: 'Real outcomes from systems we’ve shipped.',
-    sub: 'We study your business, then build and deploy the automation, agents, or software it actually needs. Here’s what that has delivered across 23 live builds.',
+    eyebrow: 'Business outcomes',
+    title: 'What better systems actually return.',
+    sub: 'Not features. Outcomes — measured across 23 live Growth OS™ deployments in the UK and Australia.',
     stats: [
       {
         to: 47283,
@@ -81,9 +147,25 @@ export const CONTENT = {
         to: 11,
         prefix: '',
         suffix: 's',
-        label: 'Average agent first-response',
-        context: 'Down from 3+ hours, manual',
+        label: 'Average first response to a new enquiry',
+        context: 'Down from 3+ hours, done manually',
         level: 0.99,
+      },
+      {
+        to: 2400000,
+        prefix: '$',
+        suffix: '+',
+        label: 'Operational cost taken out',
+        context: 'Compounded across 23 engagements · UK / AU / US / EU',
+        level: 0.85,
+      },
+      {
+        to: 22,
+        prefix: '+',
+        suffix: '%',
+        label: 'More new-patient bookings captured',
+        context: 'Riverside Dental — two-site practice, first quarter live',
+        level: 0.62,
       },
     ],
     footnote: 'Measured Mar 2025 → May 2026. Receipts on request.',
@@ -98,9 +180,9 @@ export const CONTENT = {
     steps: [
       {
         week: 'Week 01',
-        tag: 'Audit',
-        title: 'The free Agent Audit',
-        body: 'We map your operation, score every workflow for automation ROI, and hand you a written projection — before you commit a penny.',
+        tag: 'Session',
+        title: 'Business On Autopilot Session™',
+        body: 'We map your operation, find the bottleneck slowing everything else down, score every workflow for ROI, and hand you a written projection — before you commit a penny.',
       },
       {
         week: 'Week 02',
@@ -123,46 +205,64 @@ export const CONTENT = {
     ],
   },
 
+  // The execution layer inside Growth OS™. Framed as departments you hire,
+  // not automations you buy.
   suites: {
-    eyebrow: 'What we automate',
-    title: 'Agent suites for the work that drains your team.',
-    sub: "Tool-agnostic builds across the functions where hours leak the most. If a workflow is repeatable, it's automatable.",
+    eyebrow: 'The execution layer',
+    title: 'Meet your AI Workforce™.',
+    sub: 'Not tools. Departments — always on, never sick, never chasing you for a pay rise. Each one is built around how your business actually runs.',
+    // TODO(shahzar): Executive, Marketing, HR and Business Intelligence
+    // Workforces are scoped but intentionally not advertised until we can
+    // deliver and evidence them. Add here once live.
     items: [
       {
-        icon: 'support',
-        name: 'Customer Support',
-        desc: 'Tier-1 resolution, ticket triage, refunds and escalation routing — answered in seconds, not hours.',
-        metric: 'Sub-1-minute first response',
-        tools: ['Zendesk', 'Intercom', 'Slack'],
-      },
-      {
         icon: 'revops',
-        name: 'Revenue Operations',
-        desc: 'Lead enrichment, scoring, routing and CRM hygiene that keep your pipeline clean without a human touching it.',
+        name: 'Sales Workforce',
+        desc: 'Captures every enquiry, qualifies it against your criteria, books it into the diary and follows up until it converts — 24/7.',
         metric: '11-second lead routing',
         tools: ['HubSpot', 'Salesforce', 'Clay'],
       },
       {
-        icon: 'finance',
-        name: 'Finance & Reporting',
-        desc: 'Invoice reconciliation, reporting compilers and inventory sync that close your books — and your Fridays — earlier.',
-        metric: '2-day close → hourly',
-        tools: ['Xero', 'QuickBooks', 'Sheets'],
+        icon: 'support',
+        name: 'Customer Workforce',
+        desc: 'Answers, triages and resolves customer questions in your brand voice, escalating to a human only when it genuinely matters.',
+        metric: 'Sub-1-minute first response',
+        tools: ['Zendesk', 'Intercom', 'Slack'],
       },
       {
         icon: 'onboarding',
-        name: 'Onboarding & Ops',
-        desc: 'Client and employee onboarding sequencers that compress 11-day ramps into 2, documented end to end.',
+        name: 'Operations Workforce',
+        desc: 'Runs onboarding, document chasing and system sync end to end, so your team manages exceptions instead of copy-paste.',
         metric: '11 days → 2 days',
         tools: ['Notion', 'Gmail', 'Calendar'],
+      },
+      {
+        icon: 'finance',
+        name: 'Finance Workforce',
+        desc: 'Reconciles invoices, compiles reporting and keeps the numbers current — so the books close early and stay closed.',
+        metric: '2-day close → hourly',
+        tools: ['Xero', 'QuickBooks', 'Sheets'],
       },
     ],
   },
 
   dashboardWall: {
     eyebrow: 'The receipts',
-    title: 'A wall of working agents. Not slide decks.',
-    sub: 'A live snapshot of dashboards, workflow runs, and Slack channels from systems we run for clients. Names redacted; hours are real.',
+    title: 'A wall of working systems. Not slide decks.',
+    sub: 'A live snapshot of dashboards, workflow runs and Slack channels from systems we run for clients. Names redacted; hours are real.',
+    // Implementation detail — deliberately kept low on the page. Tools are
+    // how we build, not what you buy.
+    trustLabel: 'Built on the stack that suits your business — we are tool-agnostic',
+    trustLogos: [
+      'n8n',
+      'Make',
+      'LangGraph',
+      'Zapier',
+      'OpenAI',
+      'Anthropic',
+      'Slack',
+      'HubSpot',
+    ],
     tiles: [
       { kind: 'workflow', label: 'Inventory reconciliation · n8n', runs: '14,238 runs', status: 'Healthy', span: 'lg' },
       { kind: 'slack', label: '#agent-support — DTC apparel', detail: 'Resolved 412 tickets · last 7 days', span: 'sm' },
@@ -184,16 +284,18 @@ export const CONTENT = {
     name: 'Founder',
     role: 'Raynaters Tech Inc.',
     paragraphs: [
-      "Hey — I'm the founder of Raynaters Tech Inc.",
-      "Here's what I've set up for you, no strings:",
+      'Every founder I speak to tells me the same thing. "We’re busy."',
+      "But being busy was never the problem. Being dependent on people for work the system should already be doing — that's the problem.",
+      'So every engagement starts the same way. We find the bottleneck. Then we engineer the system that removes it.',
+      "That's exactly what we'll do together on your Business On Autopilot Session™:",
     ],
     bullets: [
-      'A free 30-minute Agent Audit where I personally walk through your operation and identify exactly which workflows are automatable.',
-      'A custom ROI projection delivered within 48 hours of the call — actual numbers, not vibes.',
-      "If we're a fit, you'll get a fixed-scope deployment quote (no hourly billing games).",
-      "If we're not, I'll send you 3 free recommendations and we'll part ways. No pressure.",
+      'We map your operation live and find the one process quietly slowing everything else down.',
+      'You get a written ROI projection within 48 hours — actual numbers, not vibes.',
+      "If we're a fit, you get a fixed-scope quote to build it. No hourly billing games.",
+      "If we're not, I'll tell you straight and send three things you can fix without us.",
     ],
-    closer: "You're not committing to anything. You're just getting clarity.",
+    closer: "You're not committing to anything. You're just getting clarity on what's actually holding the business back.",
     signature: '— Founder, Raynaters Tech Inc.',
   },
 
@@ -235,7 +337,7 @@ export const CONTENT = {
       label: 'Times we have had to invoke Layer 02',
     },
     closer: "We've never had to. We're not afraid to.",
-    cta: 'Book your free Agent Audit',
+    cta: 'Book Your Business On Autopilot Session™',
   },
 
   testimonials: {
@@ -533,9 +635,9 @@ export const CONTENT = {
 
   finalCta: {
     eyebrow: 'Last call',
-    title: 'Stop Doing What An Agent Could Do.',
-    sub: 'Only 12 build slots left this quarter.',
-    cta: 'Book Your Free Agent Audit',
+    title: 'Bring Us Your Biggest Bottleneck. Leave With The System To Remove It.',
+    sub: 'Every growing business has one process slowing everything else down. Bring it to your Business On Autopilot Session™ — we’ll map it, redesign it, show you exactly what we’d build, and estimate the return before you spend a penny. If we don’t believe we can create measurable value, we’ll tell you.',
+    cta: 'Book Your Business On Autopilot Session™',
     smallprint: 'Free 30-minute call. ROI projection within 48 hours. No pitch deck.',
   },
 

@@ -118,7 +118,7 @@ export default function AboutPage() {
             <Reveal delay={0.15}>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Button href={CONTENT.brand.bookHref} size="lg" withArrow>
-                  Book your free audit
+                  Book Your Business On Autopilot Session™
                 </Button>
                 <Button href="/case-studies" size="lg" variant="ghost">
                   See case studies

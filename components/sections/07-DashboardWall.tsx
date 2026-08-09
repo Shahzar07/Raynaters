@@ -4,6 +4,7 @@ import { CONTENT } from '@/lib/content';
 import { Container, Section } from '@/components/ui/Container';
 import { Reveal, RevealStagger, staggerItem } from '@/components/ui/Reveal';
 import { Eyebrow } from '@/components/ui/Eyebrow';
+import { TrustStrip } from '@/components/ui/TrustStrip';
 import { motion } from 'framer-motion';
 import { Activity, Hash, Play, TrendingUp, Workflow as WorkflowIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -269,6 +270,9 @@ export default function DashboardWall() {
             </motion.div>
           ))}
         </RevealStagger>
+
+        {/* Implementation detail sits here, not above the fold. */}
+        <TrustStrip label={CONTENT.dashboardWall.trustLabel} />
       </Container>
     </Section>
   );

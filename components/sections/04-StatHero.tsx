@@ -73,7 +73,7 @@ export default function StatHero() {
 
         <RevealStagger
           stagger={0.08}
-          className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-16 md:gap-5 lg:grid-cols-4"
+          className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-16 md:gap-5 lg:grid-cols-3"
         >
           {CONTENT.proof.stats.map((stat, i) => (
             <StatCard key={i} stat={stat} index={i} />

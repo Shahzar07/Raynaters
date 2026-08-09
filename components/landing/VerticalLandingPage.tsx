@@ -70,7 +70,7 @@ export function VerticalLandingPage({ data }: { data: LandingPage }) {
           href={`/book?utm_source=site&utm_medium=sticky-cta&utm_campaign=${data.utmCampaign}`}
           className="flex h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-accent text-[15px] font-medium text-[#0A0A0B]"
         >
-          Book a free Agent Audit
+          Book Your Business On Autopilot Session™
         </a>
       </div>
     </main>
