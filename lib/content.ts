@@ -7,7 +7,7 @@ export const CONTENT = {
   brand: {
     name: 'Raynaters',
     full: 'Raynaters Tech Inc.',
-    tagline: 'Built for businesses ready to compound.',
+    tagline: 'Turn repetitive work into your unfair advantage.',
     bookHref: '/book',
   },
 
@@ -25,13 +25,13 @@ export const CONTENT = {
   },
 
   hero: {
-    eyebrow: 'Put Your Operations on Autopilot.',
+    eyebrow: 'For ambitious founders buried in repetitive work.',
     h1Lines: [
-      'We Deploy AI Agents That',
-      'Pay For Themselves Within 90 Days',
-      '— Or We Keep Building Until They Do.',
+      'Stop Adding People',
+      'To Fix Problems',
+      'Systems Should Solve.',
     ],
-    sub: 'The Agentic Forces System has reclaimed 47,000+ operational hours for SMBs and scale-ups across the UK, US, and EU. No fluff. No "AI strategy decks." Just deployed agents earning their keep.',
+    sub: 'Raynaters designs and deploys practical AI automation for growing businesses — so leads get followed up, customers get answers, and your team gets its time back.',
     primaryCta: 'Book Your Free Agent Audit',
     secondaryCta: 'See Case Studies',
     trustLabel: 'Active deployments shipping with',
@@ -306,8 +306,8 @@ export const CONTENT = {
       {
         label: 'Legal',
         links: [
-          { label: 'Privacy', href: '#' },
-          { label: 'Terms', href: '#' },
+          { label: 'Privacy Policy', href: '/privacy-policy' },
+          { label: 'Terms of Service', href: '/terms-of-service' },
         ],
       },
     ],

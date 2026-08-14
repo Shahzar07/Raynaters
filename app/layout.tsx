@@ -24,12 +24,12 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: 'AI Automation Agency UK | Raynaters Tech',
+    title: {
+    default: 'AI Automation for Growing Businesses | Raynaters Tech',
     template: '%s | Raynaters Tech',
   },
   description:
-    'AI automation agency deploying agents for UK businesses that pay for themselves in 90 days — or we keep building until they do. Book a free Agent Audit.',
+    'Raynaters designs and deploys practical AI automation that helps growing businesses reclaim time, respond faster, and scale without adding unnecessary headcount.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'AI Automation Agency UK | Raynaters Tech',
