@@ -9,19 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#0A0A0B',
-        surface: '#131316',
-        'surface-hover': '#18181C',
-        border: '#1F1F23',
-        'text-primary': '#FAFAFA',
-        'text-secondary': '#A1A1AA',
-        'text-muted': '#71717A',
-        accent: '#D3FBA3',
-        'accent-hover': '#BFEF8A',
-        success: '#4ADE80',
+        bg: '#F8F7F3',
+        surface: '#FFFFFF',
+        'surface-hover': '#F1F0EC',
+        border: '#D9D6CF',
+        'text-primary': '#171313',
+        'text-secondary': '#514B48',
+        'text-muted': '#786F6A',
+        accent: '#E94B35',
+        'accent-hover': '#C83C2A',
+        success: '#2F7D5A',
       },
       fontFamily: {
-        display: ['var(--font-instrument-serif)', 'serif'],
+        display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
