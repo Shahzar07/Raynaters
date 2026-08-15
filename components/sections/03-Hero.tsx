@@ -225,6 +225,29 @@ export default function Hero() {
           )}
         </motion.ul>
 
+        {/* Proof bar — the numbers sit with the CTA, where the doubt is,
+            rather than several screens further down. */}
+        <motion.dl
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.85 }}
+          className="mx-auto mt-10 flex max-w-[620px] flex-col items-stretch justify-center gap-px overflow-hidden rounded-[14px] border border-border bg-border sm:flex-row"
+        >
+          {CONTENT.hero.proofBar.map((p) => (
+            <div
+              key={p.label}
+              className="flex flex-1 flex-col items-center gap-1 bg-bg px-5 py-4"
+            >
+              <dt className="font-display text-[24px] leading-none tracking-[-0.03em] text-accent sm:text-[28px]">
+                {p.value}
+              </dt>
+              <dd className="text-[12px] uppercase tracking-[0.14em] text-text-muted">
+                {p.label}
+              </dd>
+            </div>
+          ))}
+        </motion.dl>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
