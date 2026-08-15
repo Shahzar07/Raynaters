@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Cosmetic Clinics',
   navBlurb: 'Capture every aesthetic enquiry and fill your treatment book.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155004_73a98940-c917-4a6c-acc7-6848fe486d68.png',
-    alt: 'Luxury aesthetic clinic treatment room with sleek modern reclining chair and premium clinical equipment',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185113_8290cb86-e188-46cb-a80a-1133e407c2ce.png',
+    alt: 'Practitioner preparing a treatment room in a premium aesthetics clinic',
   },
   showcase: {
     eyebrow: 'How it works for cosmetic clinics',
@@ -17,12 +17,12 @@ const page: LandingPage = {
       {
         title: 'Every high-value enquiry captured instantly',
         body: 'When you\'re mid-treatment and can\'t answer, our AI receptionist responds instantly — qualifying against suitability criteria and booking consultations before the lead goes cold.',
-        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155033_d675c0fa-3787-41d5-ad52-ac7e7b8d41f9.png', alt: 'AI receptionist dashboard capturing cosmetic clinic enquiries and booking treatment consultations' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185135_bc4e54d7-1fc3-4df6-8448-bd0e27a41ec9.png', alt: 'Receptionist with a headset warmly handling a client call at a modern front desk' },
       },
       {
         title: 'No-shows reduced, deposits secured',
         body: 'The agent sends reminders and deposit prompts automatically, protecting high-value treatment slots without adding any work for your team.',
-        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155039_5730193a-d2ee-4346-be52-d4dd0d05a2c3.png', alt: 'Automation pipeline showing cosmetic enquiries converting to confirmed bookings with deposit collection' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185147_5f7901b3-d757-40b6-9339-f58b18e0d379.png', alt: 'Front-desk workspace with consultation calendar filling with confirmed bookings' },
       },
     ],
   },

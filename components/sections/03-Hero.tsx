@@ -1,15 +1,101 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { CONTENT } from '@/lib/content';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Eyebrow } from '@/components/ui/Eyebrow';
-import { Marquee } from '@/components/ui/Marquee';
 import { TOKENS } from '@/lib/design-tokens';
-import { cn } from '@/lib/utils';
+import { bookHref } from '@/lib/seo/utm';
+
+function HeroShowcase() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(true);
+  const [muted, setMuted] = useState(true);
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setPlaying(true);
+    } else {
+      v.pause();
+      setPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+  };
+
+  return (
+    <div className="relative mx-auto mt-16 max-w-[1040px] md:mt-20">
+      {/* green glow behind the showcase */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -inset-x-6 -top-6 bottom-0 -z-10 rounded-[40px]"
+        style={{
+          background:
+            'radial-gradient(60% 55% at 50% 0%, rgba(211,251,163,0.28), transparent 70%)',
+        }}
+      />
+      <div className="group/video relative overflow-hidden rounded-[20px] border-2 border-accent/50 bg-surface shadow-[0_0_0_1px_rgba(211,251,163,0.15),0_0_60px_-12px_rgba(211,251,163,0.45),0_30px_120px_-30px_rgba(0,0,0,0.85)]">
+        {/* chrome bar */}
+        <div className="flex items-center gap-2 border-b border-border bg-bg/60 px-4 py-3">
+          <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+          <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+          <span className="h-2.5 w-2.5 rounded-full bg-text-muted/40" />
+          <span className="ml-3 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-text-muted">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            Live agent build
+          </span>
+        </div>
+
+        <div className="relative">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Raynaters AI systems in action"
+            onClick={togglePlay}
+            className="block aspect-video h-full w-full cursor-pointer object-cover"
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+          </video>
+
+          {/* controls */}
+          <div className="absolute bottom-3 right-3 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={togglePlay}
+              aria-label={playing ? 'Pause video' : 'Play video'}
+              className="grid h-9 w-9 place-items-center rounded-full border border-border bg-bg/70 text-text-primary backdrop-blur transition-colors hover:border-accent hover:text-accent"
+            >
+              {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+            </button>
+            <button
+              type="button"
+              onClick={toggleMute}
+              aria-label={muted ? 'Unmute video' : 'Mute video'}
+              className="grid h-9 w-9 place-items-center rounded-full border border-border bg-bg/70 text-text-primary backdrop-blur transition-colors hover:border-accent hover:text-accent"
+            >
+              {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const wordContainer = {
   hidden: {},
@@ -34,7 +120,7 @@ function AnimatedHeadline() {
       variants={wordContainer}
       initial="hidden"
       animate="visible"
-      className="font-display text-balance text-[40px] leading-[1.04] tracking-tightest text-text-primary sm:text-[56px] md:text-[72px] md:leading-[1.02] lg:text-[88px] lg:leading-[1.0]"
+      className="font-display text-[40px] leading-[1.02] tracking-tightest text-text-primary sm:text-[56px] md:text-[72px] lg:text-[88px] lg:leading-[1.0]"
     >
       {allWords.map((words, lineIdx) => (
         <span key={lineIdx} className="block">
@@ -60,6 +146,7 @@ function HeroGlow() {
       aria-hidden
       className="pointer-events-none absolute inset-0 -z-10"
     >
+      {/* Single subtle radial — orange at very low opacity. The ONE allowed gradient. */}
       <div
         className="absolute left-1/2 top-[-10%] h-[700px] w-[1100px] -translate-x-1/2 rounded-full"
         style={{
@@ -67,165 +154,16 @@ function HeroGlow() {
             'radial-gradient(closest-side, rgba(211,251,163,0.16), rgba(211,251,163,0.05) 45%, transparent 70%)',
         }}
       />
+      {/* Hairline horizon — thin border line that grounds the hero */}
       <div className="absolute bottom-0 left-1/2 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-border to-transparent" />
     </div>
   );
 }
 
-function HeroVideo() {
-  const [canPlay, setCanPlay] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // Delay playback by 5 seconds
-    const timer = setTimeout(() => {
-      setCanPlay(true);
-      if (videoRef.current) {
-        videoRef.current.play().then(() => {
-          setIsPlaying(true);
-        }).catch(() => {
-          setIsPlaying(false);
-        });
-      }
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const togglePlay = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.5 }}
-      className="group relative mx-auto mt-10 sm:mt-12 md:mt-16 max-w-[1000px] overflow-hidden rounded-[20px] sm:rounded-[24px] md:rounded-[32px] border-2 sm:border-[3px] md:border-[4px] border-accent/20 bg-surface shadow-[0_0_50px_-12px_rgba(211,251,163,0.3)] cursor-pointer"
-      onClick={togglePlay}
-    >
-      <div className="aspect-video w-full overflow-hidden">
-        <video
-          ref={videoRef}
-          muted={isMuted}
-          loop
-          playsInline
-          className="h-full w-full object-cover"
-        >
-          <source src="/raynaterstech (1).mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      {/* Custom Minimal Controls — Parrot Green Accent */}
-      <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 flex items-center gap-2 sm:gap-3 opacity-100 sm:opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <button
-          onClick={toggleMute}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-bg/60 text-accent backdrop-blur-md transition-all hover:bg-bg/80 hover:scale-110"
-          aria-label={isMuted ? "Unmute" : "Mute"}
-        >
-          {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-        </button>
-        <button
-          onClick={togglePlay}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-bg shadow-[0_0_20px_rgba(211,251,163,0.4)] transition-all hover:scale-110 hover:shadow-accent/60"
-          aria-label={isPlaying ? "Pause" : "Play"}
-        >
-          {isPlaying ? (
-            <Pause size={22} fill="currentColor" />
-          ) : (
-            <Play size={22} fill="currentColor" className="ml-1" />
-          )}
-        </button>
-      </div>
-
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-accent/[0.03]" />
-    </motion.div>
-  );
-}
-
-function TrustStrip() {
-  return (
-    <div className="mt-16 sm:mt-20 md:mt-28">
-      <p className="text-center text-[11px] sm:text-[12px] uppercase tracking-[0.22em] text-text-muted">
-        {CONTENT.hero.trustLabel}
-      </p>
-      <div className="mt-6 sm:mt-8 overflow-hidden marquee-mask">
-        <Marquee speed="slow">
-          {CONTENT.hero.trustLogos.map((item) => {
-            // ONLY target logos that are monochrome black (or need to be white for visibility)
-            const shouldBeWhite = 
-              item.name === 'Anthropic' || 
-              item.name === 'Github' || 
-              item.name === 'Notion' || 
-              item.name === 'OpenAI' || 
-              item.name === 'Vercel' ||
-              item.name === 'Pipedream' ||
-              item.name === 'Zapier' ||
-              item.name === 'LangChain' ||
-              item.name === 'Make';
-
-            // Some SVGs/PNGs have large internal padding or thin lines and need scaling up
-            const getScale = (name: string) => {
-              if (name === 'Vercel') return 'scale-[2.8]';
-              if (name === 'OpenAI') return 'scale-[2.5]';
-              if (name === 'Notion') return 'scale-[2.2]';
-              if (name === 'Pipedream') return 'scale-[2.0]';
-              if (name === 'Bubble') return 'scale-[1.8]';
-              if (name === 'HeyGen') return 'scale-[1.1]';
-              if (name === 'GoHighLevel') return 'scale-[1.1]';
-              if (name === 'Claude') return 'scale-[1.5]';
-              if (name === 'Relevance AI') return 'scale-[1.2]';
-              if (name === 'Make') return 'scale-[1.6]';
-              if (name === 'Zapier') return 'scale-[1.4]';
-              if (name === 'LangChain') return 'scale-[1.7]';
-              return 'scale-100';
-            };
-
-            return (
-              <div
-                key={item.name}
-                className="flex h-16 sm:h-20 items-center px-7 sm:px-10 md:px-12"
-              >
-                <div className={cn("flex items-center justify-center transition-transform duration-500", getScale(item.name))}>
-                  <img
-                    src={item.logo}
-                    alt={`${item.name} logo`}
-                    className={cn(
-                      "h-7 sm:h-9 w-auto object-contain opacity-85 transition-all duration-500 hover:opacity-100",
-                      shouldBeWhite && "brightness-0 invert"
-                    )}
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </Marquee>
-      </div>
-    </div>
-  );
-}
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 pb-20 sm:pt-20 sm:pb-24 md:pt-32 md:pb-32">
+    <section className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-32">
       <HeroGlow />
       <Container>
         <motion.div
@@ -241,28 +179,58 @@ export default function Hero() {
           <AnimatedHeadline />
         </div>
 
-        <HeroVideo />
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.45 }}
+          className="mx-auto mt-8 max-w-[680px] text-center text-[17px] leading-relaxed text-text-secondary md:text-[19px]"
+        >
+          {CONTENT.hero.sub}
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.7 }}
-          className="mt-10 sm:mt-14 flex flex-col items-stretch justify-center gap-3 sm:gap-4 px-4 sm:flex-row sm:items-center sm:px-0"
+          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.6 }}
+          className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row"
         >
-          <Button href={CONTENT.brand.bookHref} size="lg" withArrow className="w-full sm:w-auto">
+          <Button
+            href={bookHref({ campaign: 'homepage', content: 'hero_cta' })}
+            size="xl"
+            withArrow
+            fullWidthOnMobile
+          >
             {CONTENT.hero.primaryCta}
           </Button>
-          <Button href="#industry" size="lg" variant="ghost" className="w-full sm:w-auto">
+          <Button href="#industry" size="xl" variant="ghost" fullWidthOnMobile>
             {CONTENT.hero.secondaryCta}
           </Button>
         </motion.div>
 
-        <motion.div
+        {/* Risk reversal directly under the primary CTA — the objection people
+            have at the exact moment they consider clicking. */}
+        <motion.ul
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.85 }}
+          transition={{ duration: 0.7, ease: TOKENS.motion.ease, delay: 0.75 }}
+          className="mt-6 flex flex-col items-center justify-center gap-x-6 gap-y-2 text-[13px] text-text-muted sm:flex-row sm:text-[14px]"
         >
-          <TrustStrip />
+          {['Free 30-minute session', 'ROI projection in 48 hours', 'No pitch deck'].map(
+            (t) => (
+              <li key={t} className="flex items-center gap-2">
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
+                {t}
+              </li>
+            ),
+          )}
+        </motion.ul>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: TOKENS.motion.ease, delay: 0.75 }}
+        >
+          <HeroShowcase />
         </motion.div>
       </Container>
     </section>

@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Receptionist for Trades',
   navBlurb: 'Answer every call and book every job — even on the tools.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_154957_621a8568-1959-40fb-92a5-1981ef7ca93d.png',
-    alt: 'Skilled tradesperson engineer working on a modern boiler in a neat UK workshop with tools on workbench',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185107_b12336d4-cdf5-40a2-91bc-a4d5331e2c9a.png',
+    alt: 'Heating engineer working on a boiler in a British home while his calls are answered automatically',
   },
   showcase: {
     eyebrow: 'How it works for trades',
@@ -17,12 +17,12 @@ const page: LandingPage = {
       {
         title: 'Never lose a job to voicemail again',
         body: 'When you\'re on the tools, every unanswered call is a missed booking. Our AI receptionist answers instantly, qualifies the job, and books it straight into your diary.',
-        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155033_d675c0fa-3787-41d5-ad52-ac7e7b8d41f9.png', alt: 'AI receptionist dashboard showing active call transcript and appointment booking panel with confirmed jobs' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185147_5f7901b3-d757-40b6-9339-f58b18e0d379.png', alt: 'Front-desk workspace with desk phone and booking calendar handling incoming calls' },
       },
       {
         title: 'From missed call to confirmed booking in seconds',
         body: 'The agent captures job type, address and urgency, books into your schedule and sends the customer a confirmation — all before you\'ve finished your current job.',
-        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155039_5730193a-d2ee-4346-be52-d4dd0d05a2c3.png', alt: 'Automation pipeline showing missed calls turning into confirmed bookings with calendar slots filling up' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185149_446e53c3-7486-4229-aa7a-c42332b588fd.png', alt: 'Tradesman by his van at golden hour checking confirmed bookings on his phone' },
       },
     ],
   },

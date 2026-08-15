@@ -8,8 +8,8 @@ const page: LandingPage = {
   navLabel: 'AI Automation for Law Firms',
   navBlurb: 'Automate intake, scheduling and chasing — bill more hours.',
   image: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155001_a6493dbe-b2df-4c25-94b4-038be364f136.png',
-    alt: 'Prestigious UK solicitor law office with mahogany bookshelves of legal volumes and elegant wooden desk',
+    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185111_d538cc1f-e1fb-4d6a-b209-a96cc5e91f8a.png',
+    alt: 'Senior solicitor working at a mahogany desk in a traditional British law office',
   },
   showcase: {
     eyebrow: 'What the agents automate',
@@ -17,12 +17,12 @@ const page: LandingPage = {
       {
         title: 'Intake and qualification running 24/7',
         body: 'Agents capture new enquiries around the clock, qualify against your matter types and criteria, and route only the relevant cases to fee-earners — with context attached.',
-        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155033_d675c0fa-3787-41d5-ad52-ac7e7b8d41f9.png', alt: 'AI intake qualification dashboard showing call transcripts and client qualification workflow' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185147_5f7901b3-d757-40b6-9339-f58b18e0d379.png', alt: 'Reception workspace handling client intake calls and consultations' },
       },
       {
         title: 'Admin off your fee-earners\' desks',
         body: 'Scheduling consultations, chasing documents, keeping clients updated — all handled by agents so your team bills the hours that used to go on admin.',
-        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155036_f5a15de6-656a-4512-a6c5-827c4f5d2dca.png', alt: 'AI agent operations dashboard showing hours saved, tasks automated and billable time recovered' },
+        image: { src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260709_185153_9b4a2753-e437-4fb0-94bd-277552919042.png', alt: 'Practice manager calmly reviewing recovered billable hours at a desk in the evening' },
       },
     ],
   },
@@ -150,9 +150,9 @@ const page: LandingPage = {
   ],
 
   metadata: {
-    title: 'AI Automation for UK Law Firms | Raynaters Tech',
+    title: 'AI Receptionist & Automation for UK Law Firms | Raynaters',
     description:
-      'AI automation for UK law firms — client intake, scheduling and chasing handled by agents so fee-earners bill more. Book a free Agent Audit.',
+      'An AI receptionist for UK law firms that qualifies new-client enquiries, captures matter details and books fee-earner calls — SRA-aware intake. Free Agent Audit.',
   },
 };
 

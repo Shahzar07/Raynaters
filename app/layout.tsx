@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Instrument_Serif } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
-import LiveAvatar from '@/components/ui/LiveAvatar';
+import ConvaiWidget from '@/components/ui/ConvaiWidget';
+import MetaPixel from '@/components/analytics/MetaPixel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { organizationSchema, websiteSchema } from '@/lib/seo/schema';
 import { SITE_URL, SITE_NAME } from '@/lib/seo/meta';
@@ -29,12 +30,12 @@ export const metadata: Metadata = {
     template: '%s | Raynaters Tech',
   },
   description:
-    'AI automation agency deploying agents for UK businesses that pay for themselves in 90 days — or we keep building until they do. Book a free Agent Audit.',
+    'AI automation agency deploying agents for UK businesses that pay for themselves in 90 days — or we keep building until they do. Book your Business On Autopilot Session.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'AI Automation Agency UK | Raynaters Tech',
     description:
-      'AI agents that pay for themselves in 90 days — or we keep building until they do. 47,000+ operational hours reclaimed across the UK, US and EU.',
+      'AI agents that pay for themselves in 90 days — or we keep building until they do. 47,000+ hours of manual work saved across the UK and Australia.',
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: 'en_GB',
@@ -83,7 +84,8 @@ export default function RootLayout({
         </Script>
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {children}
-        <LiveAvatar />
+        <ConvaiWidget />
+        <MetaPixel />
         <Analytics />
       </body>
     </html>

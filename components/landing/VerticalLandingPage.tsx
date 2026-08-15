@@ -17,7 +17,7 @@ import type { LandingPage } from '@/lib/landing-pages/types';
 
 export function VerticalLandingPage({ data }: { data: LandingPage }) {
   return (
-    <main className="relative grain min-h-screen overflow-x-hidden">
+    <main className="relative grain min-h-screen overflow-x-hidden pb-16 md:pb-0">
       <Navigation />
 
       <LandingHero
@@ -63,6 +63,16 @@ export function VerticalLandingPage({ data }: { data: LandingPage }) {
       />
 
       <Footer />
+
+      {/* Mobile sticky CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-bg/95 px-4 py-3 backdrop-blur md:hidden">
+        <a
+          href={`/book?utm_source=site&utm_medium=sticky-cta&utm_campaign=${data.utmCampaign}`}
+          className="flex h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-accent text-[15px] font-medium text-[#0A0A0B]"
+        >
+          Book Your Business On Autopilot Session™
+        </a>
+      </div>
     </main>
   );
 }

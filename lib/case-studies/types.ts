@@ -28,6 +28,8 @@ export interface CaseStudy {
 
   challenge: string;
   solution: string;
+  /** Long-form narrative rendered on the detail page as a numbered story. */
+  story: { heading: string; body: string }[];
   results: CaseStudyResult[];
 
   persona: { name: string; role: string };

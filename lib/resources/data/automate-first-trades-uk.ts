@@ -10,10 +10,6 @@ const resource: Resource = {
   datePublished: '2026-02-10',
   dateModified: '2026-02-10',
   featured: false,
-  coverImage: {
-    src: 'https://d8j0ntlcm91z4.cloudfront.net/user_31J28LgsUCQmK5Ux97L8IuICZIM/hf_20260604_155046_623c9edd-4657-4a8f-af0a-9899039d7b69.png',
-    alt: 'Workshop bench with tablet showing scheduling app with confirmed jobs, surrounded by neatly arranged tools',
-  },
 
   directAnswer:
     'For most UK trades and small service businesses, automate call answering and job booking first, because missed calls are direct lost revenue. After that, automate appointment reminders, quote follow-ups and review requests. Start with the workflow that loses you money today — not the one that is most technically exciting.',

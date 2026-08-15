@@ -9,6 +9,8 @@ import type {
   FAQPage,
   BreadcrumbList,
   Article,
+  Review,
+  Person,
   WithContext,
 } from 'schema-dts';
 import { SITE_URL, SITE_NAME, absUrl } from './meta';
@@ -33,13 +35,26 @@ export function organizationSchema(): WithContext<Organization> {
     url: SITE_URL,
     logo: absUrl('/raynaters-logo.png'),
     description:
-      'AI automation agency deploying AI agents for UK service businesses that pay for themselves within 90 days — or we keep building until they do.',
+      'AI automation agency building custom AI agents and AI receptionists for service businesses across the UK and Australia — systems that pay for themselves within 90 days, or we keep building until they do.',
     founder: {
       '@type': 'Person',
       name: 'Shahzar',
+      jobTitle: 'Founder & CEO',
       // TODO(shahzar): add founder LinkedIn profile URL
     },
-    areaServed: ['GB', 'US', 'EU'],
+    employee: [
+      {
+        '@type': 'Person',
+        name: 'Shahzar',
+        jobTitle: 'Founder & CEO',
+      },
+      {
+        '@type': 'Person',
+        name: 'Sharib',
+        jobTitle: 'Co-Founder — Business Analysis & Systems Operations',
+      },
+    ],
+    areaServed: ['GB', 'AU', 'US', 'EU'],
     sameAs: [
       'https://www.linkedin.com/in/raynaters-tech-inc-7830a0383/',
       'https://www.trustpilot.com/review/raynaters.tech',
@@ -111,6 +126,48 @@ export function breadcrumbSchema(
       name: item.name,
       item: absUrl(item.path),
     })),
+  };
+}
+
+export function reviewSchema(input: {
+  body: string;
+  author: string;
+  itemName: string;
+}): WithContext<Review> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    reviewBody: input.body,
+    author: { '@type': 'Person', name: input.author },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: '5',
+      bestRating: '5',
+    },
+    itemReviewed: {
+      '@type': 'Organization',
+      name: input.itemName,
+      '@id': ORG_ID,
+    },
+  };
+}
+
+export function personSchema(input: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  url: string;
+  sameAs?: string[];
+}): WithContext<Person> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: input.name,
+    jobTitle: input.jobTitle,
+    description: input.description,
+    url: input.url,
+    worksFor: orgRef,
+    ...(input.sameAs ? { sameAs: input.sameAs } : {}),
   };
 }
 
