@@ -709,8 +709,8 @@ export const CONTENT = {
       {
         label: 'Legal',
         links: [
-          { label: 'Privacy', href: '#' },
-          { label: 'Terms', href: '#' },
+          { label: 'Privacy Policy', href: '/privacy' },
+          { label: 'Terms & Conditions', href: '/terms' },
         ],
       },
     ],

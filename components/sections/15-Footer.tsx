@@ -112,8 +112,8 @@ export default function Footer() {
           <div className="flex flex-col items-start justify-between gap-4 text-[12px] text-text-muted md:flex-row md:items-center">
             <p>{CONTENT.footer.copyright}</p>
             <div className="flex items-center gap-5">
-              <Link href="/#" className="hover:text-text-primary transition-colors">Privacy</Link>
-              <Link href="/#" className="hover:text-text-primary transition-colors">Terms</Link>
+              <Link href="/privacy" className="hover:text-text-primary transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-text-primary transition-colors">Terms</Link>
               <span className="uppercase tracking-[0.18em]">Made in the UK</span>
             </div>
           </div>
