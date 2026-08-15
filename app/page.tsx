@@ -8,14 +8,14 @@ import Navigation from '@/components/sections/02-Navigation';
 import Hero from '@/components/sections/03-Hero';
 import ProblemCascade from '@/components/sections/17-ProblemCascade';
 import BeliefShift from '@/components/sections/18-BeliefShift';
+import WhoThisIsFor from '@/components/sections/21-WhoThisIsFor';
 import GrowthOS from '@/components/sections/19-GrowthOS';
 import StatHero from '@/components/sections/04-StatHero';
-import EvolutionStory from '@/components/sections/05-EvolutionStory';
 import IndustryAgnostic from '@/components/sections/06-IndustryAgnostic';
 import TransformationTimeline from '@/components/sections/20-TransformationTimeline';
+import RoiMethod from '@/components/sections/22-RoiMethod';
 import DashboardWall from '@/components/sections/07-DashboardWall';
 import PersonalNote from '@/components/sections/08-PersonalNote';
-import WhyDoingThis from '@/components/sections/09-WhyDoingThis';
 import Guarantee from '@/components/sections/11-Guarantee';
 import Testimonials from '@/components/sections/12-Testimonials';
 import FAQ from '@/components/sections/13-FAQ';
@@ -38,29 +38,33 @@ export default function Page() {
       <AnnouncementBar />
       <Navigation />
       <Hero />
-      {/* Belief arc: the wall → the belief → the system that answers it */}
+
+      {/* 1. The problem, then the belief that reframes it */}
       <ProblemCascade />
       <BeliefShift />
-      {/* CTA 2 — fires the moment the belief lands, while it stings */}
+
+      {/* 2. Who this is for — stated before we ask for anything, so the right
+             reader self-selects and the wrong one leaves early */}
+      <WhoThisIsFor />
       <CTABlock variant="band" {...CONTENT.ctaBands.afterBelief} />
+
+      {/* 3. The solution, and the workforces that execute it */}
       <GrowthOS />
-      {/* The execution layer inside Growth OS™ */}
       <IndustryAgnostic />
-      {/* CTA 3 — they now know what they'd be buying */}
       <CTABlock {...CONTENT.ctaBands.afterWorkforces} />
-      {/* Proof: outcomes, then the before/after it produced */}
+
+      {/* 4. Proof — the numbers, then the before/after they produced */}
       <StatHero />
       <TransformationTimeline />
-      {/* CTA 4 — straight after the proof peak */}
       <CTABlock variant="band" {...CONTENT.ctaBands.afterProof} />
-      {/* How we get there, and why you can trust it */}
-      <EvolutionStory />
+
+      {/* 5. Why the guarantee is method, not marketing */}
+      <RoiMethod />
       <Guarantee />
-      {/* CTA 5 — risk reversal is the strongest moment to ask */}
       <CTABlock {...CONTENT.ctaBands.afterGuarantee} />
+
+      {/* 6. Human close, then receipts */}
       <PersonalNote />
-      <WhyDoingThis />
-      {/* Implementation receipts + tool logos — deliberately low */}
       <DashboardWall />
       <Testimonials />
       <FAQ />

@@ -37,7 +37,11 @@ function SuiteCard({ suite }: { suite: Suite }) {
         <ArrowUpRight className="h-5 w-5 text-text-muted transition-colors duration-300 group-hover:text-accent" />
       </div>
 
-      <h3 className="mt-7 text-[22px] tracking-[-0.02em] text-text-primary md:text-[24px]">
+      {/* The reader identifies through the problem before the product name. */}
+      <p className="mt-7 max-w-[36ch] font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-text-primary md:text-[22px]">
+        {suite.problem}
+      </p>
+      <h3 className="mt-4 text-[13px] font-medium uppercase tracking-[0.16em] text-accent">
         {suite.name}
       </h3>
       <p className="mt-3 max-w-[42ch] text-[16px] leading-relaxed text-text-secondary">
