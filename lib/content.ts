@@ -58,15 +58,90 @@ export const CONTENT = {
   },
 
   hero: {
-    eyebrow: 'Business Operating Systems · UK & Australia',
+    // The avatar is named in the eyebrow so a cold visitor knows within one
+    // line whether this page is for them.
+    eyebrow: 'For UK & Australian service businesses · 5–50 staff',
     h1Lines: [
       "Your Business Doesn't Need",
       'More Employees.',
       'It Needs Better Systems.',
     ],
-    sub: "Growing businesses don't run out of people. They run out of systems. Raynaters Tech engineers Business Operating Systems — AI systems that remove bottlenecks, automate repetitive work, and let your company scale without the operational chaos.",
+    sub: "We build AI systems for trades, clinics, property and professional-services firms — answering every enquiry, booking the work and running the admin, so you stop hiring to keep up. Live in weeks, and it pays for itself in 90 days or we keep building.",
     primaryCta: 'Book Your Business On Autopilot Session™',
     secondaryCta: 'See the results',
+    /** Proof sits beside the CTA, where the doubt is. */
+    proofBar: [
+      { value: '47,283', label: 'hours reclaimed' },
+      { value: '23', label: 'systems live' },
+      { value: '<90 days', label: 'to full ROI' },
+    ],
+  },
+
+  /**
+   * Who this is for — stated plainly, including who it is NOT for.
+   *
+   * The site previously spoke to trades, clinics, dentists, salons, estate
+   * agents and law firms across four regions at once, which reads as "everyone"
+   * and therefore lands on no one. Naming the avatar and openly disqualifying
+   * the wrong-fit reader is the single biggest clarity win available here.
+   */
+  icp: {
+    eyebrow: 'Who we build for',
+    title: 'This is built for one kind of business.',
+    sub: 'We are not a general AI consultancy and we do not take every engagement. Here is exactly who gets the most out of what we build.',
+    forLabel: 'You are a fit if',
+    notForLabel: 'We are not right for you if',
+    forItems: [
+      'You run a service business in the UK or Australia — trades, clinics, property, professional services.',
+      'You have between 5 and 50 people, and admin is growing faster than revenue.',
+      'Enquiries arrive by phone, form or DM — and some of them are being missed.',
+      'Your next instinct is to hire someone to handle it.',
+      'You can point to one process that slows everything else down.',
+    ],
+    notForItems: [
+      'You want a one-off chatbot on your website rather than a system that runs a workflow.',
+      'You are pre-revenue or still validating what the business does.',
+      'You need someone to tell you AI is the future — you are not ready to deploy anything yet.',
+      'You want the cheapest possible option rather than the fastest payback.',
+    ],
+    closer: 'If you read the left column and recognised your business, the session will be worth your 30 minutes.',
+  },
+
+  /**
+   * Makes the 90-day guarantee feel methodical rather than promotional by
+   * showing exactly how the return gets measured.
+   */
+  roiMethod: {
+    eyebrow: 'How the guarantee works',
+    title: 'Your ROI is measured. Not promised blindly.',
+    sub: 'Every engagement runs through the same five steps, so at any point you can see exactly what the system is returning against what we said it would.',
+    steps: [
+      {
+        n: '01',
+        title: 'Identify the highest-ROI workflow',
+        body: 'We map your operation and score every repeatable process by the hours and revenue it is costing you today.',
+      },
+      {
+        n: '02',
+        title: 'Calculate the expected impact',
+        body: 'You get a written projection — the hours returned, the revenue recovered, and what the build costs — before you commit anything.',
+      },
+      {
+        n: '03',
+        title: 'Build and deploy',
+        body: 'Fixed scope, fixed price, built on infrastructure you own and deployed inside the tools you already run.',
+      },
+      {
+        n: '04',
+        title: 'Measure actual performance',
+        body: 'We track the live system against the projection. Not impressions of progress — the actual numbers, shared with you.',
+      },
+      {
+        n: '05',
+        title: 'Keep optimising until it pays for itself',
+        body: 'If it has not covered its own cost within 90 days, we keep iterating at no further fee until it does.',
+      },
+    ],
   },
 
   problem: {
@@ -241,7 +316,7 @@ export const CONTENT = {
   // not automations you buy.
   suites: {
     eyebrow: 'The execution layer',
-    title: 'Meet your AI Workforce™.',
+    title: 'Find your problem. Meet the workforce that removes it.',
     sub: 'Not tools. Departments — always on, never sick, never chasing you for a pay rise. Each one is built around how your business actually runs.',
     // TODO(shahzar): Executive, Marketing, HR and Business Intelligence
     // Workforces are scoped but intentionally not advertised until we can
@@ -249,6 +324,7 @@ export const CONTENT = {
     items: [
       {
         icon: 'revops',
+        problem: 'Leads going cold before anyone calls them back?',
         name: 'Sales Workforce',
         desc: 'Captures every enquiry, qualifies it against your criteria, books it into the diary and follows up until it converts — 24/7.',
         metric: '11-second lead routing',
@@ -256,6 +332,7 @@ export const CONTENT = {
       },
       {
         icon: 'support',
+        problem: 'Customers waiting hours for a simple answer?',
         name: 'Customer Workforce',
         desc: 'Answers, triages and resolves customer questions in your brand voice, escalating to a human only when it genuinely matters.',
         metric: 'Sub-1-minute first response',
@@ -263,6 +340,7 @@ export const CONTENT = {
       },
       {
         icon: 'onboarding',
+        problem: 'Same admin re-typed across three systems?',
         name: 'Operations Workforce',
         desc: 'Runs onboarding, document chasing and system sync end to end, so your team manages exceptions instead of copy-paste.',
         metric: '11 days → 2 days',
@@ -270,6 +348,7 @@ export const CONTENT = {
       },
       {
         icon: 'finance',
+        problem: 'Reporting and reconciliation eating your Fridays?',
         name: 'Finance Workforce',
         desc: 'Reconciles invoices, compiles reporting and keeps the numbers current — so the books close early and stay closed.',
         metric: '2-day close → hourly',
